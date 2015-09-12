@@ -1,295 +1,167 @@
-import configuration_support as cs
-from datetime import datetime
-import time, communication
-
-class SerialParameters(object):
-	baud_rate = 9600
-	establish_connection_timeout = 2 # seconds
-	serial_read_timeout = 0.01 # seconds
-	receive_message_timeout = 3 # seconds
-
-class Instruction(object):
-	code = ""
-	id = 0
-	parameter = ""
-
-class RecipeInstruction(object):
-	time = 0.0
-	code = ""
-	id = ""
-	parameter = ""
-
-class InstructionCode(object):
-	error = "ERR"
-	sensor_time = "STM"
-	sensor_air_temperature = "SAT"
-	sensor_air_humidity = "SHU"
-	sensor_light_intensity = "SLI"
-	actuator_air_heater = "AAH"
-	actuator_air_humidifier = "AHU"
-	actuator_air_vent = "AAV"
-	actuator_air_circulation = "AAC"
-	actuator_light_panel = "ALP"
-	actuator_light_vent = "ALV"
-
-class InstructionCodeExpanded(object):
-	error = "Error"
-	sensor_time = "Sensor Time"
-	sensor_air_temperature = "Sensor Air Temperature"
-	sensor_air_humidity = "Sensor Humidity"
-	sensor_light_intensity = "Sensor Light Intensity"
-	actuator_air_heater = "Actuator Air Heater"
-	actuator_air_humidifier = "Actuator Air Humidifier"
-	actuator_air_vent = "Actuator Air Vent"
-	actuator_air_circulation = "Actuator Air Circulation"
-	actuator_light_panel = "Actuator Light Panel"
-	actuator_light_vent = "Actuator Light Vent"
-
-class State(object):
-	# Non-configurable
-	mode = 0
-	time = 0.0
-	start_of_recipe = True
-	end_of_recipe = False
-	recipe_instruction_waiting = False
-	recipe_start_time = 0.0
-	recipe_time = 0.0
-	recipe_code = ""
-	recipe_parameter = ""
-	error_codes = []
-	error_parameters = []
-
-	reported_sensor_time_default = "26/07/2015 21:51:53"
-	reported_sensor_time_default_id = 1
-
-	# Air Temperature Sensor
-	# Reported
-	reported_sensor_air_temperature_default = 0.0
-	reported_sensor_air_temperature_default_id = 1
-	# Controls
-	desired_sensor_air_temperature_default = 0.0
-	ambient_sensor_air_temperature_1 = 21.0
-	active_actuation_sensor_air_temperature_1 = False
-	active_threshold_sensor_air_temperature_1 = .5 # kind of like overshoot
-	inactive_threshold_sensor_air_temperature_1 = 1 # level of precision we strive to maintain
-	direction_sensor_air_temperature_1 = 0
-
-	# Air Humidity Sensor
-	# Reported
-	reported_sensor_air_humidity_default = 0.0
-	reported_sensor_air_humidity_default_id = 1
-	# Controls
-	desired_sensor_air_humidity_default = 0.0
-	ambient_sensor_air_humidity_1 = 45
-	active_actuation_sensor_air_humidity_1 = False
-	active_threshold_sensor_air_humidity_1 = 2
-	inactive_threshold_sensor_air_humidity_1 = 4
-	direction_sensor_air_humidity_1 = 0
-
-	# Light Intensity Sensor
-	# Reported
-	reported_sensor_light_intensity_default = 0.0
-	reported_sensor_light_intensity_default_id = 1
-	# Controls
-	desired_sensor_light_intensity_default = 0.0
-	ambient_sensor_light_intensity_defaul1 = 45
-	active_actuation_sensor_light_intensity_1 = False
-	active_threshold_sensor_light_intensity_1 = 2
-	inactive_threshold_sensor_light_intensity_1 = 4
-	direction_sensor_light_intensity_1 = 0
-
-	# Air Heater Actuator
-	# Controls
-	desired_actuator_air_heater_default = 0
-	desired_actuator_air_heater_default_id = 1
-
-	# Air Humidifier Actuator
-	# Controls
-	desired_actuator_air_humidifier_default = 0
-	desired_actuator_air_humidifier_default_id = 1
-
-	# Air Vent Actuator
-	# Controls
-	desired_actuator_air_vent_default = 0
-	desired_actuator_air_vent_default_id = 1
-
-	# Air Circulation Actuator
-	# Controls
-	desired_actuator_air_circulation_default = 0
-	desired_actuator_air_circulation_default_id = 1
-
-	# Light Panel Actuator
-	# Controls
-	desired_actuator_light_panel_default = 0
-	desired_actuator_light_panel_default_id = 1
-	
-	# Light Fan Actuator
-	# Controls
-	desired_actuator_light_vent_default = 0
-	desired_actuator_light_vent_default_id = 1
-
-	# Display State
-	def Display(self):
-		print(("mode = " + str(self.mode)))
-		print(("error_codes = " + str(self.error_codes)))
-		print(("error_parameters = " + str(self.error_parameters)))
-		print(("reported_sensor_time_default = " + str(self.reported_sensor_time_default)))
-		print(("reported_sensor_air_temperature_default = " + str(self.reported_sensor_air_temperature_default)))
-		print(("reported_sensor_air_humidity_default = " + str(self.reported_sensor_air_humidity_default)))
-		print(("reported_sensor_light_intensity_default = " + str(self.reported_sensor_light_intensity_default)))
-		print(("desired_sensor_air_temperature_default = " + str(self.desired_sensor_air_temperature_default)))
-		print(("desired_sensor_air_humidity_default = " + str(self.desired_sensor_air_humidity_default)))
-		print(("desired_sensor_light_intensity_default = " + str(self.desired_sensor_light_intensity_default)))
-		print(("desired_actuator_air_heater_default = " + str(self.desired_actuator_air_heater_default)))
-		print(("desired_actuator_air_humidifier_default = " + str(self.desired_actuator_air_humidifier_default)))
-		print(("desired_actuator_air_vent_default = " + str(self.desired_actuator_air_vent_default)))
-		print(("desired_actuator_air_circulation_default = " + str(self.desired_actuator_air_circulation_default)))
-		print(("desired_actuator_light_panel_default = " + str(self.desired_actuator_light_panel_default)))
-		print(("desired_actuator_light_vent_default = " + str(self.desired_actuator_light_vent_default)))
-
-	# Generate Message for Log
-	def GetLogMessage(self):
-		# Sensors
-		message = "{\"" + InstructionCode.sensor_time + "\":" + str(self.time) + ","
-		message += "\"d" + InstructionCode.sensor_air_temperature + "\":" + str(self.desired_sensor_air_temperature_default) + ","
-		message += "\"" + InstructionCode.sensor_air_temperature + "\":" + str(self.reported_sensor_air_temperature_default) + ","
-		message += "\"d" + InstructionCode.sensor_air_humidity + "\":" + str(self.desired_sensor_air_humidity_default) + ","
-		message += "\"" + InstructionCode.sensor_air_humidity + "\":" + str(self.reported_sensor_air_humidity_default) + ","
-		message += "\"d" + InstructionCode.sensor_light_intensity + "\":" + str(self.desired_sensor_light_intensity_default) + ","
-		message += "\"" + InstructionCode.sensor_light_intensity + "\":" + str(self.reported_sensor_light_intensity_default) + ","
-
-		# Actuators
-		message += "\"" + InstructionCode.actuator_air_heater + "\":" + str(self.desired_actuator_air_heater_default) + ","
-		message += "\"" + InstructionCode.actuator_air_humidifier + "\":" + str(self.desired_actuator_air_humidifier_default) + ","
-		message += "\"" + InstructionCode.actuator_air_vent + "\":" + str(self.desired_actuator_air_vent_default) + ","
-		message += "\"" + InstructionCode.actuator_air_circulation + "\":" + str(self.desired_actuator_air_circulation_default) + ","
-		message += "\"" + InstructionCode.actuator_light_panel + "\":" + str(self.desired_actuator_light_panel_default) + ","
-		message += "\"" + InstructionCode.actuator_light_vent + "\":" + str(self.desired_actuator_light_vent_default) + ","
-
-		# Errors
-		for i in range(0,len(self.error_codes)):
-			message += "\"" + InstructionCode.error + "\":\"" + str(self.error_codes[i]) + "-" + str(self.error_parameters[i]) + "\"," 
-
-		# End of Message
-		message += "\"END\":0},\n"
-		return message
+import time
 
 
-def HandleStreamMessage(state, message):
-	# Handle Time
-	state.reported_sensor_time_default = cs.GetInstructionParameter(InstructionCode.sensor_time, state.reported_sensor_time_default_id, message)
-	# d = datetime.strptime(state.reported_sensor_time_default, "%d/%m/%Y %H:%M:%S")
-	# state.time = time.mktime(d.timetuple())
-	# Handle Error Messages
-	state = cs.HandleErrorInstructions(state, Instruction, InstructionCode.error, message)
-	# Handle Rest of Stream
-	state.reported_sensor_air_temperature_default = float(cs.GetInstructionParameter(InstructionCode.sensor_air_temperature, state.reported_sensor_air_temperature_default_id, message))
-	state.reported_sensor_air_humidity_default = float(cs.GetInstructionParameter(InstructionCode.sensor_air_humidity, state.reported_sensor_air_humidity_default_id, message))
-	# note: add in light intensity		
-
-	return state
-
-def ExecuteRecipeInstruction(state):
-	if (state.recipe_code == InstructionCode.sensor_air_temperature):
-		print(("@ " + state.reported_sensor_time_default + " -> " + str(state.recipe_code) + " " + str(state.recipe_parameter)))
-		state.desired_sensor_air_temperature_default = float(state.recipe_parameter)
-	if (state.recipe_code == InstructionCode.sensor_air_humidity):
-		print(("@ " + state.reported_sensor_time_default + " -> " + str(state.recipe_code) + " " + str(state.recipe_parameter)))
-		state.desired_sensor_air_humidity_default = float(state.recipe_parameter)
-
-	if (state.recipe_code == InstructionCode.sensor_light_intensity):
-		print(("@ " + state.reported_sensor_time_default + " -> " + str(state.recipe_code) + " " + str(state.recipe_parameter)))
-		state.desired_sensor_light_intensity_default = float(state.recipe_parameter)
-
-	return state
+class SerialParameters:
+    baud_rate = 9600
+    serial_read_timeout = 0.01  # seconds
+    establish_connection_timeout = 4  # seconds
+    receive_message_timeout = 3  # seconds
 
 
-TemperatureHumidityDirectionDecisionTable = [
-	# T, H, (:) HE, HU, V, C
-	[-1,-1,0,0,1,1],
-	[-1,0,0,0,1,1],
-	[-1,1,0,1,1,1],
-	[0,-1,0,0,1,1],
-	[0,0,0,0,0,1],
-	[0,1,0,1,0,1],
-	[1,-1,1,0,1,1],
-	[1,0,1,0,0,1],
-	[1,1,1,1,0,1],
-]
+class ManualProfiler:
+    """ Class to profile a function
 
-def HandleControls(state, ser):
-	# Get Direction Based off Active/Inactive Threshold
-	# Air Temperature
-	if (state.active_actuation_sensor_air_temperature_1 == False):
-		state.direction_sensor_air_temperature_1 = cs.ComputeDirection(state.desired_sensor_air_temperature_default, state.reported_sensor_air_temperature_default, state.inactive_threshold_sensor_air_temperature_1)
-	else:
-		state.direction_sensor_air_temperature_1 = cs.ComputeDirection(state.desired_sensor_air_temperature_default, state.reported_sensor_air_temperature_default, state.active_threshold_sensor_air_temperature_1)
-	# Humidity
-	if (state.active_actuation_sensor_air_humidity_1 == False):
-		state.direction_sensor_air_humidity_1 = cs.ComputeDirection(state.desired_sensor_air_humidity_default, state.reported_sensor_air_humidity_default, state.inactive_threshold_sensor_air_humidity_1)
-	else:
-		state.direction_sensor_air_humidity_1 = cs.ComputeDirection(state.desired_sensor_air_humidity_default, state.reported_sensor_air_humidity_default, state.active_threshold_sensor_air_humidity_1)
+    To profile a function/loop/any code, create an instance of ManualProfiler outside of it.
+    Then, at the top of the code to be profiled, call instance.startLoop to start the path and add the first point
+    every time you call instance.addPoint within the code, the profiler will store the time delta from the last point
+    at the end, call endLoop to indicate the end of the code path
+    ManualProfiler will automatically break up the profiling into different code paths so that you can see how long
+    each segment of each path took.
+    Unfortunately, this means that code with lots of points inside of conditional statements will have lots of different
+    run types ( <= 2^n, where n is the number of points inside conditionals, to be exact).
+    Whenever you want to get the current profiling stats, call instance.getStatusList.
+    This will return a list with each line of the status output. ex. Use "\n".join(instance.getStatusList())
+    Calling getStatusList WILL NOT clear the stats, you need to call clear for that! So if you want
+    pseudo-continuous stats: every once in a while, call getStatusList and then clear. Or for a bucketed approach,
+    call clear only every x times of calling getStatusList.
 
-	# Get Desired Temperature and Humidity State From Direction Based Lookup Table
-	for i in range(0,len(TemperatureHumidityDirectionDecisionTable)):
-		if ((TemperatureHumidityDirectionDecisionTable[i][0] == state.direction_sensor_air_temperature_1) & (TemperatureHumidityDirectionDecisionTable[i][1] == state.direction_sensor_air_humidity_1)):
-			# Actuator Air Heater
-			desired = TemperatureHumidityDirectionDecisionTable[i][2]
-			if (state.desired_actuator_air_heater_default != desired):
-				state.desired_actuator_air_heater_default = desired
-				cs.SendInstruction(ser, InstructionCode.actuator_air_heater, state.desired_actuator_air_heater_default_id, state.desired_actuator_air_heater_default)
-			# Actuator Air Humidifier
-			desired = TemperatureHumidityDirectionDecisionTable[i][3]
-			if (state.desired_actuator_air_humidifier_default != desired):
-				state.desired_actuator_air_humidifier_default = desired
-				cs.SendInstruction(ser, InstructionCode.actuator_air_humidifier, state.desired_actuator_air_humidifier_default_id, state.desired_actuator_air_humidifier_default)
-			# Actuator Air Vent
-			desired = TemperatureHumidityDirectionDecisionTable[i][4]
-			if (state.desired_actuator_air_vent_default != desired):
-				state.desired_actuator_air_vent_default = desired
-				cs.SendInstruction(ser, InstructionCode.actuator_air_vent, state.desired_actuator_air_vent_default_id, state.desired_actuator_air_vent_default)
-			# Actuator Air Circulation
-			desired = TemperatureHumidityDirectionDecisionTable[i][5]
-			if (state.desired_actuator_air_circulation_default != desired):
-				state.desired_actuator_air_circulation_default = desired
-				cs.SendInstruction(ser, InstructionCode.actuator_air_circulation, state.desired_actuator_air_circulation_default_id, state.desired_actuator_air_circulation_default)
+    NOTE: ManualProfile will only store self.max_runs_per_type of each run to prevent stats calculation from taking
+    too long. It will still have the latest results tho, see the endLoop method.
+    Change max_runs_per_type this if you want data for more runs and don't mind the time cost.
 
+    NOTE: If you getStatus and want to clear within the same loop, you can call endLoop AFTER clear so that you
+    don't clear the run you just profiled
 
-	# Set Light Panel and Light Vent On if Desired Light Intensity > 0
-	desired = state.desired_sensor_light_intensity_default
-	if (desired > 0):
-		desired = 1
-	# Light Panel
-	if (state.desired_actuator_light_panel_default != desired):
-		state.desired_actuator_light_panel_default = desired
-		cs.SendInstruction(ser, InstructionCode.actuator_light_panel, state.desired_actuator_light_panel_default_id, state.desired_actuator_light_panel_default)
-	# Light Vent
-	if (state.desired_actuator_light_vent_default != desired):
-		state.desired_actuator_light_vent_default = desired
-		cs.SendInstruction(ser, InstructionCode.actuator_light_vent, state.desired_actuator_light_vent_default_id, state.desired_actuator_light_vent_default)
+    """
+    initial_sample_name = 'start'     # name of the first sample, ex 'start'
+    final_sample_name = 'end'       # name of the end sample, ex 'end'
+    max_runs_per_type = 200         # limit to x runs so that stats don't take too long to compute
+    runs_to_remove_after_max = 10   # used when we get more than max_runs_per_type of a run_type. see endLoop
+    max_name_length = 50            # For fixed width printing, will trim names to this size
 
-	return state
+    def __init__(self):
+        # Not cleared (see self.clear())
+        self._code_paths_tree = {self.initial_sample_name: {}}  # code paths tree, always starts with the first sample.
+        self._last_created_run_type = 0                 # For each new run_type, increment this and use the new val
+        self._run_length_dictby_run_type = {}           # dict (by run_type) of length of run for that type
+        self._names_list_dictby_run_type = {}           # dict (by run_type) of (list of names) for that type
 
+        # Cleared (see self.clear())
+        self._run_times_dictby_run_type = {}            # dict (by run_type) of list of runs for that type
 
+        # Loop stuff
+        self._loop_start_time = None
+        self._last_sample_time = None
+        self._last_sample_name = None
+        self._current_path = None                       # stores where we are in the code path
+        self._current_run_timedelta_list = None         # stores the times for the current run
+        self._current_run_names_list = None             # stores names for current run to add to self._names_list...
 
+    def _clearLoopRelated(self):
+        """Clear all loop related attributes, called at the end of a loop"""
+        for item in [self._last_sample_name, self._last_sample_time, self._loop_start_time,
+                     self._current_path, self._current_run_timedelta_list, ]:
+            item = None
 
+    def clear(self):
+        """Clears all the runs from this class so we can get new data
 
+        Note: this does not clear the run types in the _code_paths_tree, we want them to be consistent across runs
+        """
+        self._clearLoopRelated()
 
+        self._run_times_dictby_run_type = {}
 
+    def startLoop(self):
+        """Call this at the start of the loop to start the benchmarking"""
 
+        self._loop_start_time = time.time()
 
+        assert self.initial_sample_name in self._code_paths_tree
 
+        # code_paths_tree should have the first sample in it by default
+        self._current_path = self._code_paths_tree[self.initial_sample_name]
+        self._current_run_names_list = [self.initial_sample_name]
+        self._current_run_timedelta_list = [0]              # start should always be 0
 
+        self._last_sample_name = self.initial_sample_name
+        self._last_sample_time = self._loop_start_time
 
+    def addPoint(self, name: str):
+        """Call this every time you want add a time sample"""
+        assert self._loop_start_time is not None, "loop_start_time should be set before calling addPoint! see startLoop"
+        assert self._current_path is not None, "current_path should not be None! see startLoop, endLoop"
 
+        # get times
+        curtime = time.time()
+        time_delta = curtime - self._last_sample_time
+        self._last_sample_time = curtime
 
+        # timedelta and names list
+        self._current_run_timedelta_list.append(time_delta)
+        self._current_run_names_list.append(name)
 
+        # Code path
+        if name not in self._current_path:      # If the name is not in the current_path, this is a new path!
+            self._current_path[name] = {}           # continue the tree for this code path
+        self._current_path = self._current_path[name]
 
+        # record name just in case...
+        self._last_sample_name = name
 
+    def endLoop(self):
+        """Call this at the end of loop to end benchmarking. Will record total loop time as well"""
+        assert self._current_run_timedelta_list is not None
 
+        # store total time as final_sample_name
+        curtime = time.time()
+        self._current_run_timedelta_list.append(curtime - self._loop_start_time)
+        self._current_run_names_list.append(self.final_sample_name)
 
+        # if we are on a new path, create a new run type
+        if self.final_sample_name not in self._current_path:     # NEW path (no final_sample_name in leaf node)
+            self._last_created_run_type += 1                            # increment
+            run_type = self._last_created_run_type                      # and use it
+            self._current_path[self.final_sample_name] = run_type       # store the run type
 
+            self._run_length_dictby_run_type[run_type] = len(self._current_run_timedelta_list)
+            self._names_list_dictby_run_type[run_type] = self._current_run_names_list
+            # will init cleared lists in the next if block, we need to do it for existing paths sometimes too
 
+        run_type = self._current_path[self.final_sample_name]       # Get the run type
 
+        # if we haven't encountered this path since we've cleared, need to init lists
+        if run_type not in self._run_times_dictby_run_type:
+            # init run_times, run_count
+            self._run_times_dictby_run_type[run_type] = []
 
+        # if there are already the max amount of this run type, trim by self.runs_to_remove_after_max
+        if len(self._run_times_dictby_run_type[run_type]) >= self.max_runs_per_type:
+            self._run_times_dictby_run_type[run_type] = \
+                self._run_times_dictby_run_type[run_type][self.runs_to_remove_after_max:]
 
+            # have run_type, store all the info related to this run
+            # make sure this list is the right length. all runs of a specific type should be same
+        assert len(self._current_run_timedelta_list) == self._run_length_dictby_run_type[run_type]
+        # create lists for this run_type if they don't exist yet (they are cleared but code paths aren't!
+        self._run_times_dictby_run_type[run_type].append(self._current_run_timedelta_list)
+
+    def getStatusList(self):
+
+        status_list = ['-----Profiling-----']
+        # we already know they are all the same length since we check that when we start
+        for run_type in sorted(self._run_times_dictby_run_type.keys()):
+            status_list.append("Run type %d, count %d" % (run_type, len(self._run_times_dictby_run_type[run_type])))
+            names_list = self._names_list_dictby_run_type[run_type]
+
+            timedelta_listby_sample = list(zip(*self._run_times_dictby_run_type[run_type]))       # NOTE dat star magic.
+            max_list = [max(x) for x in timedelta_listby_sample]
+            avg_list = [sum(x)/len(x) for x in timedelta_listby_sample]  # NOTE python3 style division, will fail in py2
+
+            assert len(max_list) == len(avg_list) == len(names_list)
+
+            for name, avg_val, max_val in zip(names_list, avg_list, max_list):
+                status_list.append("%*.*s:  %2.2f  %2.2f" % (self.max_name_length, self.max_name_length,
+                                                             name, avg_val, max_val))
+
+        return status_list
