@@ -1,5 +1,4 @@
 // http://www.dfrobot.com/index.php?route=product/product&product_id=879#.Va0RhxNViko
-
 #ifndef SENSOR_DS1307_H
 #define SENSOR_DS1307_H
 
@@ -10,14 +9,15 @@
 #endif
 
 #include "support_time.h"
+#include "support_wire.h"
 
 class SensorDs1307 {
   public:
   // Public Functions
-  SensorDs1307 (int id, String instruction_code);
+  SensorDs1307 (String instruction_code, int instruction_id);
   void begin(void);
   String get(void);
-  bool set(String instruction);
+  String set(String instruction_code, int instruction_id, String instruction_parameter);
 
   // This needs to be removed
   String setTime(void);
@@ -37,7 +37,7 @@ class SensorDs1307 {
 
   // Private Variables
   static bool exists;
-  int id_;
+  int instruction_id_;
   uint32_t start_time_;
   String instruction_code_;
 };

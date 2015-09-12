@@ -1,5 +1,5 @@
-#ifndef GENERAL_COMMUNICATION_H
-#define GENERAL_COMMUNICATION_H
+#ifndef COMMUNICATION_H
+#define COMMUNICATION_H
 
 // msg = {JsonStrings}
 // packed_message = SOH msg_size STX msg ETX checksum EOT
@@ -14,13 +14,16 @@
 class Communication {
   public:
     // Public Functions
+    Communication(bool external_monitor);
     void begin(void);
     void send(String message);
     bool available(void);
     String receive(void);
+    char* floatToString(float value, int places);
     
     // Public Variables
-    bool not_connected_ = 0;
+    bool not_connected_;
+    bool external_monitor_;
 
   private:
     // Private Functions
@@ -33,15 +36,15 @@ class Communication {
     String parseFooter(String message);
     
     //Private Variables
-    const uint32_t kBaudRate = 9600;
-    const uint32_t kEstablishConnectionTimeout = 2000; // milliseconds
-    const uint32_t kReceiveTimeout = 2000; // milliseconds
-    const char kStartOfHeaderChar = 1;
-    const char kStartOfTextChar = 2;
-    const char kEndOfTextChar = 3;
-    const char kEndOfTransmissionChar = 4;
-    const char kEnquireChar = 5;
-    const char kAcknowledgeChar = 6; 
+    uint32_t kBaudRate;
+    uint32_t kEstablishConnectionTimeout; // milliseconds
+    uint32_t kReceiveTimeout; // milliseconds
+    char kStartOfHeaderChar;
+    char kStartOfTextChar;
+    char kEndOfTextChar;
+    char kEndOfTransmissionChar;
+    char kEnquireChar;
+    char kAcknowledgeChar; 
 };
 
-#endif // GENERAL_COMMUNICATION_H_
+#endif // COMMUNICATION_H_

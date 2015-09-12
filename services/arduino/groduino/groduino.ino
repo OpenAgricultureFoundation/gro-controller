@@ -1,13 +1,11 @@
-#include "general_configuration.h"
-
-// Really want to remove this jank...
-#include <Wire.h>
-#include <SoftwareSerial.h>
+#include "module_handler.h"
 
 void setup() {
-  InitializeConfiguration();
+  initializeStaticModules();
+  initializeDynamicModules();
 }
 
 void loop() {
-  UpdateConfiguration();
+  updateIncomingMessage();
+  updateStreamMessage();
 }

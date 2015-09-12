@@ -1,11 +1,10 @@
 #include "sensor_ds1307.h"
-#include <Wire.h>
 
 #define DS1307_CTRL_ID 0x68 
 
 // PUBLIC FUNCTIONS
-SensorDs1307::SensorDs1307 (int id, String instruction_code) {
-  id_ = id;
+SensorDs1307::SensorDs1307 (String instruction_code, int instruction_id) {
+  instruction_id_ = instruction_id;
   instruction_code_ = instruction_code;
 }
 
@@ -14,7 +13,11 @@ void SensorDs1307::begin(void) {
 }
 
 String SensorDs1307::get(void) {
-  String message = "\"" + instruction_code_ + "\":{" + id_ + ",";
+  String message = "\"";
+  message += instruction_code_;
+  message += " ";
+  message += instruction_id_;
+  message += "\":\"";
   tmElements_t tm;
   if (read(tm)) {
     // Day
@@ -54,17 +57,17 @@ String SensorDs1307::get(void) {
       message += "0";
     }
     message += tm.Second;
-    message += "},";
+    message += "\",";
   } 
   else {
     if (chipPresent()) {
-        message += "0.0},\"ERR\":{2,\"ds1307\"},";
+        message += "00/00/0000 00:00:00\",\"GERR 2\":\"ds1307 time not set\",";
 //      message += "Error: The time is not set on the DS1307 Time Sensor.\n";
 //      message += "Likely Cause: The battery became dislodged or died.\n";
 //      message += "Possible Fix: Run the set time function.";
     } 
     else {
-        message += "0.0},\"ERR\":{3,\"ds1307\"},";
+        message += "00/00/0000 00:00:00\",\"GERR 3\":\"ds1307 can't read\",";
 //      message += "Error: Unable to read the time from the DS1307 Time Sensor.\n";
 //      message += "Likely Cause: Improper wiring or chip is dead.\n";
 //      message += "Possible Fix: Check the circuitry.";
@@ -73,8 +76,8 @@ String SensorDs1307::get(void) {
   return message; 
 }
 
-bool SensorDs1307::set(String instruction) {
-  return 0;
+String SensorDs1307::set(String instruction_code, int instruction_id, String instruction_parameter) {
+  return "";
 }
 
 String SensorDs1307::setTime(void) {
@@ -107,7 +110,6 @@ String SensorDs1307::setTime(void) {
     message += __DATE__;
     message += "\"";
   }
-  
 }
  
 

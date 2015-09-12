@@ -7,34 +7,26 @@
  #include "WProgram.h"
 #endif
 
-struct Instruction {
-  String code;
-  int id;
-  int value;
-};
-
 class ActuatorRelay {
   public:
     // Public Functions
-    ActuatorRelay(int id, uint8_t pin, String instruction_code);
+    ActuatorRelay(int pin, String instruction_code, int instruction_id);
     void begin(void); 
     String get(void); 
-    String set(String instruction);
+    String set(String instruction_code, int instruction_id, String instruction_parameter);
+
+    // Public Variables
+    int value_;
     
   private:
     // Private Functions
-    String parseInstruction(String message, Instruction *instruction);
     void turnOn(void);
     void turnOff(void);
     
     // Private Variables
-    uint8_t pin_;
-    uint8_t id_;
-    uint8_t value_;
+    int pin_;
+    int instruction_id_;
     String instruction_code_;
 };
 
-
-
 #endif // ACTUATOR_RELAY_H_
-

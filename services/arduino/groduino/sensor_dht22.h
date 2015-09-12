@@ -27,31 +27,33 @@
 class SensorDht22 {
   public:
     // Public functions
-    SensorDht22(uint8_t id, uint8_t pin, String humidity_instruction, String temperature_instruction);
+    SensorDht22(int pin, String temperature_instruction_code, int temperature_instruction_id, String humidity_instruction_code, int humidity_instruction_id);
     void begin(void);
     String get(void);
-    bool set(String instruction);
+    String set(String instruction_code, int instruction_id, String parameter);
     
   private:
     // Private Functions
     void getSensorData(void);
-    //String getJsonString(void);
     boolean read(void);
     void getRawSensorData(void);
     void filterSensorData(void);
+    String floatToString( double val, unsigned int precision);
     
     // Private Variables
+    int pin_;
+    String humidity_instruction_code_;
+    int humidity_instruction_id_;
+    String temperature_instruction_code_;
+    int temperature_instruction_id_;
+    float humidity_;
+    float temperature_;
     uint8_t data[6];
-    uint8_t id_, pin_, count_;
+    uint8_t count_;
     uint32_t last_read_time_;
     boolean first_reading_;
     float humidity_raw_;
     float temperature_raw_;
-    String humidity_instruction_;
-    String temperature_instruction_;
-    float humidity_;
-    float temperature_;
-
 };
 
 #endif // SensorDht22_H_

@@ -1,10 +1,12 @@
 #include "sensor_dht22.h"
 
-SensorDht22::SensorDht22(uint8_t id, uint8_t pin, String humidity_instruction, String temperature_instruction) {
-  id_ = id;
+SensorDht22::SensorDht22(int pin, String temperature_instruction_code, int temperature_instruction_id, String humidity_instruction_code, int humidity_instruction_id){
   pin_ = pin;
-  humidity_instruction_ = humidity_instruction;
-  temperature_instruction_ = temperature_instruction;
+  humidity_instruction_code_ = humidity_instruction_code;
+  humidity_instruction_id_ = humidity_instruction_id;
+  temperature_instruction_code_ = temperature_instruction_code;
+  temperature_instruction_id_ = temperature_instruction_id;
+  
   count_ = COUNT;
   first_reading_ = true;
 }
@@ -16,17 +18,37 @@ void SensorDht22::begin(void) {
 }
 
 String SensorDht22::get(void) {
+  // Get Sensor Data
   getSensorData();
+
+  // Initialize Message
   String message = "";
-  message += "\"" + humidity_instruction_ + "\":{" + id_ + "," + humidity_ + "},";
-  message += temperature_instruction_ + "\":{" + id_ + "," + temperature_ + "},";
+
+  // Append Temperature
+  message += "\"";
+  message += temperature_instruction_code_;
+  message += " ";
+  message += temperature_instruction_id_;
+  message += "\":";
+  message += floatToString(temperature_, 100);
+  message += ",";
+
+  // Append Humidity
+  message += "\"";
+  message += humidity_instruction_code_;
+  message += " ";
+  message +=  humidity_instruction_id_;
+  message += "\":";
+  message += floatToString(humidity_, 100);
+  message += ",";
+
+  // Return Message
   return message;
 }
 
-bool SensorDht22::set(String instruction) {
-  return 0;
+String SensorDht22::set(String instruction_code, int instruction_id, String parameter) {
+  return "";
 }
-
 
 void SensorDht22::getRawSensorData(void) {
   humidity_raw_ = 0;
@@ -120,9 +142,22 @@ boolean SensorDht22::read(void) {
   }
   return false;
 }
-  
 
 
-
-
-
+String SensorDht22::floatToString( double val, unsigned int precision) {
+// prints val with number of decimal places determine by precision
+// NOTE: precision is 1 followed by the number of zeros for the desired number of decimial places
+// example: printDouble( 3.1415, 100); // prints 3.14 (two decimal places)
+  String str = "";
+  str += int(val);  //prints the int part
+  str += "."; // print the decimal point
+  unsigned int frac;
+  if(val >= 0) {
+    frac = (val - int(val)) * precision;
+  }
+  else {
+    frac = (int(val)- val ) * precision;
+  }
+  str += int(frac);
+  return str;
+} 
