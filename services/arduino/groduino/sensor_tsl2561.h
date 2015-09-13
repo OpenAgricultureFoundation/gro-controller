@@ -79,15 +79,16 @@
 class SensorTsl2561 {
   public:
     // Public Functions
-    SensorTsl2561(String instruction_code, int instruction_id);
+    SensorTsl2561(String lux_instruction_code, int lux_instruction_id, String par_instruction_code, int par_instruction_id);
     void begin(void);
     String get(void);
     String set(String instruction_code, int instruction_id, String instruction_parameter);
 
     // Public Variables
-    int lux_;
-    float par_; // note: this is likely only valid for Lvjing LED Light panel
-    
+    int lux_; // unit: lux
+    float par_; //unit: (umol)*(m^-2)*(s^-1)
+    // note: PAR is likely only valid for Erligpowht 45W LED Red Blue Indoor Garden Plant Grow Light Hanging Lightpanel
+    // found @ http://www.amazon.com/gp/product/B00S2DPYQM?psc=1&redirect=true&ref_=oh_aui_detailpage_o08_s03
   private:
     // Private Functions
     void getSensorData(void);
@@ -97,8 +98,10 @@ class SensorTsl2561 {
     void writeRegister(int deviceAddress, int address, uint8_t val);
     
     // Private Variables
-    String instruction_code_;
-    int instruction_id_;
+    String lux_instruction_code_;
+    int lux_instruction_id_;
+    String par_instruction_code_;
+    int par_instruction_id_;
     float calibrtion_to_vernier_lux_;
     float calibration_to_vernier_par_;
     float measuring_indoor_par_correction_; //reduction by 14%

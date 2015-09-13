@@ -64,7 +64,7 @@ Instruction parseIncomingMessage(String message) {
 #include "sensor_contact_switch.h"
 
 // Electronics Panel Iteration2
-SensorTsl2561 sensor_tsl2561_light_intensity_default("SLIN", 1);
+SensorTsl2561 sensor_tsl2561_light_intensity_default("SLIN", 1, "SLPA", 1);
 SensorDht22 sensor_dht22_air_temperature_humidity_default(A0, "SATM", 1, "SAHU", 1);
 SensorGc0011 sensor_gc0011_air_co2_temperature_humidity_default(12, 11, "SACO", 1, "SATM", 2, "SAHU", 2);
 SensorDfr0161 sensor_dfr0161_water_ph_default(A1, "SWPH", 1);

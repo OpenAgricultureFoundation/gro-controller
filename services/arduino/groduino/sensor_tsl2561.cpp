@@ -1,9 +1,12 @@
 #include "sensor_tsl2561.h"
 
 //----------------------------------------------PUBLIC------------------=----------------------------//
-SensorTsl2561::SensorTsl2561(String instruction_code, int instruction_id) {
-  instruction_code_ = instruction_code;
-  instruction_id_ = instruction_id;
+SensorTsl2561::SensorTsl2561(String lux_instruction_code, int lux_instruction_id, String par_instruction_code, int par_instruction_id) {
+  lux_instruction_code_ = lux_instruction_code;
+  lux_instruction_id_ = lux_instruction_id;
+  par_instruction_code_ = par_instruction_code;
+  par_instruction_id_ = par_instruction_id;
+  
 }
 
 void SensorTsl2561::begin() {
@@ -12,8 +15,9 @@ void SensorTsl2561::begin() {
   writeRegister(TSL2561_Address,TSL2561_Timing,0x00);  //No High Gain (1x), integration time of 13ms
   writeRegister(TSL2561_Address,TSL2561_Interrupt,0x00);
   writeRegister(TSL2561_Address,TSL2561_Control,0x00);  // POWER Down
-  calibrtion_to_vernier_lux_ = 0.67;
-  calibration_to_vernier_par_ = 0.019;
+  
+  calibrtion_to_vernier_lux_ = 0.78;
+  calibration_to_vernier_par_ = 0.02;
   measuring_indoor_par_correction_ = 0.86; //reduction by 14%
   read_register_timeout_ = 5; // milliseconds
 }
@@ -33,11 +37,20 @@ String SensorTsl2561::get(void) {
 
   // Append Light Intensity
   message += "\"";
-  message += instruction_code_;
+  message += lux_instruction_code_;
   message += " ";
-  message += instruction_id_;
+  message += lux_instruction_id_;
   message += "\":";
   message += lux_;
+  message += ",";
+
+  // Append Light Par
+  message += "\"";
+  message += par_instruction_code_;
+  message += " ";
+  message += par_instruction_id_;
+  message += "\":";
+  message += par_;
   message += ",";
 
   // Return Message
@@ -57,7 +70,7 @@ void SensorTsl2561::getSensorData(void) {
   writeRegister(TSL2561_Address,TSL2561_Control,0x03);  // POWER UP
   delay(14);
 
-  float samples = 20;
+  float samples = 40;
   int i;
   for (i=0; i<samples; i++) {
     getLux();
