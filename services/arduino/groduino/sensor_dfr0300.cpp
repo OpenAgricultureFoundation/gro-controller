@@ -2,17 +2,22 @@
 
 //-----------------------------------------------PUBLIC----------------------------------------------//
 
-SensorDfr0300::SensorDfr0300(int temperature_pin, int ec_pin, String temperature_instruction_code, int temperature_id, String ec_instruction_code, int ec_id) {
+SensorDfr0300::SensorDfr0300(int temperature_pin, int ec_pin, int ec_enable_pin, String temperature_instruction_code, int temperature_id, String ec_instruction_code, int ec_id) {
   temperature_pin_ = temperature_pin;
   ec_pin_ = ec_pin;
   temperature_instruction_code_ = temperature_instruction_code;
   temperature_id_ = temperature_id;
   ec_instruction_code_ = ec_instruction_code;
   ec_id_ = ec_id;
+  ec_enable_pin_ = ec_enable_pin;
 }
 
 void SensorDfr0300::begin(void) {
   ds_ = new OneWire(temperature_pin_);
+  ec_coefficient_ = 1.68;
+  ec_offset_ = 0.40;
+  pinMode(ec_enable_pin_, OUTPUT);
+  digitalWrite(ec_enable_pin_, LOW);
 }
 
 String SensorDfr0300::get(void) {
@@ -52,21 +57,28 @@ String SensorDfr0300::set(String instruction_code, int instruction_id, String in
 void SensorDfr0300::getSensorData(void) {
   getTemperature();
   startTempertureConversion();
+  digitalWrite(ec_enable_pin_, HIGH);
+  delay(200);
   getEc(temperature_);
+  digitalWrite(ec_enable_pin_, LOW);
+  delay(300);
 }
 
 void SensorDfr0300::getEc(float temperature) { 
   float analog;
   int i;
-  for (i=0; i<20; i++) {
+  int samples = 50;
+  for (i=0; i<samples; i++) {
+    delayMicroseconds(20);
     analog += analogRead(ec_pin_);
   }
-  analog /= 20;
+  analog /= samples;
   
   float voltage = analog*(float)5000/1024;
   float temp_coefficient = 1.0 + 0.0185*(temperature - 25.0);
   float coefficient_voltage = (float)voltage/temp_coefficient;  
-  if(coefficient_voltage<150) {
+  //if(coefficient_voltage<150) {
+  if(coefficient_voltage<10) { // semi sketchy but seems to be +- 0.2 with vernier
     // Error
     ec_ = 0.0;
     //Serial.println("No solution!");   //25^C 1413us/cm<-->about 216mv  if the voltage(compensate)<150,that is <1ms/cm,out of the range
@@ -78,7 +90,9 @@ void SensorDfr0300::getEc(float temperature) {
   }
   else { 
     if(coefficient_voltage<=448) {
-      ec_ = 6.84*coefficient_voltage-64.32;   //1ms/cm<EC<=3ms/cm
+      
+      //ec_ = 6.84*coefficient_voltage-64.32;   //1ms/cm<EC<=3ms/cm
+      ec_ = 6.84*coefficient_voltage-64.12;   //1ms/cm<EC<=3ms/cm
     }
     else if (coefficient_voltage<=1457) {
       ec_ = 6.98*coefficient_voltage-127;  //3ms/cm<EC<=10ms/cm
@@ -88,6 +102,8 @@ void SensorDfr0300::getEc(float temperature) {
     }
     ec_ /= 1000;    //convert us/cm to ms/cm
   }
+
+  ec_  = ec_ * ec_coefficient_ + ec_offset_;
 }
 
 void SensorDfr0300::getTemperature(void) {

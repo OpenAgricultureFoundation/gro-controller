@@ -68,19 +68,20 @@ SensorTsl2561 sensor_tsl2561_light_intensity_default("SLIN", 1, "SLPA", 1);
 SensorDht22 sensor_dht22_air_temperature_humidity_default(A0, "SATM", 1, "SAHU", 1);
 SensorGc0011 sensor_gc0011_air_co2_temperature_humidity_default(12, 11, "SACO", 1, "SATM", 2, "SAHU", 2);
 SensorDfr0161 sensor_dfr0161_water_ph_default(A1, "SWPH", 1);
-SensorDfr0300 sensor_dfr0300_water_temperature_ec_default(5, A2, "SWTM", 1, "SWEC", 1);
+SensorDfr0300 sensor_dfr0300_water_temperature_ec_default(5, A2, 2, "SWTM", 1, "SWEC", 1);
 SensorContactSwitch sensor_contact_switch_general_shell_open_default(4, "SGSO", 1); 
 SensorContactSwitch sensor_contact_switch_general_window_open_default(3, "SGWO", 1);
 
 // AC Relay Block: AC[1:4] <--> Pin[9:6]
-ActuatorRelay actuator_relay_air_heater_default(7, "AAHE", 1); // AC port 4
-ActuatorRelay actuator_relay_light_panel_default(8, "ALPN", 1); // AC port 3
-ActuatorRelay actuator_relay_air_humidifier_default(9, "AAHU", 1); // AC port 2
+// pin 6 --> port 4
+ActuatorRelay actuator_relay_air_heater_default(6, "AAHE", 1); // AC port 4
+ActuatorRelay actuator_relay_light_panel_default(8, "ALPN", 1); // AC port 2
+ActuatorRelay actuator_relay_air_humidifier_default(9, "AAHU", 1); // AC port 1
 
 // DC Relay Block 
 ActuatorRelay actuator_relay_air_vent_default(14, "AAVE", 1); 
 ActuatorRelay actuator_relay_air_circulation_default(15, "AACR", 1);   
-ActuatorRelay actuator_relay_light_chamber_illumination_default(53, "ALCI", 1);                                                                
+ActuatorRelay actuator_relay_light_chamber_illumination_default(53, "ALPN", 4);  // ALCI                                                             
 ActuatorRelay actuator_relay_light_motherboard_illumination_default(52, "ALMI", 1);
 
 /*
@@ -145,13 +146,14 @@ void updateStreamMessage(void) {
   String stream_message = "\"GTYP\":\"Stream\",";
   
   // Get Stream Message
+  stream_message += sensor_dfr0300_water_temperature_ec_default.get();
   stream_message += sensor_tsl2561_light_intensity_default.get();
   stream_message += sensor_dht22_air_temperature_humidity_default.get(); // does not work on 1.0
   stream_message += sensor_gc0011_air_co2_temperature_humidity_default.get();
-  stream_message += sensor_dfr0300_water_temperature_ec_default.get();
   stream_message += sensor_dfr0161_water_ph_default.get();
   stream_message += sensor_contact_switch_general_shell_open_default.get();
   stream_message += sensor_contact_switch_general_window_open_default.get();
+  stream_message += sensor_dfr0161_water_ph_default.get();
   stream_message += actuator_relay_air_heater_default.get();
   stream_message += actuator_relay_air_humidifier_default.get();
   stream_message += actuator_relay_air_vent_default.get();
