@@ -34,7 +34,19 @@ class Server:
     def __init__(self, base_url=None):
         if base_url is not None:
             self._base_url = base_url
-
+        
+        # Authentication
+        data = { 'username':'plantos', 'password':'plantos' }
+        data_string = json.dumps(data)
+        headers = {'Content-type': 'application/json'}
+        req = requests.post("http://18.85.54.49/auth/login/", params={"many": True}, data=data_string, headers=headers)
+        if req.status_code != 200:
+            logging.error('Failed to post %s: Code %d', data_string, req.status_code) 
+        else:
+            logging.debug('Acquired authentication token!')
+        self._token = req.json()['key']
+        
+        # Get Urls       
         self._urls_dictby_name = self._getJsonWithRetry(self._base_url)
         self._cache_dictby_url = {}
         self._thread_list = []
@@ -52,7 +64,9 @@ class Server:
         req = None
         while retry_count < self._max_retries:
             try:
-                req = requests.get(url, timeout=self._req_timeout)
+                #val = 'Token ' + self._token
+                headers = {'Authentication': 'Token ' + self._token} 
+                req = requests.get(url, timeout=self._req_timeout, headers=headers)
                 if req.status_code == requests.codes.ok:
                     break
                 logging.warning('Failed to get %s, status %d, retry %d' % (url, req.status_code, retry_count))
@@ -165,8 +179,8 @@ class Server:
         self._thread_list.append(t)
 
     def _postDataPoints(self, values_list):
-        req = requests.post(self._post_datapoint_url, params={"many": True}, json=values_list)
-
+        headers = {'Authentication': 'Token ' + self._token}
+        req = requests.post(self._post_datapoint_url, params={"many": True}, json=values_list, headers=headers)
         if req.status_code != 201:
             logging.error('Failed to post %s: Code %d', values_list, req.status_code)
         else:
