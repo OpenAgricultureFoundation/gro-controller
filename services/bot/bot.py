@@ -12,7 +12,7 @@ from ..configuration import ManualProfiler
 from .actuator import Actuator
 from .sensingPoint import SensingPoint
 
-SERVER = 'http://18.133.7.178/'         # TODO
+SERVER = 'http://18.85.54.49/'         # TODO
 # SERVER = 'http://gro.danmandan.com/'
 
 
