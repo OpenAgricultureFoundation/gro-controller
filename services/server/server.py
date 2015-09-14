@@ -26,7 +26,7 @@ class Server:
     _min_time_to_wait_for_threads = 0.1     # When we are decreasing the wait time, don't go lower than this
     _max_time_to_wait_for_threads = 2       # We don't want to wait for threads for longer than this
 
-    _base_url = 'http://18.133.7.178/'
+    _base_url = 'http://18.85.54.49/'
     # _base_url = 'http://gro.danmandan.com/'
 
     _post_datapoint_url = _base_url + 'dataPoint/'
