@@ -35,7 +35,7 @@ class Server:
         if base_url is not None:
             self._base_url = base_url
         
-        # Authentication
+        # Authorization
         data = { 'username':'plantos', 'password':'plantos' }
         data_string = json.dumps(data)
         headers = {'Content-type': 'application/json'}
@@ -65,7 +65,7 @@ class Server:
         while retry_count < self._max_retries:
             try:
                 #val = 'Token ' + self._token
-                headers = {'Authentication': 'Token ' + self._token} 
+                headers = {'Authorization': 'Token ' + self._token} 
                 req = requests.get(url, timeout=self._req_timeout, headers=headers)
                 if req.status_code == requests.codes.ok:
                     break
@@ -179,7 +179,7 @@ class Server:
         self._thread_list.append(t)
 
     def _postDataPoints(self, values_list):
-        headers = {'Authentication': 'Token ' + self._token}
+        headers = {'Authorization': 'Token ' + self._token}
         req = requests.post(self._post_datapoint_url, params={"many": True}, json=values_list, headers=headers)
         if req.status_code != 201:
             logging.error('Failed to post %s: Code %d', values_list, req.status_code)

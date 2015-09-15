@@ -1,5 +1,5 @@
 #bin/bash
-n=$[5+1]
+n=$[$[5+1]+1]
 next_n=$[$n+1]
 sed -i "2s/.*/n=$next_n/" ${0}
 echo $n
