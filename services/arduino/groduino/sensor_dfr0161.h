@@ -18,6 +18,7 @@ class SensorDfr0161 {
   private:
     // Private Functions
     float getPh(void);
+    float getData(void);
     String floatToString(double val, unsigned int precision);
 
     //Private Variables
@@ -26,6 +27,8 @@ class SensorDfr0161 {
     int instruction_id_;
     float offset_;
     uint8_t number_of_samples_;
+    float calibration_offset_;
+    float calibration_coeff_;
 };
 
 #endif // SENSOR_DFR0161_H_

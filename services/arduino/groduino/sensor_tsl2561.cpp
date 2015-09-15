@@ -50,7 +50,7 @@ String SensorTsl2561::get(void) {
   message += " ";
   message += par_instruction_id_;
   message += "\":";
-  message += par_;
+  message += floatToString(par_, 100);
   message += ",";
 
   // Return Message
@@ -213,3 +213,21 @@ unsigned long SensorTsl2561::calculateLux(unsigned int iGain, unsigned int tInt,
   lux=temp>>LUX_SCALE;
   return (lux);
 }
+
+String SensorTsl2561::floatToString( double val, unsigned int precision) {
+// prints val with number of decimal places determine by precision
+// NOTE: precision is 1 followed by the number of zeros for the desired number of decimial places
+// example: printDouble( 3.1415, 100); // prints 3.14 (two decimal places)
+  String str = "";
+  str += int(val);  //prints the int part
+  str += "."; // print the decimal point
+  unsigned int frac;
+  if(val >= 0) {
+    frac = (val - int(val)) * precision;
+  }
+  else {
+    frac = (int(val)- val ) * precision;
+  }
+  str += int(frac);
+  return str;
+} 

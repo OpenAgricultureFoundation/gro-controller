@@ -96,6 +96,7 @@ class SensorTsl2561 {
     unsigned long calculateLux(unsigned int iGain, unsigned int tInt,int iType);
     uint8_t readRegister(int deviceAddress, int address);
     void writeRegister(int deviceAddress, int address, uint8_t val);
+    String floatToString( double val, unsigned int precision);
     
     // Private Variables
     String lux_instruction_code_;

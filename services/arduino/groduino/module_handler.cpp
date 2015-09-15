@@ -54,7 +54,6 @@ Instruction parseIncomingMessage(String message) {
 
 //---------------------------------------DYNAMIC MODULE HANDLER CODE---------------------------------//
 // Import Module Libraries
-#include "sensor_ds1307.h"
 #include "sensor_tsl2561.h"
 #include "sensor_dht22.h"
 #include "sensor_gc0011.h"
@@ -81,7 +80,7 @@ ActuatorRelay actuator_relay_air_humidifier_default(9, "AAHU", 1); // AC port 1
 // DC Relay Block 
 ActuatorRelay actuator_relay_air_vent_default(14, "AAVE", 1); 
 ActuatorRelay actuator_relay_air_circulation_default(15, "AACR", 1);   
-ActuatorRelay actuator_relay_light_chamber_illumination_default(53, "ALPN", 4);  // ALCI                                                             
+ActuatorRelay actuator_relay_light_chamber_illumination_default(53, "ALPN", 2);  // ALCI                                                             
 ActuatorRelay actuator_relay_light_motherboard_illumination_default(52, "ALMI", 1);
 
 /*
