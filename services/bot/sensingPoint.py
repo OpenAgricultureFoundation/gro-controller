@@ -103,7 +103,7 @@ class SensingPoint(Element):
         for timestamp, value in self._values_buffer:
             value_dict = {"timestamp": int(timestamp),
                           "value": value,
-                          "origin": self.url}
+                          "sensing_point": self.url}
             values_list.append(value_dict)
         return values_list
 
