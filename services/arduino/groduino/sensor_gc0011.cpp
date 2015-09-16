@@ -41,7 +41,7 @@ String SensorGc0011::get(void) {
   message += " ";
   message += co2_instruction_id_;
   message += "\":";
-  message += floatToString(co2_, 100);
+  message += String(co2,1); //floatToString(co2_, 100);
   message += ",";
 
   // Append Temperature Data to Message
@@ -50,7 +50,7 @@ String SensorGc0011::get(void) {
   message += " ";
   message += temperature_instruction_id_;
   message += "\":";
-  message += floatToString(temperature_, 100);
+  message += String(temperature, 1); //floatToString(temperature_, 100);
   message += ",";
 
   // Append Humidity Data to Message
@@ -59,7 +59,7 @@ String SensorGc0011::get(void) {
   message += " ";
   message += humidity_instruction_id_;
   message += "\":";
-  message += floatToString(humidity_, 100);
+  message += String(humidity, 1); //floatToString(humidity_, 100);
   message += ",";
   
   return message;
@@ -97,9 +97,9 @@ String SensorGc0011::set(String instruction_code, int instruction_id, String ins
 //------------------------------------------------PRIVATE--------------------------------------------------//
 void SensorGc0011::getSensorData(void) {
   // Reset Values
-  co2_ = 0;
-  temperature_ = 0;
-  humidity_ = 0;
+  co2 = 0;
+  temperature = 0;
+  humidity = 0;
   
   // Open Connection
   ss_->begin(9600);
@@ -109,21 +109,21 @@ void SensorGc0011::getSensorData(void) {
   sendMessage("Z");
   message = receiveMessage();
   if(message[1] == 'Z') {
-    co2_ = (float)(message.substring(3,8).toInt());
+    co2 = (float)(message.substring(3,8).toInt());
   }
 
   // Get Temperature
   sendMessage("T");
   message = receiveMessage();
   if(message[1] == 'T') {
-    temperature_ = 0.1*(float)(message.substring(3,8).toInt()-1000);
+    temperature = 0.1*(float)(message.substring(3,8).toInt()-1000);
   }
   
   // Get Humidity
   sendMessage("H");
   message = receiveMessage();
   if(message[1] == 'H') {
-    humidity_ = 0.1*(float)(message.substring(3,8).toInt());
+    humidity = 0.1*(float)(message.substring(3,8).toInt());
   }
 
   // Close Connection

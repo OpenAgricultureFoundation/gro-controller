@@ -14,8 +14,12 @@ void initializeStaticModules(void);
 void initializeDynamicModules(void);
 void updateIncomingMessage(void);
 void updateStreamMessage(void);
+void initializeBarebones(void);
+void updateBarebones(void);
 
 //------------------------------------------------PRIVATE--------------------------------------------//
+void updateLcd(void);
+
 struct Instruction {
   String code;
   int id;

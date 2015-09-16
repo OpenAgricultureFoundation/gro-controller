@@ -30,7 +30,7 @@ String SensorDht22::get(void) {
   message += " ";
   message += temperature_instruction_id_;
   message += "\":";
-  message += floatToString(temperature_, 100);
+  message += String(temperature,1);//floatToString(temperature_, 100);
   message += ",";
 
   // Append Humidity
@@ -39,7 +39,7 @@ String SensorDht22::get(void) {
   message += " ";
   message +=  humidity_instruction_id_;
   message += "\":";
-  message += floatToString(humidity_, 100);
+  message += String(humidity); //floatToString(humidity_, 100);
   message += ",";
 
   // Return Message
@@ -75,8 +75,8 @@ void SensorDht22::getSensorData(void) {
 }
 
 void SensorDht22::filterSensorData(void) {
-  humidity_ = humidity_raw_;
-  temperature_ = temperature_raw_;
+  humidity = humidity_raw_;
+  temperature = temperature_raw_;
 }
 
 boolean SensorDht22::read(void) {

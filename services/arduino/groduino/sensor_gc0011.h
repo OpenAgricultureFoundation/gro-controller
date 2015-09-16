@@ -24,9 +24,9 @@ class SensorGc0011 {
     String set(String instruction_code, int instruction_id, String instruction_parameter);
 
     // Public Variables
-    float temperature_;
-    float humidity_;
-    float co2_;
+    float temperature;
+    float humidity;
+    float co2;
    
   private:
     // Private Functions

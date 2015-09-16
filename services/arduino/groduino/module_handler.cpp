@@ -61,6 +61,7 @@ Instruction parseIncomingMessage(String message) {
 #include "actuator_relay.h"
 #include "sensor_dfr0300.h"
 #include "sensor_contact_switch.h"
+#include "rgb_lcd.h"
 
 // Electronics Panel Iteration2
 SensorTsl2561 sensor_tsl2561_light_intensity_default("SLIN", 1, "SLPA", 1);
@@ -83,37 +84,8 @@ ActuatorRelay actuator_relay_air_circulation_default(15, "AACR", 1);
 ActuatorRelay actuator_relay_light_chamber_illumination_default(53, "ALPN", 2);  // ALCI                                                             
 ActuatorRelay actuator_relay_light_motherboard_illumination_default(52, "ALMI", 1);
 
-/*
-  // Electronics Panel Iteration1
-  SensorTsl2561 sensor_tsl2561_light_intensity_default("SLIN", 1);
-  SensorDht22 sensor_dht22_air_temperature_humidity_default(A0, "SATM", 1, "SAHU", 1);
-  SensorGc0011 sensor_gc0011_air_co2_temperature_humidity_default(11, 12, "SACO", 1, "SATM", 2, "SAHU", 2);
-  SensorDfr0300 sensor_dfr0300_water_temperature_ec_default(2, A2, "SWTM", 1, "SWEC", 1); //attn
-  SensorDfr0161 sensor_dfr0161_water_ph_default(A1, "SWPH", 1);
-  
-  ActuatorRelay actuator_relay_light_panel_default(6, "ALPN", 1);
-  ActuatorRelay actuator_relay_light_vent_default(4, "ALVE", 1); //attn
-  ActuatorRelay actuator_relay_air_heater_default(7, "AAHE", 1);
-  ActuatorRelay actuator_relay_air_humidifier_default(8, "AAHU", 1);
-  ActuatorRelay actuator_relay_air_vent_default(3, "AAVE", 1);
-  ActuatorRelay actuator_relay_air_circulation_default(5, "AACR", 1);
-*/
-
-/*
-  // Wooden Box
-  SensorDs1307 sensor_ds1307_time_default("GTIM",1);
-  SensorTsl2561 sensor_tsl2561_light_intensity_default("SLIN", 1);
-  SensorDht22 sensor_dht22_air_temperature_humidity_default(A0, "SATM", 1, "SAHU", 1);
-  SensorGc0011 sensor_gc0011_air_co2_temperature_humidity_default(11, 12, "SACO", 1, "SATM", 2, "SAHU", 2);
-  SensorDfr0300 sensor_dfr0300_water_temperature_ec_default(7, A2, "SWTM", 1, "SWEC", 1);
-  SensorDfr0161 sensor_dfr0161_water_ph_default(A1, "SWPH", 1);
-  ActuatorRelay actuator_relay_light_panel_default(4, "ALPN", 1);
-  ActuatorRelay actuator_relay_light_vent_default(12, "ALVE", 1);
-  ActuatorRelay actuator_relay_air_heater_default(3, "AAHE", 1);
-  ActuatorRelay actuator_relay_air_humidifier_default(2, "AAHU", 1);
-  ActuatorRelay actuator_relay_air_vent_default(10, "AAVE", 1);
-  ActuatorRelay actuator_relay_air_circulation_default(8, "AACR", 1);
-*/
+// Barebones Swank
+rgb_lcd lcd;
 
 // Function(initializeDynamicModules): called once to initialize all dynamic modules
 void initializeDynamicModules(void) {
@@ -135,6 +107,8 @@ void initializeDynamicModules(void) {
   // Set Default States
   actuator_relay_air_circulation_default.set("AACR", 1, "1");
   actuator_relay_light_motherboard_illumination_default.set("ALMI",1,"1");
+
+
 }
 
 
@@ -198,4 +172,136 @@ String handleIncomingMessage(void) {
   return return_message;
 }
 
+// This is a stripped version of a food computer setup. Intent is that it can keep a system functional 
+// while networks are being setup && configured. super hack.
+uint32_t start_time;
+const uint32_t hour = 3600000; //milliseconds
+void initializeBarebones(void) {
+  // Barebones swank
+  lcd.begin(16, 2);
+  lcd.setRGB(0, 255, 0);
+  start_time = millis(); // should really be RTC, or at least EEPROM. aint nobody got time for that though
+}
+
+void updateBarebones(void) {
+  updateLcd();
+  // Cycle Resetter
+  if (millis() - start_time > 24*hour) {
+    start_time = millis();
+  }
+
+  // Grow Light ON Cycle
+  if ((millis() - start_time < 18*hour) && (actuator_relay_light_panel_default.value_ != 1)) {
+    actuator_relay_light_panel_default.set("ALPN",1,"1");
+  }
+
+  // Grow Light OFF Cycle
+  if ((millis() - start_time > 18*hour) && (actuator_relay_light_panel_default.value_ != 0)) {
+    actuator_relay_light_panel_default.set("ALPN",1,"0");
+  }
+}
+
+// Function makes nice things on LCD
+// Also some function prep........
+// EC init
+float prev_ec=0;
+int prev_ec_len=3;
+float min_ec = 1.5;
+float max_ec = 3.5;
+// pH init
+float prev_ph=0;
+int prev_ph_len=3;
+float min_ph = 6.0;
+float max_ph = 8.0;
+// CO2 init
+float prev_co2=0.0;
+int prev_co2_len=3;
+// RH init
+float prev_rh=0.0;
+int prev_rh_len=3;
+
+void updateLcd(void) {
+  // Update EC
+  lcd.setCursor(0,0);
+  lcd.write("EC:0.0");
+  float ec = sensor_dfr0300_water_temperature_ec_default.ec;
+  if (ec != prev_ec) {
+    // Erase
+    lcd.setCursor(3,0);
+    for (int i=0; i<prev_ec_len; i++) {
+      lcd.print(" ");
+    }
+    // Rewrite
+    lcd.setCursor(3,0);
+    String msg = String(ec,1);
+    lcd.print(msg);
+    prev_ec = ec;
+    prev_ec_len = msg.length();
+  }
+
+  // Update pH
+  lcd.setCursor(0,1);
+  lcd.write("pH:0.0");
+  float ph = sensor_dfr0161_water_ph_default.ph;
+  if (ph != prev_ec) {
+    // Erase
+    lcd.setCursor(3,1);
+    for (int i=0; i<prev_ph_len; i++) {
+      lcd.print(" ");
+    }
+    // Rewrite
+    lcd.setCursor(3,1);
+    String msg = String(ph,1);
+    lcd.print(msg);
+    prev_ph = ph;
+    prev_ph_len = msg.length();
+  }
+
+  // Update CO2
+  lcd.setCursor(8,0);
+  lcd.write("CO2:0.0");
+  float co2 = sensor_gc0011_air_co2_temperature_humidity_default.co2;
+  if (co2 != prev_co2) {
+    // Erase
+    lcd.setCursor(12,0);
+    for (int i=0; i<prev_co2_len; i++) {
+      lcd.print(" ");
+    }
+    // Rewrite
+    lcd.setCursor(12,1);
+    String msg = String(co2,0);
+    lcd.print(msg);
+    prev_co2 = co2;
+    prev_co2_len = msg.length();
+  }
+
+  // Update RH
+  lcd.setCursor(9,1);
+  lcd.write("RH:0.0");
+  float rh = sensor_dht22_air_temperature_humidity_default.humidity;
+  if (rh != prev_rh) {
+    // Erase
+    lcd.setCursor(12,1);
+    for (int i=0; i<prev_rh_len; i++) {
+      lcd.print(" ");
+    }
+    // Rewrite
+    lcd.setCursor(12,1);
+    String msg = String(co2,0);
+    lcd.print(msg);
+    prev_rh = rh;
+    prev_rh_len = msg.length();
+  } 
+
+  // Update Display Happyynessss
+  if ((ph<min_ph) || (ph>max_ph)) {
+    lcd.setRGB(255, 0, 0);
+  }
+  else if ((ec<min_ec) || (ec>max_ec)) {
+    lcd.setRGB(255, 0, 0);
+  }
+  else {
+    lcd.setRGB(0, 255, 0);
+  }
+}
 

@@ -10,25 +10,26 @@
 class SensorDfr0161 {
   public:
     // Public Functions
-    SensorDfr0161(uint8_t pin, String instruction_code, int instruction_id_);
+    SensorDfr0161(uint8_t ph_pin, String ph_instruction_code, int ph_instruction_id);
     void begin(void);
     String get(void);
-    String set(String instruction_code, int instruction_id, String instruction_parameter);
+    String set(String ph_instruction_code, int ph_instruction_id, String pg_instruction_parameter);
+    double getPh(void);
 
+    // Public Variables
+    float ph;
+    
   private:
     // Private Functions
-    float getPh(void);
-    float getData(void);
+    double avergeArray(int* arr, int number);
     String floatToString(double val, unsigned int precision);
 
-    //Private Variables
-    uint8_t pin_;
-    String instruction_code_;
-    int instruction_id_;
-    float offset_;
-    uint8_t number_of_samples_;
-    float calibration_offset_;
-    float calibration_coeff_;
+    // Private Variables
+    int ph_pin_;
+    String ph_instruction_code_;
+    int ph_instruction_id_;
+    double calibration_coeff_;
+    double calibration_offset_;
 };
 
 #endif // SENSOR_DFR0161_H_

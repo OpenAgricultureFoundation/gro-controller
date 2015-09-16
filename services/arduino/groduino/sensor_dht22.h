@@ -26,11 +26,15 @@
 
 class SensorDht22 {
   public:
-    // Public functions
+    // Public Functions
     SensorDht22(int pin, String temperature_instruction_code, int temperature_instruction_id, String humidity_instruction_code, int humidity_instruction_id);
     void begin(void);
     String get(void);
     String set(String instruction_code, int instruction_id, String parameter);
+
+    // Public Variables
+    float humidity;
+    float temperature;
     
   private:
     // Private Functions
@@ -46,8 +50,7 @@ class SensorDht22 {
     int humidity_instruction_id_;
     String temperature_instruction_code_;
     int temperature_instruction_id_;
-    float humidity_;
-    float temperature_;
+
     uint8_t data[6];
     uint8_t count_;
     uint32_t last_read_time_;
