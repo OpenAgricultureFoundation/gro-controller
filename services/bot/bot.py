@@ -291,9 +291,10 @@ class Bot:
         for actuator_dict in actuator_list:
             actuator_inst = self.getElementByUrl(actuator_dict['url'])
             assert isinstance(actuator_inst, Actuator)
-            if actuator_dict['override_value'] is not None and actuator_dict['override_timeout'] > cur_time:
+            if actuator_dict['override_value'] is not None: #and actuator_dict['override_timeout'] > cur_time:
                 logging.debug('%s overriden to state %f', str(actuator_inst), actuator_dict['override_value'])
-                actuator_inst.override(actuator_dict['override_value'], actuator_dict['override_timeout'])
+                # actuator_inst.override(actuator_dict['override_value'], actuator_dict['override_timeout'])
+                actuator_inst.override(actuator_dict['override_value'])
             else:
                 actuator_inst._override = False      # TODO shouldn't be accessing private method. see override notes
 

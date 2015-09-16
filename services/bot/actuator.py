@@ -219,13 +219,13 @@ class Actuator(Element):
 
     # TODO use timer with callback to clear override. For now, depends on self.state being set through polling
     # or use a queue in bot
-    def override(self, value, endtime):
+    def override(self, value): #, endtime):
         """Override the state on the actuator until endtime
         :param value: value to override to
         :param endtime: time to override til as unix timestamp
         """
-        if endtime > time.time():  # if endtime hasn't passed yet
-            self._override = False  # just in case we were already in override
-            self.state = value
-            self._override = True
-            self._override_endtime = endtime
+        #if endtime > time.time():  # if endtime hasn't passed yet
+        self._override = False  # just in case we were already in override
+        self.state = value
+        self._override = True
+        #self._override_endtime = endtime
