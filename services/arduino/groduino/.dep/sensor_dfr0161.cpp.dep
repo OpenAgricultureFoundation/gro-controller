@@ -1,4 +1,4 @@
-groduino.o: groduino.ino \
+sensor_dfr0161.o: sensor_dfr0161.cpp sensor_dfr0161.h \
  /usr/share/arduino/hardware/arduino/cores/arduino/Arduino.h \
  /usr/share/arduino/hardware/arduino/cores/arduino/binary.h \
  /usr/share/arduino/hardware/arduino/cores/arduino/WCharacter.h \
@@ -8,10 +8,9 @@ groduino.o: groduino.ino \
  /usr/share/arduino/hardware/arduino/cores/arduino/Print.h \
  /usr/share/arduino/hardware/arduino/cores/arduino/Printable.h \
  /usr/share/arduino/hardware/arduino/cores/arduino/new.h \
- /usr/share/arduino/hardware/arduino/variants/mega/pins_arduino.h \
- module_handler.h \
- /usr/share/arduino/hardware/arduino/cores/arduino/Arduino.h \
- communication.h
+ /usr/share/arduino/hardware/arduino/variants/mega/pins_arduino.h
+
+sensor_dfr0161.h:
 
 /usr/share/arduino/hardware/arduino/cores/arduino/Arduino.h:
 
@@ -32,9 +31,3 @@ groduino.o: groduino.ino \
 /usr/share/arduino/hardware/arduino/cores/arduino/new.h:
 
 /usr/share/arduino/hardware/arduino/variants/mega/pins_arduino.h:
-
-module_handler.h:
-
-/usr/share/arduino/hardware/arduino/cores/arduino/Arduino.h:
-
-communication.h:
