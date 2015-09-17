@@ -207,12 +207,12 @@ void updateBarebones(void) {
 float prev_ec=0;
 int prev_ec_len=3;
 float min_ec = 1.5;
-float max_ec = 3.5;
+float max_ec = 2.5;
 // pH init
 float prev_ph=0;
 int prev_ph_len=3;
-float min_ph = 6.0;
-float max_ph = 8.0;
+float min_ph = 5.5;
+float max_ph = 6.5;
 // CO2 init
 float prev_co2=0.0;
 int prev_co2_len=3;
@@ -257,41 +257,43 @@ void updateLcd(void) {
     prev_ph_len = msg.length();
   }
 
-  // Update CO2
-  lcd.setCursor(8,0);
-  lcd.write("CO2:0.0");
-  float co2 = sensor_gc0011_air_co2_temperature_humidity_default.co2;
-  if (co2 != prev_co2) {
-    // Erase
-    lcd.setCursor(12,0);
-    for (int i=0; i<prev_co2_len; i++) {
-      lcd.print(" ");
-    }
-    // Rewrite
-    lcd.setCursor(12,1);
-    String msg = String(co2,0);
-    lcd.print(msg);
-    prev_co2 = co2;
-    prev_co2_len = msg.length();
-  }
-
-  // Update RH
-  lcd.setCursor(9,1);
-  lcd.write("RH:0.0");
-  float rh = sensor_dht22_air_temperature_humidity_default.humidity;
-  if (rh != prev_rh) {
-    // Erase
-    lcd.setCursor(12,1);
-    for (int i=0; i<prev_rh_len; i++) {
-      lcd.print(" ");
-    }
-    // Rewrite
-    lcd.setCursor(12,1);
-    String msg = String(co2,0);
-    lcd.print(msg);
-    prev_rh = rh;
-    prev_rh_len = msg.length();
-  } 
+//  // Update CO2
+//  lcd.setCursor(8,0);
+//  lcd.write("CO2:0.0");
+//  float co2 = sensor_gc0011_air_co2_temperature_humidity_default.co2;
+//  if (co2 != prev_co2) {
+//    // Erase
+//    lcd.setCursor(12,0);
+//    for (int i=0; i<prev_co2_len; i++) {
+//      lcd.print(" ");
+//    }
+//    // Rewrite
+//    lcd.setCursor(12,0);
+//    int co2_int = (int) co2;
+//    String msg = co2_int;
+//    lcd.print(msg);
+//    prev_co2 = co2;
+//    prev_co2_len = msg.length();
+//  }
+//
+//  // Update RH
+//  lcd.setCursor(9,1);
+//  lcd.write("RH:0.0");
+//  float rh = sensor_dht22_air_temperature_humidity_default.humidity;
+//  if (rh != prev_rh) {
+//    // Erase
+//    lcd.setCursor(12,1);
+//    for (int i=0; i<prev_rh_len; i++) {
+//      lcd.print(" ");
+//    }
+//    // Rewrite
+//    lcd.setCursor(12,1);
+//    int rh_msg = (int) rh;
+//    String msg = rh_msg;
+//    lcd.print(msg);
+//    prev_rh = rh;
+//    prev_rh_len = msg.length();
+//  } 
 
   // Update Display Happyynessss
   if ((ph<min_ph) || (ph>max_ph)) {

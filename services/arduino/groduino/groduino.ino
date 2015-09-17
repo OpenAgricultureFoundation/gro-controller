@@ -10,6 +10,4 @@ void loop() {
   updateIncomingMessage();
   updateStreamMessage();
   updateBarebones();
-
-  
 }

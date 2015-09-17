@@ -61,7 +61,7 @@ void SensorDfr0300::getSensorData(void) {
   delay(1000);
   ec = getEc(temperature);
   digitalWrite(ec_enable_pin_, LOW);
-  delay(800);
+  delay(1400);
 }
 
 
@@ -79,7 +79,7 @@ float SensorDfr0300::getEc(float temperature_value) {
   float temp_coefficient = 1.0 + 0.0185*(temperature_value - 25.0);
   float coeff_voltage = analog_voltage / temp_coefficient; 
   
-  if(coeff_voltage < 50) {
+  if(coeff_voltage < 20) {
     return 0;
     //Serial.println("No solution!");   //25^C 1413us/cm<-->about 216mv  if the voltage(compensate)<150,that is <1ms/cm,out of the range
   }
