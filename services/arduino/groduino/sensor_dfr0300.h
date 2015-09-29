@@ -22,6 +22,7 @@ class SensorDfr0300 {
     // Public Variables
     float temperature; //degrees C
     float ec; //uS/cm
+    float ec_avg; //uS/cm
 
   private:
     // Private Functions
@@ -41,6 +42,7 @@ class SensorDfr0300 {
     int ec_id_;
     float ec_coefficient_;
     float ec_offset_;
+    float offset_;
     
     byte data_[12];
     byte addr_[8];

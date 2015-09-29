@@ -18,6 +18,7 @@ class SensorDfr0161 {
 
     // Public Variables
     float ph;
+    float ph_avg;
     
   private:
     // Private Functions

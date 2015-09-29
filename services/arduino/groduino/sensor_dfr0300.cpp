@@ -1,6 +1,8 @@
 #include "sensor_dfr0300.h"
+#include "MovingAverageFilter.h"
 
 //-----------------------------------------------PUBLIC----------------------------------------------//
+MovingAverageFilter ec_filter(20);
 
 SensorDfr0300::SensorDfr0300(int temperature_pin, int ec_pin, int ec_enable_pin, String temperature_instruction_code, int temperature_id, String ec_instruction_code, int ec_id) {
   temperature_pin_ = temperature_pin;
@@ -14,10 +16,9 @@ SensorDfr0300::SensorDfr0300(int temperature_pin, int ec_pin, int ec_enable_pin,
 
 void SensorDfr0300::begin(void) {
   ds_ = new OneWire(temperature_pin_);
-  //ec_coefficient_ = 1.68;
-  //ec_offset_ = 0.40;
   pinMode(ec_enable_pin_, OUTPUT);
   digitalWrite(ec_enable_pin_, LOW);
+  offset_ = 0.15;
 }
 
 String SensorDfr0300::get(void) {
@@ -42,7 +43,8 @@ String SensorDfr0300::get(void) {
   message += " ";
   message += ec_id_;
   message += "\":";
-  message += String(ec,1);
+  //message += String(ec,1);
+  message += String(ec_avg,1);
   message += ",";
 
   // Return Message
@@ -57,11 +59,8 @@ String SensorDfr0300::set(String instruction_code, int instruction_id, String in
 void SensorDfr0300::getSensorData(void) {
   temperature = getTemperature();
   startTempertureConversion();
-  digitalWrite(ec_enable_pin_, HIGH);
-  delay(1000);
   ec = getEc(temperature);
-  digitalWrite(ec_enable_pin_, LOW);
-  delay(1400);
+  ec_avg = ec_filter.process(ec);
 }
 
 
@@ -79,7 +78,7 @@ float SensorDfr0300::getEc(float temperature_value) {
   float temp_coefficient = 1.0 + 0.0185*(temperature_value - 25.0);
   float coeff_voltage = analog_voltage / temp_coefficient; 
   
-  if(coeff_voltage < 20) {
+  if(coeff_voltage < 0) {
     return 0;
     //Serial.println("No solution!");   //25^C 1413us/cm<-->about 216mv  if the voltage(compensate)<150,that is <1ms/cm,out of the range
   }
@@ -90,13 +89,13 @@ float SensorDfr0300::getEc(float temperature_value) {
   else { 
     if(coeff_voltage <= 448) {
       
-      return (6.84*coeff_voltage-64.32)/1000;   //1ms/cm<EC<=3ms/cm
+      return (6.84*coeff_voltage-64.32)/1000 + offset_;   //1ms/cm<EC<=3ms/cm
     }
     else if (coeff_voltage <= 1457) {
-      return (6.98*coeff_voltage-127)/1000;  //3ms/cm<EC<=10ms/cm
+      return (6.98*coeff_voltage-127)/1000 + offset_;  //3ms/cm<EC<=10ms/cm
     }
     else {
-      return (5.3*coeff_voltage+2278)/1000; //10ms/cm<EC<20ms/cm
+      return (5.3*coeff_voltage+2278)/1000 + offset_; //10ms/cm<EC<20ms/cm
     }
   }
 }
