@@ -3,11 +3,15 @@
 void setup() {
   initializeStaticModules();
   initializeDynamicModules();
-  initializeBarebones();
 }
 
+bool once = 1;
 void loop() {
   updateIncomingMessage();
   updateStreamMessage();
+  if (once) {
+    initializeBarebones();
+    once = 0;
+  }
   updateBarebones();
 }

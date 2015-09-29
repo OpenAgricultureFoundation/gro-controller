@@ -1,4 +1,7 @@
 #include "sensor_dfr0161.h"
+#include "MovingAverageFilter.h"
+
+MovingAverageFilter ph_filter(20);
 
 //------------------------------------------PUBLIC FUNCTIONS----------------------------------------//
 SensorDfr0161::SensorDfr0161(uint8_t ph_pin, String ph_instruction_code, int ph_instruction_id) {
@@ -10,6 +13,7 @@ SensorDfr0161::SensorDfr0161(uint8_t ph_pin, String ph_instruction_code, int ph_
 void SensorDfr0161::begin(void) {
   calibration_coeff_ = 3.5;
   calibration_offset_ = -0.1;
+  
 }
 
 String SensorDfr0161::get(void) {
@@ -18,13 +22,15 @@ String SensorDfr0161::get(void) {
 
   // Get Data For pH
   ph = getPh();
+  ph_avg = ph_filter.process(ph);
 
   // Append pH
   message += ph_instruction_code_;
   message += " ";
   message += ph_instruction_id_;
   message += "\":";
-  message += String(ph,1);
+  //message += String(ph,1);
+  message += String(ph_avg,1);
   message += ",";
 
   // Return Message

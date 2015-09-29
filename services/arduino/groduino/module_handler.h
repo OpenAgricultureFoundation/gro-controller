@@ -19,6 +19,7 @@ void updateBarebones(void);
 
 //------------------------------------------------PRIVATE--------------------------------------------//
 void updateLcd(void);
+void updateLcdSwitched(void);
 
 struct Instruction {
   String code;
