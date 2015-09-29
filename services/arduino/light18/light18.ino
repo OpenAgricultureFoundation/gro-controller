@@ -1,4 +1,5 @@
 int light_pin = 8;
+const int hour_in_ms = 3600000;
 
 void setup() {
   pinMode(light_pin,OUTPUT);
@@ -6,7 +7,7 @@ void setup() {
 
 void loop() {
   digitalWrite(light_pin, LOW); // turn on
-  delay(4000);
+  delay(hour_in_ms*18);
   digitalWrite(light_pin, HIGH); // turn off
-  delay(1000);
+  delay(hour_in_ms*6);
 }

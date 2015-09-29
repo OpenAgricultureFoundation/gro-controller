@@ -9,8 +9,6 @@
 # Short-Description: runs daemon for food computer
 # Description:       runs daemon for food computer, script initialization...
 #		     ... make executable: >>chmod 755 grodaemon.sh
-#		     ... copy to init.d >>sudo cp grodaemon.sh /etc/init.d
-#		     ... run script at right time >>sudo update-rc.d grodaemon.sh defaults
 ### END INIT INFO
 
 # Change the next 3 lines to suit where you install your script and what you want to call it
