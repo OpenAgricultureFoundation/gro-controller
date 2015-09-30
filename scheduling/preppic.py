@@ -2,12 +2,12 @@
 # Used to take photos for timelapse
 # For sequence of 3 photos, use cron as such
 """
-35 15 * * * /home/pi/gro-controller/scheduling/preppic.py --purple
-36 15 * * * /home/pi/gro-controller/scheduling/takepic.sh purple
-37 15 * * * /home/pi/gro-controller/scheduling/preppic.py --white
-38 15 * * * /home/pi/gro-controller/scheduling/takepic.sh white
-39 15 * * * /home/pi/gro-controller/scheduling/preppic.py --mixed
-40 15 * * * /home/pi/gro-controller/scheduling/takepic.sh mixed
+0 2 * * * /home/pi/gro-controller/scheduling/preppic.py --purple
+1 2 * * * /home/pi/gro-controller/scheduling/takepic.sh purple
+2 2 * * * /home/pi/gro-controller/scheduling/preppic.py --white
+3 2 * * * /home/pi/gro-controller/scheduling/takepic.sh white
+4 2 * * * /home/pi/gro-controller/scheduling/preppic.py --mixed
+5 2 * * * /home/pi/gro-controller/scheduling/takepic.sh mixed
 """
 
 import time
@@ -103,11 +103,17 @@ def sendRequest(url, data, token):
 if __name__ == "__main__":
     cmdargs_dict = commandLineInit()
     
+    # Get Server IP
+    f = open(os.path.join('/home/pi/', 'server_ip.txt'), 'r')
+    server_ip = f.readline();
+    f.close()
+    base_url = "http://" + server_ip.strip() + "/" 
+    
     # Authorization
     data = { 'username':'plantos', 'password':'plantos' }
     data_string = json.dumps(data)
     headers = {'Content-type': 'application/json'}
-    req = requests.post("http://18.85.54.49/auth/login/", params={"many": True}, data=data_string, headers=headers)
+    req = requests.post(base_url+"auth/login/", params={"many": True}, data=data_string, headers=headers)
     if req.status_code != 200:
         logging.error('Failed to post %s: Code %d', data_string, req.status_code) 
     else:
@@ -119,13 +125,13 @@ if __name__ == "__main__":
     # Send Overrides 
     if cmdargs_dict['white'] is True:
         print('Preparing for white pic')
-        sendRequest("http://18.85.54.49/actuator/2/override/", {'duration':90,'value':1}, token) #white
-        sendRequest("http://18.85.54.49/actuator/1/override/", {'duration':90,'value':0}, token) #purple
+        sendRequest(base_url+"actuator/2/override/", {'duration':90,'value':1}, token) #white
+        sendRequest(base_url+"actuator/1/override/", {'duration':90,'value':0}, token) #purple
     elif cmdargs_dict['purple'] is True:
         print('Preparing for purple pic')
-        sendRequest("http://18.85.54.49/actuator/2/override/", {'duration':90,'value':0}, token) #white
-        sendRequest("http://18.85.54.49/actuator/1/override/", {'duration':90,'value':1}, token) #purple
+        sendRequest(base_url+"actuator/2/override/", {'duration':90,'value':0}, token) #white
+        sendRequest(base_url+"actuator/1/override/", {'duration':90,'value':1}, token) #purple
     elif cmdargs_dict['mixed'] is True:
         print('Preparing for mixed pic')
-        sendRequest("http://18.85.54.49/actuator/2/override/", {'duration':90,'value':1}, token) #white
-        sendRequest("http://18.85.54.49/actuator/1/override/", {'duration':90,'value':1}, token) #purple
+        sendRequest(base_url+"actuator/2/override/", {'duration':90,'value':1}, token) #white
+        sendRequest(base_url+"actuator/1/override/", {'duration':90,'value':1}, token) #purple

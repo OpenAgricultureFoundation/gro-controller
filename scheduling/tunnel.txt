@@ -13,7 +13,7 @@ sudo su
 # will have to enter password
 #
 sudo ssh-copy-id -i /root/.ssh/tunnel_rsa_id <user>@<server>
-# where <server> is something like: 18.85.54.49
+# where <server> is something like: 18.85.54.48
 # where <user> is something like: pi
 # will have to enter servers password
 #
@@ -23,7 +23,7 @@ exit
 #
 ## Open reverse ssh tunnel in background with persistance
 autossh -fNi /root/.ssh/tunnel_rsa_id.pub -R 19999:localhost:22 <user>@<plantos>
-# where <server> is something like 18.85.54.49
+# where <server> is something like 18.85.54.48
 # where <user> is something like plantos
 #
 ## Verify tunnel works
@@ -39,7 +39,7 @@ ssh <user>@localhost -p 19999
 crontab -e
 # add the autossh.. command prefaced by @reboot
 # will look like this
-@reboot autossh -fNi /root/.ssh/tunnel_rsa_id.pub -o "PubkeyAuthentication=yes" -o "PasswordAuthentication=no" -R 19999:localhost:22 plantos@18.85.54.49 &
+@reboot autossh -fNi /root/.ssh/tunnel_rsa_id.pub -o "PubkeyAuthentication=yes" -o "PasswordAuthentication=no" -R 19999:localhost:22 plantos@18.85.54.48 &
 # 
 #
 ## Now, reverse ssh tunnel should always be open

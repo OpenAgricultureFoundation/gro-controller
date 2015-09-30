@@ -5,6 +5,7 @@ import logging
 import requests  # TODO all server stuff should be through server
 import json      # TODO shouldn't need this
 import time
+import os
 
 from ..server import Server, ServerResourceLazyDict
 from ..configuration import ManualProfiler
@@ -12,9 +13,7 @@ from ..configuration import ManualProfiler
 from .actuator import Actuator
 from .sensingPoint import SensingPoint
 
-SERVER = 'http://18.85.54.49/'         # TODO
-# SERVER = 'http://gro.danmandan.com/'
-
+#SERVER = ''         # TODO
 
 # TODO be able to add actuators/sensing points dynamically
 # TODO be consistent with suffixes (ex groduino_inst)
@@ -266,6 +265,12 @@ class Bot:
     def getSetPointsFromServer(self):       # seems like it works, can't test because of new format
         """Get all the setpoints and set them on the correct sensing points
         """
+        # Get Server IP - this is horrible, omg...
+        f = open(os.path.join('/home/pi/', 'server_ip.txt'), 'r')
+        server_ip = f.readline();
+        f.close()
+        SERVER = "http://" + server_ip.strip() + "/"
+        
         SERVER_SET_POINT = SERVER + 'tray/1/set_points/'            # TODO should be getting enclosure (only one)
         setpoint_list = self.server.getJson(SERVER_SET_POINT)     # NOTE Set point list is formatted differently! See db
 
@@ -284,6 +289,12 @@ class Bot:
         """Get all the overrides and set them on the correct actuator
         """
         cur_time = time.time()
+        
+        # Get Server IP - this is horrible, omg...
+        f = open(os.path.join('/home/pi/', 'server_ip.txt'), 'r')
+        server_ip = f.readline();
+        f.close()
+        SERVER = "http://" + server_ip.strip() + "/"
 
         SERVER_ACTUATOR = SERVER + 'actuator/'          # TODO no hardcode!
         actuator_list = self.server.getJson(SERVER_ACTUATOR)

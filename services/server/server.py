@@ -3,7 +3,7 @@ import logging
 import requests
 import requests.exceptions
 import threading
-
+import os
 import sys
 import time
 
@@ -26,20 +26,26 @@ class Server:
     _min_time_to_wait_for_threads = 0.1     # When we are decreasing the wait time, don't go lower than this
     _max_time_to_wait_for_threads = 2       # We don't want to wait for threads for longer than this
 
-    _base_url = 'http://18.85.54.49/'
-    # _base_url = 'http://gro.danmandan.com/'
+    _base_url = ''
 
-    _post_datapoint_url = _base_url + 'dataPoint/'
+    _post_datapoint_url = ''
 
     def __init__(self, base_url=None):
+        # Get Server IP
+        f = open(os.path.join('/home/pi/', 'server_ip.txt'), 'r')
+        server_ip = f.readline();
+        f.close()
+        self._base_url = "http://" + server_ip.strip() + "/"
+        self._post_datapoint_url = self._base_url + 'dataPoint/'        
+
         if base_url is not None:
             self._base_url = base_url
-        
+ 
         # Authorization
         data = { 'username':'plantos', 'password':'plantos' }
         data_string = json.dumps(data)
         headers = {'Content-type': 'application/json'}
-        req = requests.post("http://18.85.54.49/auth/login/", params={"many": True}, data=data_string, headers=headers)
+        req = requests.post(self._base_url+"auth/login/", params={"many": True}, data=data_string, headers=headers)
         if req.status_code != 200:
             logging.error('Failed to post %s: Code %d', data_string, req.status_code) 
         else:
