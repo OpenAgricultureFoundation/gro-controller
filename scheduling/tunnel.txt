@@ -43,10 +43,11 @@ crontab -e
 # 
 #
 ## Now, reverse ssh tunnel should always be open
-# reboot system and verify tunnel exists from startup
+# reboot system and verify tunnel exists from startup...
+# note: does not work if just pull power (hard reboot)...
+# if hard reboot happens, must jumper soft reboot pins
+# pins found on board in box named "RUN"
+# can also do a soft reboot / power down from cmd line...
 # tunnel should also re-open if link goes down
 # i.e. disconnect then reconnect ethernet cable...
 # ...may take a few minutes to reestablish
-
-
-
