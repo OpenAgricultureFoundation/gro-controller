@@ -1,0 +1,52 @@
+## Build Reverse SSH Tunnel
+#
+#
+## Create public/private key
+sudo ssh-keygen -f /root/.ssh/tunnel_rsa_id
+# will prompt for passphrase, leave empty, press enter
+# will prompt for same passphrase, leave empty, press enter
+#
+#
+## Copy key to server
+sudo su
+# go into super user mode
+# will have to enter password
+#
+sudo ssh-copy-id -i /root/.ssh/tunnel_rsa_id <user>@<server>
+# where <server> is something like: 18.85.54.49
+# where <user> is something like: pi
+# will have to enter servers password
+#
+exit
+# leave super user mode
+#
+#
+## Open reverse ssh tunnel in background with persistance
+autossh -fNi /root/.ssh/tunnel_rsa_id.pub -R 19999:localhost:22 <user>@<plantos>
+# where <server> is something like 18.85.54.49
+# where <user> is something like plantos
+#
+## Verify tunnel works
+# from the server you are creating a tunnel to, run:
+ssh <user>@localhost -p 19999
+# where <user> is something like: pi
+# you should be able to login now
+#
+#
+## Set to run on startup
+# add command to cron so that it runs on system reboot
+# open crontab editor
+crontab -e
+# add the autossh.. command prefaced by @reboot
+# will look like this
+@reboot autossh -fNi /root/.ssh/tunnel_rsa_id.pub -o "PubkeyAuthentication=yes" -o "PasswordAuthentication=no" -R 19999:localhost:22 plantos@18.85.54.49 &
+# 
+#
+## Now, reverse ssh tunnel should always be open
+# reboot system and verify tunnel exists from startup
+# tunnel should also re-open if link goes down
+# i.e. disconnect then reconnect ethernet cable...
+# ...may take a few minutes to reestablish
+
+
+
