@@ -1,4 +1,14 @@
 #!/usr/bin/env python3
+# Used to take photos for timelapse
+# For sequence of 3 photos, use cron as such
+"""
+35 15 * * * /home/pi/gro-controller/scheduling/preppic.py --purple
+36 15 * * * /home/pi/gro-controller/scheduling/takepic.sh purple
+37 15 * * * /home/pi/gro-controller/scheduling/preppic.py --white
+38 15 * * * /home/pi/gro-controller/scheduling/takepic.sh white
+39 15 * * * /home/pi/gro-controller/scheduling/preppic.py --mixed
+40 15 * * * /home/pi/gro-controller/scheduling/takepic.sh mixed
+"""
 
 import time
 import argparse         # allows us to pass in some parameters through command line
@@ -36,7 +46,9 @@ def commandLineInit():
     parser.add_argument('-i', '--info', action='store_true', help="Output info messages to show what's going on")
     parser.add_argument('-q', '--quiet', action='store_true', help='Quiet output, only errors and critical')
     parser.add_argument('-qq', '--qquiet', action='store_true', help='Really quiet output, only critical')
-
+    parser.add_argument('-wh', '--white', action='store_true', help='prep picture for white image')    
+    parser.add_argument('-pr', '--purple', action='store_true', help='prep picture for purple image')
+    parser.add_argument('-mx', '--mixed', action='store_true', help='prep picture for mixed image')
     args = parser.parse_args()
     args_dict = vars(args)	    # convert all args to a dict for convenience. use ex. args_dict['verbose']
 
@@ -78,10 +90,10 @@ def commandLineInit():
 
     return args_dict
 
-def overrideChamberIllumination(data):
+def sendRequest(url, data, token):
         data_string = json.dumps(data)
-        headers = {'Content-type': 'application/json'}
-        req = requests.post("http://18.85.54.49/actuator/19/override/", params={"many": True}, data=data_string, headers=headers)
+        headers = {'Content-type': 'application/json', 'Authorization':'Token '+token}
+        req = requests.post(url, params={"many": True}, data=data_string, headers=headers)
         if req.status_code != 200:
             logging.error('Failed to post %s: Code %d', data_string, req.status_code)
         else:
@@ -90,9 +102,30 @@ def overrideChamberIllumination(data):
 # Main Code
 if __name__ == "__main__":
     cmdargs_dict = commandLineInit()
-
-    # TODO just init the server inside bot. Bot should take ip of server to connect to
-    # server = Server(cmdargs_dict['server'])
     
-    data = { 'duration':120, 'value':1 }
-    overrideChamberIllumination(data)
+    # Authorization
+    data = { 'username':'plantos', 'password':'plantos' }
+    data_string = json.dumps(data)
+    headers = {'Content-type': 'application/json'}
+    req = requests.post("http://18.85.54.49/auth/login/", params={"many": True}, data=data_string, headers=headers)
+    if req.status_code != 200:
+        logging.error('Failed to post %s: Code %d', data_string, req.status_code) 
+    else:
+        logging.debug('Acquired authentication token!')
+    token = req.json()['key']
+    #print(token)    
+
+   
+    # Send Overrides 
+    if cmdargs_dict['white'] is True:
+        print('Preparing for white pic')
+        sendRequest("http://18.85.54.49/actuator/2/override/", {'duration':90,'value':1}, token) #white
+        sendRequest("http://18.85.54.49/actuator/1/override/", {'duration':90,'value':0}, token) #purple
+    elif cmdargs_dict['purple'] is True:
+        print('Preparing for purple pic')
+        sendRequest("http://18.85.54.49/actuator/2/override/", {'duration':90,'value':0}, token) #white
+        sendRequest("http://18.85.54.49/actuator/1/override/", {'duration':90,'value':1}, token) #purple
+    elif cmdargs_dict['mixed'] is True:
+        print('Preparing for mixed pic')
+        sendRequest("http://18.85.54.49/actuator/2/override/", {'duration':90,'value':1}, token) #white
+        sendRequest("http://18.85.54.49/actuator/1/override/", {'duration':90,'value':1}, token) #purple

@@ -6,5 +6,5 @@ export DISPLAY=:0.0
 #sleep 20
 
 #Call Gnome EOG
-/usr/bin/eog -f /home/pi/gro-controller/scheduling/img.jpg
+/usr/bin/eog -f /home/pi/gro-controller/scheduling/screensaver.jpg
 
