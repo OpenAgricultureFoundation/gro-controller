@@ -1,7 +1,7 @@
 #include "sensor_dfr0161.h"
 #include "MovingAverageFilter.h"
 
-MovingAverageFilter ph_filter(20);
+MovingAverageFilter ph_filter(10);
 
 //------------------------------------------PUBLIC FUNCTIONS----------------------------------------//
 SensorDfr0161::SensorDfr0161(uint8_t ph_pin, String ph_instruction_code, int ph_instruction_id) {

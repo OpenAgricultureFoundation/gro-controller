@@ -2,7 +2,7 @@
 #include "MovingAverageFilter.h"
 
 //-----------------------------------------------PUBLIC----------------------------------------------//
-MovingAverageFilter ec_filter(20);
+MovingAverageFilter ec_filter(10);
 
 SensorDfr0300::SensorDfr0300(int temperature_pin, int ec_pin, int ec_enable_pin, String temperature_instruction_code, int temperature_id, String ec_instruction_code, int ec_id) {
   temperature_pin_ = temperature_pin;

@@ -5,13 +5,14 @@ void setup() {
   initializeDynamicModules();
 }
 
-bool once = 1;
+//bool once = 1;
 void loop() {
   updateIncomingMessage();
   updateStreamMessage();
-  if (once) {
-    initializeBarebones();
-    once = 0;
-  }
-  updateBarebones();
+  delay(3000);
+//  if (once) {
+//    initializeBarebones();
+//    once = 0;
+//  }
+//  updateBarebones();
 }
