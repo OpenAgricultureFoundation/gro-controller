@@ -17,7 +17,7 @@ if sys.version_info < (3, 3, 0):
 # Note: for convention, all urls will have trailing slash. So if you are appending to them, no beginning slash needed
 class Server:
     _max_retries = 5            # max retries for post
-    _req_timeout = 1                # timeout for requests
+    _req_timeout = 3                # timeout for requests
     _warn_results_count = 500   # when getting all results, will warn if there are >_warn_results_count results
     _max_results_count = 1000   # if # results > this, will throw error and return _max_results_count results
 
@@ -76,7 +76,8 @@ class Server:
                 if req.status_code == requests.codes.ok:
                     break
                 logging.warning('Failed to get %s, status %d, retry %d' % (url, req.status_code, retry_count))
-            except requests.exceptions.RequestException:
+            except requests.exceptions.RequestException as e:
+                logging.warning('Failed to get request, RequestException: %s' % (e))
                 pass        # Just pass it, we will include it as a retry ahead
             finally:
                 retry_count += 1
