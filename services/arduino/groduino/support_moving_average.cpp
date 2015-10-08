@@ -1,7 +1,7 @@
 /*
 https://github.com/sebnil/Moving-Avarage-Filter--Arduino-Library-
 */
-#include "MovingAverageFilter.h"
+#include "support_moving_average.h"
 
 MovingAverageFilter::MovingAverageFilter(unsigned int newDataPointsCount) {
   k = 0; //initialize so that we start to write at index 0

@@ -1,5 +1,4 @@
 #include "sensor_dfr0300.h"
-#include "MovingAverageFilter.h"
 
 //-----------------------------------------------PUBLIC----------------------------------------------//
 MovingAverageFilter ec_filter(10);

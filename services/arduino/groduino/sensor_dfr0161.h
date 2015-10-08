@@ -7,6 +7,8 @@
  #include "WProgram.h"
 #endif
 
+#include "support_moving_average.h"
+
 class SensorDfr0161 {
   public:
     // Public Functions

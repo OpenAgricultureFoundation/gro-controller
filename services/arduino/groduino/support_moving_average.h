@@ -1,8 +1,8 @@
 /*
 https://github.com/sebnil/Moving-Avarage-Filter--Arduino-Library-
 */
-#ifndef MovingAverageFilter_h
-#define MovingAverageFilter_h
+#ifndef SUPPORT_MOVING_AVERAGE_H
+#define SUPPORT_MOVING_AVERAGE_H
 
 #define MAX_DATA_POINTS 20
 
@@ -20,5 +20,5 @@ private:
   float out;
   int i; // just a loop counter
 };
-#endif
+#endif // SUPPORT_MOVING_AVERAGE_H_
 

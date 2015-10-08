@@ -10,6 +10,7 @@
 #endif
 
 #include "support_one_wire.h"
+#include "support_moving_average.h"
 
 class SensorDfr0300 {
   public:

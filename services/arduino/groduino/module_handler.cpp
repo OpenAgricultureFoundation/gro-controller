@@ -1,6 +1,5 @@
 #include "module_handler.h"
 
-
 // Declare Communication Object
 Communication communication(0); // 1 to listen
 
@@ -61,7 +60,6 @@ Instruction parseIncomingMessage(String message) {
 #include "sensor_dfr0300.h"
 #include "sensor_contact_switch.h"
 #include "rgb_lcd.h"
-#include "MovingAverageFilter.h"
 
 // Electronics Panel Iteration2
 SensorTsl2561 sensor_tsl2561_light_intensity_default("SLIN", 1, "SLPA", 1);

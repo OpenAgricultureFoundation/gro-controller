@@ -1,5 +1,4 @@
 #include "sensor_dfr0161.h"
-#include "MovingAverageFilter.h"
 
 MovingAverageFilter ph_filter(10);
 
