@@ -1,0 +1,435 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_sensor_dfr0300" kind="class" language="C++" prot="public">
+    <compoundname>SensorDfr0300</compoundname>
+    <includes refid="sensor__dfr0300_8h" local="no">sensor_dfr0300.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_sensor_dfr0300_1acc4191cfd71800c3aa571bcb1820b385" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float SensorDfr0300::temperature</definition>
+        <argsstring></argsstring>
+        <name>temperature</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" line="24" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sensor_dfr0300_1abe5609d68642bb1f9e898820dd742671" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float SensorDfr0300::ec</definition>
+        <argsstring></argsstring>
+        <name>ec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" line="25" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sensor_dfr0300_1a110d741893fd0fca0145325b3ffa8300" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float SensorDfr0300::ec_avg</definition>
+        <argsstring></argsstring>
+        <name>ec_avg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" line="26" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_sensor_dfr0300_1a8e11903aed977ce737c463f4e22760c0" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int SensorDfr0300::temperature_pin_</definition>
+        <argsstring></argsstring>
+        <name>temperature_pin_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" line="37" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sensor_dfr0300_1ac743ed5f89e0062e1d925efd88fd4778" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int SensorDfr0300::ec_pin_</definition>
+        <argsstring></argsstring>
+        <name>ec_pin_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" line="38" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sensor_dfr0300_1a260d19f080a9583acb56c6f931fccd9d" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int SensorDfr0300::ec_enable_pin_</definition>
+        <argsstring></argsstring>
+        <name>ec_enable_pin_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" line="39" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sensor_dfr0300_1a3a2c1136ca47999bd8e9f7f73ab7e78e" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String SensorDfr0300::temperature_instruction_code_</definition>
+        <argsstring></argsstring>
+        <name>temperature_instruction_code_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" line="40" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sensor_dfr0300_1a087e9041b40acf36e722e181c9d2b4e6" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int SensorDfr0300::temperature_id_</definition>
+        <argsstring></argsstring>
+        <name>temperature_id_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" line="41" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sensor_dfr0300_1aa163dfc258401b359bdf3e818b59c6ae" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String SensorDfr0300::ec_instruction_code_</definition>
+        <argsstring></argsstring>
+        <name>ec_instruction_code_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" line="42" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sensor_dfr0300_1a6851cd2431a29323d798c4d5b951014f" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int SensorDfr0300::ec_id_</definition>
+        <argsstring></argsstring>
+        <name>ec_id_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" line="43" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sensor_dfr0300_1a240e5ad981d1c6d4d12aea8eee1257b3" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float SensorDfr0300::ec_coefficient_</definition>
+        <argsstring></argsstring>
+        <name>ec_coefficient_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" line="44" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sensor_dfr0300_1a28b194e1cb7008e4dba49042eb139eb3" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float SensorDfr0300::ec_offset_</definition>
+        <argsstring></argsstring>
+        <name>ec_offset_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" line="45" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sensor_dfr0300_1a0cd2b3c054d7795f8bedfe465085b521" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float SensorDfr0300::offset_</definition>
+        <argsstring></argsstring>
+        <name>offset_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" line="46" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sensor_dfr0300_1aefd6862b1478c19d0ed0f93b530e8bae" prot="private" static="no" mutable="no">
+        <type>byte</type>
+        <definition>byte SensorDfr0300::data_[12]</definition>
+        <argsstring>[12]</argsstring>
+        <name>data_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" line="48" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sensor_dfr0300_1a3707ddadcdc221c3ea62406e350862ba" prot="private" static="no" mutable="no">
+        <type>byte</type>
+        <definition>byte SensorDfr0300::addr_[8]</definition>
+        <argsstring>[8]</argsstring>
+        <name>addr_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" line="49" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sensor_dfr0300_1a89189bb311f2db19e6a43ba0513303cb" prot="private" static="no" mutable="no">
+        <type><ref refid="class_one_wire" kindref="compound">OneWire</ref> *</type>
+        <definition>OneWire* SensorDfr0300::ds_</definition>
+        <argsstring></argsstring>
+        <name>ds_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" line="51" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_sensor_dfr0300_1a8a318afa69fd7aeb2c5d331bf3cc196a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SensorDfr0300::SensorDfr0300</definition>
+        <argsstring>(int temperature_pin, int ec_pin, int ec_enable_pin, String temperature_instruction_code, int temperature_id, String ec_instruction_code, int ec_id)</argsstring>
+        <name>SensorDfr0300</name>
+        <param>
+          <type>int</type>
+          <declname>temperature_pin</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ec_pin</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ec_enable_pin</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>temperature_instruction_code</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>temperature_id</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>ec_instruction_code</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ec_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" line="18" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.cpp" bodystart="6" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_sensor_dfr0300_1a310bf946e482b58ab079d43f3bb3093b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SensorDfr0300::begin</definition>
+        <argsstring>(void)</argsstring>
+        <name>begin</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" line="19" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.cpp" bodystart="16" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_sensor_dfr0300_1a16b2e1ab7ed6bd191ea3a4d588d28861" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>String</type>
+        <definition>String SensorDfr0300::get</definition>
+        <argsstring>(void)</argsstring>
+        <name>get</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" line="20" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.cpp" bodystart="23" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="class_sensor_dfr0300_1a538a5bd7f86693ce975d4b4b7f48bee0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>String</type>
+        <definition>String SensorDfr0300::set</definition>
+        <argsstring>(String instruction_code, int instruction_id, String instruction_parameter)</argsstring>
+        <name>set</name>
+        <param>
+          <type>String</type>
+          <declname>instruction_code</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>instruction_id</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>instruction_parameter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" line="21" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.cpp" bodystart="53" bodyend="55"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_sensor_dfr0300_1aa42f4a6a5d829fe0b53979a19ab928f3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SensorDfr0300::getSensorData</definition>
+        <argsstring>(void)</argsstring>
+        <name>getSensorData</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" line="30" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.cpp" bodystart="58" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="class_sensor_dfr0300_1ad4490aa3ac5d16b48a678e583feaeb11" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float SensorDfr0300::getTemperature</definition>
+        <argsstring>(void)</argsstring>
+        <name>getTemperature</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" line="31" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.cpp" bodystart="102" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="class_sensor_dfr0300_1ad67e9aa351c262e5ae9c8fa505efac6f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SensorDfr0300::startTempertureConversion</definition>
+        <argsstring>(void)</argsstring>
+        <name>startTempertureConversion</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" line="32" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.cpp" bodystart="123" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="class_sensor_dfr0300_1a33777bfb45197a63182aa640a08a4f49" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float SensorDfr0300::getEc</definition>
+        <argsstring>(float temperature)</argsstring>
+        <name>getEc</name>
+        <param>
+          <type>float</type>
+          <declname>temperature</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" line="33" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.cpp" bodystart="67" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="class_sensor_dfr0300_1a249349ee7e10afdeafe62f800adf73ae" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float SensorDfr0300::TempProcess</definition>
+        <argsstring>(bool ch)</argsstring>
+        <name>TempProcess</name>
+        <param>
+          <type>bool</type>
+          <declname>ch</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" line="34" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" line="15" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_dfr0300.h" bodystart="15" bodyend="52"/>
+    <listofallmembers>
+      <member refid="class_sensor_dfr0300_1a3707ddadcdc221c3ea62406e350862ba" prot="private" virt="non-virtual"><scope>SensorDfr0300</scope><name>addr_</name></member>
+      <member refid="class_sensor_dfr0300_1a310bf946e482b58ab079d43f3bb3093b" prot="public" virt="non-virtual"><scope>SensorDfr0300</scope><name>begin</name></member>
+      <member refid="class_sensor_dfr0300_1aefd6862b1478c19d0ed0f93b530e8bae" prot="private" virt="non-virtual"><scope>SensorDfr0300</scope><name>data_</name></member>
+      <member refid="class_sensor_dfr0300_1a89189bb311f2db19e6a43ba0513303cb" prot="private" virt="non-virtual"><scope>SensorDfr0300</scope><name>ds_</name></member>
+      <member refid="class_sensor_dfr0300_1abe5609d68642bb1f9e898820dd742671" prot="public" virt="non-virtual"><scope>SensorDfr0300</scope><name>ec</name></member>
+      <member refid="class_sensor_dfr0300_1a110d741893fd0fca0145325b3ffa8300" prot="public" virt="non-virtual"><scope>SensorDfr0300</scope><name>ec_avg</name></member>
+      <member refid="class_sensor_dfr0300_1a240e5ad981d1c6d4d12aea8eee1257b3" prot="private" virt="non-virtual"><scope>SensorDfr0300</scope><name>ec_coefficient_</name></member>
+      <member refid="class_sensor_dfr0300_1a260d19f080a9583acb56c6f931fccd9d" prot="private" virt="non-virtual"><scope>SensorDfr0300</scope><name>ec_enable_pin_</name></member>
+      <member refid="class_sensor_dfr0300_1a6851cd2431a29323d798c4d5b951014f" prot="private" virt="non-virtual"><scope>SensorDfr0300</scope><name>ec_id_</name></member>
+      <member refid="class_sensor_dfr0300_1aa163dfc258401b359bdf3e818b59c6ae" prot="private" virt="non-virtual"><scope>SensorDfr0300</scope><name>ec_instruction_code_</name></member>
+      <member refid="class_sensor_dfr0300_1a28b194e1cb7008e4dba49042eb139eb3" prot="private" virt="non-virtual"><scope>SensorDfr0300</scope><name>ec_offset_</name></member>
+      <member refid="class_sensor_dfr0300_1ac743ed5f89e0062e1d925efd88fd4778" prot="private" virt="non-virtual"><scope>SensorDfr0300</scope><name>ec_pin_</name></member>
+      <member refid="class_sensor_dfr0300_1a16b2e1ab7ed6bd191ea3a4d588d28861" prot="public" virt="non-virtual"><scope>SensorDfr0300</scope><name>get</name></member>
+      <member refid="class_sensor_dfr0300_1a33777bfb45197a63182aa640a08a4f49" prot="private" virt="non-virtual"><scope>SensorDfr0300</scope><name>getEc</name></member>
+      <member refid="class_sensor_dfr0300_1aa42f4a6a5d829fe0b53979a19ab928f3" prot="private" virt="non-virtual"><scope>SensorDfr0300</scope><name>getSensorData</name></member>
+      <member refid="class_sensor_dfr0300_1ad4490aa3ac5d16b48a678e583feaeb11" prot="private" virt="non-virtual"><scope>SensorDfr0300</scope><name>getTemperature</name></member>
+      <member refid="class_sensor_dfr0300_1a0cd2b3c054d7795f8bedfe465085b521" prot="private" virt="non-virtual"><scope>SensorDfr0300</scope><name>offset_</name></member>
+      <member refid="class_sensor_dfr0300_1a8a318afa69fd7aeb2c5d331bf3cc196a" prot="public" virt="non-virtual"><scope>SensorDfr0300</scope><name>SensorDfr0300</name></member>
+      <member refid="class_sensor_dfr0300_1a538a5bd7f86693ce975d4b4b7f48bee0" prot="public" virt="non-virtual"><scope>SensorDfr0300</scope><name>set</name></member>
+      <member refid="class_sensor_dfr0300_1ad67e9aa351c262e5ae9c8fa505efac6f" prot="private" virt="non-virtual"><scope>SensorDfr0300</scope><name>startTempertureConversion</name></member>
+      <member refid="class_sensor_dfr0300_1acc4191cfd71800c3aa571bcb1820b385" prot="public" virt="non-virtual"><scope>SensorDfr0300</scope><name>temperature</name></member>
+      <member refid="class_sensor_dfr0300_1a087e9041b40acf36e722e181c9d2b4e6" prot="private" virt="non-virtual"><scope>SensorDfr0300</scope><name>temperature_id_</name></member>
+      <member refid="class_sensor_dfr0300_1a3a2c1136ca47999bd8e9f7f73ab7e78e" prot="private" virt="non-virtual"><scope>SensorDfr0300</scope><name>temperature_instruction_code_</name></member>
+      <member refid="class_sensor_dfr0300_1a8e11903aed977ce737c463f4e22760c0" prot="private" virt="non-virtual"><scope>SensorDfr0300</scope><name>temperature_pin_</name></member>
+      <member refid="class_sensor_dfr0300_1a249349ee7e10afdeafe62f800adf73ae" prot="private" virt="non-virtual"><scope>SensorDfr0300</scope><name>TempProcess</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

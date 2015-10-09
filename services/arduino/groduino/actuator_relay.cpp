@@ -24,8 +24,7 @@ String ActuatorRelay::get(void) {
   message += "\":";
   message += value_;
   message += ",";
-
-  // return "";
+  
   return message;
 }
 

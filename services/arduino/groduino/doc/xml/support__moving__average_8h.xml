@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="support__moving__average_8h" kind="file" language="C++">
+    <compoundname>support_moving_average.h</compoundname>
+    <includedby refid="sensor__dfr0161_8h" local="yes">sensor_dfr0161.h</includedby>
+    <includedby refid="sensor__dfr0300_8h" local="yes">sensor_dfr0300.h</includedby>
+    <includedby refid="support__moving__average_8cpp" local="yes">support_moving_average.cpp</includedby>
+    <invincdepgraph>
+      <node id="141">
+        <label>module_handler.cpp</label>
+        <link refid="module__handler_8cpp"/>
+      </node>
+      <node id="142">
+        <label>sensor_dfr0161.cpp</label>
+        <link refid="sensor__dfr0161_8cpp"/>
+      </node>
+      <node id="140">
+        <label>sensor_dfr0161.h</label>
+        <link refid="sensor__dfr0161_8h"/>
+        <childnode refid="141" relation="include">
+        </childnode>
+        <childnode refid="142" relation="include">
+        </childnode>
+      </node>
+      <node id="139">
+        <label>support_moving_average.h</label>
+        <link refid="support_moving_average.h"/>
+        <childnode refid="140" relation="include">
+        </childnode>
+        <childnode refid="143" relation="include">
+        </childnode>
+        <childnode refid="145" relation="include">
+        </childnode>
+      </node>
+      <node id="144">
+        <label>sensor_dfr0300.cpp</label>
+        <link refid="sensor__dfr0300_8cpp"/>
+      </node>
+      <node id="143">
+        <label>sensor_dfr0300.h</label>
+        <link refid="sensor__dfr0300_8h"/>
+        <childnode refid="141" relation="include">
+        </childnode>
+        <childnode refid="144" relation="include">
+        </childnode>
+      </node>
+      <node id="145">
+        <label>support_moving_average.cpp</label>
+        <link refid="support__moving__average_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_moving_average_filter" prot="public">MovingAverageFilter</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="support__moving__average_8h_1a1c0a61ecb2e23d904616be132b1f4467" prot="public" static="no">
+        <name>MAX_DATA_POINTS</name>
+        <initializer>20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/support_moving_average.h" line="7" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/support_moving_average.h" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">https://github.com/sebnil/Moving-Avarage-Filter--Arduino-Library-</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SUPPORT_MOVING_AVERAGE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SUPPORT_MOVING_AVERAGE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="support__moving__average_8h_1a1c0a61ecb2e23d904616be132b1f4467" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX_DATA_POINTS<sp/>20</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="class_moving_average_filter" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_moving_average_filter" kindref="compound">MovingAverageFilter</ref><sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//construct<sp/>without<sp/>coefs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><ref refid="class_moving_average_filter_1a2845e489c746ffaeb9113e3f87bad8e1" kindref="member">MovingAverageFilter</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>newDataPointsCount);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="class_moving_average_filter_1af050822d0acb5a8d32559beb1af0519d" kindref="member">process</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>in);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>values[<ref refid="support__moving__average_8h_1a1c0a61ecb2e23d904616be132b1f4467" kindref="member">MAX_DATA_POINTS</ref>];</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k;<sp/></highlight><highlight class="comment">//<sp/>k<sp/>stores<sp/>the<sp/>index<sp/>of<sp/>the<sp/>current<sp/>array<sp/>read<sp/>to<sp/>create<sp/>a<sp/>circular<sp/>memory<sp/>through<sp/>the<sp/>array</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>dataPointsCount;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>out;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;<sp/></highlight><highlight class="comment">//<sp/>just<sp/>a<sp/>loop<sp/>counter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>SUPPORT_MOVING_AVERAGE_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/support_moving_average.h"/>
+  </compounddef>
+</doxygen>

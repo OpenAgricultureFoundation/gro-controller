@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_sensor_contact_switch" kind="class" language="C++" prot="public">
+    <compoundname>SensorContactSwitch</compoundname>
+    <includes refid="sensor__contact__switch_8h" local="no">sensor_contact_switch.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_sensor_contact_switch_1a38d5bad22015b2013e776dec61bc8622" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SensorContactSwitch::is_connected_</definition>
+        <argsstring></argsstring>
+        <name>is_connected_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_contact_switch.h" line="19" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_contact_switch.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_sensor_contact_switch_1a4153cff505b95ff654be49791eb33668" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int SensorContactSwitch::pin_</definition>
+        <argsstring></argsstring>
+        <name>pin_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_contact_switch.h" line="26" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_contact_switch.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sensor_contact_switch_1a28a98a4d653b6f14eeadc65cb9297b6b" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int SensorContactSwitch::instruction_id_</definition>
+        <argsstring></argsstring>
+        <name>instruction_id_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_contact_switch.h" line="27" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_contact_switch.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_sensor_contact_switch_1ab37134d83a9ba8b177d70d1bb0d2ab82" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String SensorContactSwitch::instruction_code_</definition>
+        <argsstring></argsstring>
+        <name>instruction_code_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_contact_switch.h" line="28" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_contact_switch.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_sensor_contact_switch_1a821878d797ea7b94dd2870f98df8fdf5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SensorContactSwitch::SensorContactSwitch</definition>
+        <argsstring>(int pin, String instruction_code, int instruction_id)</argsstring>
+        <name>SensorContactSwitch</name>
+        <param>
+          <type>int</type>
+          <declname>pin</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>instruction_code</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>instruction_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_contact_switch.h" line="13" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_contact_switch.cpp" bodystart="4" bodyend="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_sensor_contact_switch_1a037d866b1e40776cc6fa00a46169b150" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SensorContactSwitch::begin</definition>
+        <argsstring>(void)</argsstring>
+        <name>begin</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_contact_switch.h" line="14" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_contact_switch.cpp" bodystart="10" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="class_sensor_contact_switch_1a99a5906b45ed441eea56fb2960d35191" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>String</type>
+        <definition>String SensorContactSwitch::get</definition>
+        <argsstring>(void)</argsstring>
+        <name>get</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_contact_switch.h" line="15" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_contact_switch.cpp" bodystart="14" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="class_sensor_contact_switch_1ab49acd5d6132eed50d7342717649abc2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>String</type>
+        <definition>String SensorContactSwitch::set</definition>
+        <argsstring>(String instruction_code, int instruction_id, String instruction_parameter)</argsstring>
+        <name>set</name>
+        <param>
+          <type>String</type>
+          <declname>instruction_code</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>instruction_id</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>instruction_parameter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_contact_switch.h" line="16" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_contact_switch.cpp" bodystart="34" bodyend="36"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_sensor_contact_switch_1adb4c23504b9a2751f42082cd651f3138" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SensorContactSwitch::getData</definition>
+        <argsstring>(void)</argsstring>
+        <name>getData</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_contact_switch.h" line="23" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_contact_switch.cpp" bodystart="39" bodyend="41"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_contact_switch.h" line="10" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/sensor_contact_switch.h" bodystart="10" bodyend="29"/>
+    <listofallmembers>
+      <member refid="class_sensor_contact_switch_1a037d866b1e40776cc6fa00a46169b150" prot="public" virt="non-virtual"><scope>SensorContactSwitch</scope><name>begin</name></member>
+      <member refid="class_sensor_contact_switch_1a99a5906b45ed441eea56fb2960d35191" prot="public" virt="non-virtual"><scope>SensorContactSwitch</scope><name>get</name></member>
+      <member refid="class_sensor_contact_switch_1adb4c23504b9a2751f42082cd651f3138" prot="private" virt="non-virtual"><scope>SensorContactSwitch</scope><name>getData</name></member>
+      <member refid="class_sensor_contact_switch_1ab37134d83a9ba8b177d70d1bb0d2ab82" prot="private" virt="non-virtual"><scope>SensorContactSwitch</scope><name>instruction_code_</name></member>
+      <member refid="class_sensor_contact_switch_1a28a98a4d653b6f14eeadc65cb9297b6b" prot="private" virt="non-virtual"><scope>SensorContactSwitch</scope><name>instruction_id_</name></member>
+      <member refid="class_sensor_contact_switch_1a38d5bad22015b2013e776dec61bc8622" prot="public" virt="non-virtual"><scope>SensorContactSwitch</scope><name>is_connected_</name></member>
+      <member refid="class_sensor_contact_switch_1a4153cff505b95ff654be49791eb33668" prot="private" virt="non-virtual"><scope>SensorContactSwitch</scope><name>pin_</name></member>
+      <member refid="class_sensor_contact_switch_1a821878d797ea7b94dd2870f98df8fdf5" prot="public" virt="non-virtual"><scope>SensorContactSwitch</scope><name>SensorContactSwitch</name></member>
+      <member refid="class_sensor_contact_switch_1ab49acd5d6132eed50d7342717649abc2" prot="public" virt="non-virtual"><scope>SensorContactSwitch</scope><name>set</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

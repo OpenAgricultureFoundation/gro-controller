@@ -1,0 +1,629 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="rgb__lcd_8h" kind="file" language="C++">
+    <compoundname>rgb_lcd.h</compoundname>
+    <includes local="no">inttypes.h</includes>
+    <includes local="yes">Print.h</includes>
+    <includedby refid="rgb__lcd_8cpp" local="yes">rgb_lcd.cpp</includedby>
+    <incdepgraph>
+      <node id="56">
+        <label>Print.h</label>
+      </node>
+      <node id="54">
+        <label>rgb_lcd.h</label>
+        <link refid="rgb_lcd.h"/>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>inttypes.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="58">
+        <label>rgb_lcd.cpp</label>
+        <link refid="rgb__lcd_8cpp"/>
+      </node>
+      <node id="57">
+        <label>rgb_lcd.h</label>
+        <link refid="rgb_lcd.h"/>
+        <childnode refid="58" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classrgb__lcd" prot="public">rgb_lcd</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="rgb__lcd_8h_1aab25150c611eb3bcd9efa6945d1ef7f7" prot="public" static="no">
+        <name>LCD_ADDRESS</name>
+        <initializer>(0x7c&gt;&gt;1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="33" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1a2e3762a739bed0a17cfdc7e314fbd9aa" prot="public" static="no">
+        <name>RGB_ADDRESS</name>
+        <initializer>(0xc4&gt;&gt;1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="34" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1a87b537f5fa5c109d3c05c13d6b18f382" prot="public" static="no">
+        <name>WHITE</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="38" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1a8d23feea868a983c8c2b661e1e16972f" prot="public" static="no">
+        <name>RED</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="39" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1acfbc006ea433ad708fdee3e82996e721" prot="public" static="no">
+        <name>GREEN</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="40" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1a79d10e672abb49ad63eeaa8aaef57c38" prot="public" static="no">
+        <name>BLUE</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="41" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1a536cb6b9337bdc28365d65467b85323c" prot="public" static="no">
+        <name>REG_RED</name>
+        <initializer>0x04</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="43" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1ac96ed11272aaf7cec530691ba0edd614" prot="public" static="no">
+        <name>REG_GREEN</name>
+        <initializer>0x03</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="44" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1aecc673a9e070db8d16ae3d25f99efc8c" prot="public" static="no">
+        <name>REG_BLUE</name>
+        <initializer>0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="45" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1a01082c2505bcd579197cb2f1163c352c" prot="public" static="no">
+        <name>REG_MODE1</name>
+        <initializer>0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="47" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1a80d98ba6dfe312e7cdf817a10a9bfda3" prot="public" static="no">
+        <name>REG_MODE2</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="48" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1a2cb2bb355c8ce0c0fa50b7bc60db2ffa" prot="public" static="no">
+        <name>REG_OUTPUT</name>
+        <initializer>0x08</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="49" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1acc3509bc0442b41e2b816555de473ed2" prot="public" static="no">
+        <name>LCD_CLEARDISPLAY</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="52" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1a154c86a887633d0f6d9988e4dbb1f419" prot="public" static="no">
+        <name>LCD_RETURNHOME</name>
+        <initializer>0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="53" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1a5597e1d5819ea2f0734ad4313abf6703" prot="public" static="no">
+        <name>LCD_ENTRYMODESET</name>
+        <initializer>0x04</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="54" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1adfb8b2b8b8a08d7313504d7a4f89d99f" prot="public" static="no">
+        <name>LCD_DISPLAYCONTROL</name>
+        <initializer>0x08</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="55" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1a61f16a2b7550e4700f7898a7587c5594" prot="public" static="no">
+        <name>LCD_CURSORSHIFT</name>
+        <initializer>0x10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="56" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1aaef882ae70d1f485cd132815d9716111" prot="public" static="no">
+        <name>LCD_FUNCTIONSET</name>
+        <initializer>0x20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="57" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1aae6ea856879c11dee58493184582a52f" prot="public" static="no">
+        <name>LCD_SETCGRAMADDR</name>
+        <initializer>0x40</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="58" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1a15008b832807a208d9d88c74e6751ebf" prot="public" static="no">
+        <name>LCD_SETDDRAMADDR</name>
+        <initializer>0x80</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="59" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1a43c26ba2e66880fac95ef640b56873ad" prot="public" static="no">
+        <name>LCD_ENTRYRIGHT</name>
+        <initializer>0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="62" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1ae7c6309fce6200bd7526d090a4a84dd0" prot="public" static="no">
+        <name>LCD_ENTRYLEFT</name>
+        <initializer>0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="63" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1aa2cf1d0f4a319e53c009cffe1184466c" prot="public" static="no">
+        <name>LCD_ENTRYSHIFTINCREMENT</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="64" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1a049ee97e98d04788c1da9a55590fbe42" prot="public" static="no">
+        <name>LCD_ENTRYSHIFTDECREMENT</name>
+        <initializer>0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="65" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1a76236ae8317b34bbc98ea56bc0a2639c" prot="public" static="no">
+        <name>LCD_DISPLAYON</name>
+        <initializer>0x04</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="68" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1a257ebe775cac7140cf82aa40d8ce545a" prot="public" static="no">
+        <name>LCD_DISPLAYOFF</name>
+        <initializer>0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="69" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1ab67f0adccde68de88eee0513fdfc4574" prot="public" static="no">
+        <name>LCD_CURSORON</name>
+        <initializer>0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="70" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1a32b194a3adaa0a0bb69acee2e6a754fa" prot="public" static="no">
+        <name>LCD_CURSOROFF</name>
+        <initializer>0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="71" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1ac3b19d4e6553b9bbf18a23387e439206" prot="public" static="no">
+        <name>LCD_BLINKON</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="72" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1a4b28243034cec656b0ed490ba6979752" prot="public" static="no">
+        <name>LCD_BLINKOFF</name>
+        <initializer>0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="73" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1ab2f7b67abfac33f610acfd5d7a971f40" prot="public" static="no">
+        <name>LCD_DISPLAYMOVE</name>
+        <initializer>0x08</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="76" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1ac21f0302ac4136775877d5f4759e4f74" prot="public" static="no">
+        <name>LCD_CURSORMOVE</name>
+        <initializer>0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="77" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1acf5999180233790bb2c9902efde58f7f" prot="public" static="no">
+        <name>LCD_MOVERIGHT</name>
+        <initializer>0x04</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="78" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1aafb86adb0dfca1e65d65b2cd1946a009" prot="public" static="no">
+        <name>LCD_MOVELEFT</name>
+        <initializer>0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="79" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1a59a57ca857dae5d89eb5f2a38c4ac6f0" prot="public" static="no">
+        <name>LCD_8BITMODE</name>
+        <initializer>0x10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="82" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1ab8c35d355d2372090c7a347e961c9224" prot="public" static="no">
+        <name>LCD_4BITMODE</name>
+        <initializer>0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="83" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1a7987e93538df2819583ba43b81ddbb25" prot="public" static="no">
+        <name>LCD_2LINE</name>
+        <initializer>0x08</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="84" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1a8c85cf88d8af66a47c42249d81c94641" prot="public" static="no">
+        <name>LCD_1LINE</name>
+        <initializer>0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="85" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1abb3210156d88d3fe18c9352eb161fe42" prot="public" static="no">
+        <name>LCD_5x10DOTS</name>
+        <initializer>0x04</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="86" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="rgb__lcd_8h_1a9ef57e724c1b846dae0f531aff6fb464" prot="public" static="no">
+        <name>LCD_5x8DOTS</name>
+        <initializer>0x00</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="87" column="9" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/>rgb_lcd.h</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/>2013<sp/>Copyright<sp/>(c)<sp/>Seeed<sp/>Technology<sp/>Inc.<sp/><sp/>All<sp/>right<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/>Author:Loovee</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/>2013-9-18</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"></highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/>add<sp/>rgb<sp/>backlight<sp/>fucnction<sp/>@<sp/>2013-10-15</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/><sp/></highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/>This<sp/>library<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/>modify<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/><sp/>License<sp/>as<sp/>published<sp/>by<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/>version<sp/>2.1<sp/>of<sp/>the<sp/>License,<sp/>or<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"></highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/>This<sp/>library<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the<sp/>GNU</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"></highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/><sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/><sp/>License<sp/>along<sp/>with<sp/>this<sp/>library;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/><sp/>Foundation,<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>St,<sp/>Fifth<sp/>Floor,<sp/>Boston,<sp/>MA<sp/><sp/>02110-1301<sp/><sp/>USA</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__RGB_LCD_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__RGB_LCD_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;inttypes.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Print.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Device<sp/>I2C<sp/>Arress</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="rgb__lcd_8h_1aab25150c611eb3bcd9efa6945d1ef7f7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCD_ADDRESS<sp/><sp/><sp/><sp/><sp/>(0x7c&gt;&gt;1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="rgb__lcd_8h_1a2e3762a739bed0a17cfdc7e314fbd9aa" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RGB_ADDRESS<sp/><sp/><sp/><sp/><sp/>(0xc4&gt;&gt;1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">//<sp/>color<sp/>define<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="rgb__lcd_8h_1a87b537f5fa5c109d3c05c13d6b18f382" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>WHITE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="rgb__lcd_8h_1a8d23feea868a983c8c2b661e1e16972f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>RED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="rgb__lcd_8h_1acfbc006ea433ad708fdee3e82996e721" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GREEN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="rgb__lcd_8h_1a79d10e672abb49ad63eeaa8aaef57c38" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BLUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="rgb__lcd_8h_1a536cb6b9337bdc28365d65467b85323c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>REG_RED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x04<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>pwm2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="rgb__lcd_8h_1ac96ed11272aaf7cec530691ba0edd614" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>REG_GREEN<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x03<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>pwm1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="rgb__lcd_8h_1aecc673a9e070db8d16ae3d25f99efc8c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>REG_BLUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x02<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>pwm0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="rgb__lcd_8h_1a01082c2505bcd579197cb2f1163c352c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>REG_MODE1<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="rgb__lcd_8h_1a80d98ba6dfe312e7cdf817a10a9bfda3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>REG_MODE2<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x01</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="rgb__lcd_8h_1a2cb2bb355c8ce0c0fa50b7bc60db2ffa" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>REG_OUTPUT<sp/><sp/><sp/><sp/><sp/><sp/>0x08</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment">//<sp/>commands</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="rgb__lcd_8h_1acc3509bc0442b41e2b816555de473ed2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCD_CLEARDISPLAY<sp/>0x01</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="rgb__lcd_8h_1a154c86a887633d0f6d9988e4dbb1f419" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCD_RETURNHOME<sp/>0x02</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="rgb__lcd_8h_1a5597e1d5819ea2f0734ad4313abf6703" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCD_ENTRYMODESET<sp/>0x04</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="rgb__lcd_8h_1adfb8b2b8b8a08d7313504d7a4f89d99f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCD_DISPLAYCONTROL<sp/>0x08</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="rgb__lcd_8h_1a61f16a2b7550e4700f7898a7587c5594" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCD_CURSORSHIFT<sp/>0x10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="rgb__lcd_8h_1aaef882ae70d1f485cd132815d9716111" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCD_FUNCTIONSET<sp/>0x20</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="rgb__lcd_8h_1aae6ea856879c11dee58493184582a52f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCD_SETCGRAMADDR<sp/>0x40</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="rgb__lcd_8h_1a15008b832807a208d9d88c74e6751ebf" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCD_SETDDRAMADDR<sp/>0x80</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="comment">//<sp/>flags<sp/>for<sp/>display<sp/>entry<sp/>mode</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="rgb__lcd_8h_1a43c26ba2e66880fac95ef640b56873ad" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCD_ENTRYRIGHT<sp/>0x00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="rgb__lcd_8h_1ae7c6309fce6200bd7526d090a4a84dd0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCD_ENTRYLEFT<sp/>0x02</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="rgb__lcd_8h_1aa2cf1d0f4a319e53c009cffe1184466c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCD_ENTRYSHIFTINCREMENT<sp/>0x01</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="rgb__lcd_8h_1a049ee97e98d04788c1da9a55590fbe42" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCD_ENTRYSHIFTDECREMENT<sp/>0x00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="comment">//<sp/>flags<sp/>for<sp/>display<sp/>on/off<sp/>control</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="rgb__lcd_8h_1a76236ae8317b34bbc98ea56bc0a2639c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCD_DISPLAYON<sp/>0x04</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="rgb__lcd_8h_1a257ebe775cac7140cf82aa40d8ce545a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCD_DISPLAYOFF<sp/>0x00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="rgb__lcd_8h_1ab67f0adccde68de88eee0513fdfc4574" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCD_CURSORON<sp/>0x02</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="rgb__lcd_8h_1a32b194a3adaa0a0bb69acee2e6a754fa" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCD_CURSOROFF<sp/>0x00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="rgb__lcd_8h_1ac3b19d4e6553b9bbf18a23387e439206" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCD_BLINKON<sp/>0x01</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="rgb__lcd_8h_1a4b28243034cec656b0ed490ba6979752" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCD_BLINKOFF<sp/>0x00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="comment">//<sp/>flags<sp/>for<sp/>display/cursor<sp/>shift</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="rgb__lcd_8h_1ab2f7b67abfac33f610acfd5d7a971f40" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCD_DISPLAYMOVE<sp/>0x08</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="rgb__lcd_8h_1ac21f0302ac4136775877d5f4759e4f74" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCD_CURSORMOVE<sp/>0x00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="rgb__lcd_8h_1acf5999180233790bb2c9902efde58f7f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCD_MOVERIGHT<sp/>0x04</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="rgb__lcd_8h_1aafb86adb0dfca1e65d65b2cd1946a009" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCD_MOVELEFT<sp/>0x00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="comment">//<sp/>flags<sp/>for<sp/>function<sp/>set</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="rgb__lcd_8h_1a59a57ca857dae5d89eb5f2a38c4ac6f0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCD_8BITMODE<sp/>0x10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="rgb__lcd_8h_1ab8c35d355d2372090c7a347e961c9224" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCD_4BITMODE<sp/>0x00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="rgb__lcd_8h_1a7987e93538df2819583ba43b81ddbb25" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCD_2LINE<sp/>0x08</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="rgb__lcd_8h_1a8c85cf88d8af66a47c42249d81c94641" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCD_1LINE<sp/>0x00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="rgb__lcd_8h_1abb3210156d88d3fe18c9352eb161fe42" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCD_5x10DOTS<sp/>0x04</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="rgb__lcd_8h_1a9ef57e724c1b846dae0f531aff6fb464" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LCD_5x8DOTS<sp/>0x00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="classrgb__lcd" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classrgb__lcd" kindref="compound">rgb_lcd</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>Print<sp/></highlight></codeline>
+<codeline lineno="90"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><ref refid="classrgb__lcd_1ac651f214e977bc15e4f4f4bfc921ae6a" kindref="member">rgb_lcd</ref>();</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrgb__lcd_1a828ec16645effff091b11356de90f016" kindref="member">begin</ref>(uint8_t<sp/>cols,<sp/>uint8_t<sp/>rows,<sp/>uint8_t<sp/>charsize<sp/>=<sp/><ref refid="rgb__lcd_8h_1a9ef57e724c1b846dae0f531aff6fb464" kindref="member">LCD_5x8DOTS</ref>);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrgb__lcd_1a3be1a6075d03e10beff572c7303d6205" kindref="member">clear</ref>();</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrgb__lcd_1a3cb99ab37a932a7279605033a1f3627a" kindref="member">home</ref>();</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrgb__lcd_1ae74196f203857b5a0886668263cb6b0a" kindref="member">noDisplay</ref>();</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrgb__lcd_1aaa29ca8413bdc5e558f2f24575a0884b" kindref="member">display</ref>();</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrgb__lcd_1a2da54a37f1f57cec4f41a6f9415b278b" kindref="member">noBlink</ref>();</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrgb__lcd_1a9d7a1aca56d3b677eac640909e44317c" kindref="member">blink</ref>();</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrgb__lcd_1afcfef50ded29ec34468e56c1a578ad39" kindref="member">noCursor</ref>();</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrgb__lcd_1a624fa4814b8d8e328cbaa1e030c7e5b6" kindref="member">cursor</ref>();</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrgb__lcd_1a13ec4ba249962dfa70e2296cbbbb59b7" kindref="member">scrollDisplayLeft</ref>();</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrgb__lcd_1acba95981c737747a2bbf74698145dc85" kindref="member">scrollDisplayRight</ref>();</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrgb__lcd_1aa6a10cee260f41c76fc3ec76797ae3e1" kindref="member">leftToRight</ref>();</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrgb__lcd_1ad023821ee7042a6c9602741febda6db6" kindref="member">rightToLeft</ref>();</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrgb__lcd_1a6280037a96fa1f40c3cc447e8c548076" kindref="member">autoscroll</ref>();</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrgb__lcd_1acda0feac43a242781f72e21e6f474d50" kindref="member">noAutoscroll</ref>();</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrgb__lcd_1a2904b44e55a03d5ae11d2dd1e940725e" kindref="member">createChar</ref>(uint8_t,<sp/>uint8_t[]);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrgb__lcd_1af4fb51c7b2dc73c4bad4ff3c54d808d5" kindref="member">setCursor</ref>(uint8_t,<sp/>uint8_t);<sp/></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classrgb__lcd_1afb79c9b7461d192545808de0555aa94c" kindref="member">write</ref>(uint8_t);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrgb__lcd_1a4fadb9289928d7111636d006f47912de" kindref="member">command</ref>(uint8_t);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>color<sp/>control</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrgb__lcd_1aa319b6f0ace80a28b1f3826f9fb0a1d5" kindref="member">setRGB</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>r,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>g,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>b);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>set<sp/>rgb</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="classrgb__lcd_1aca034d77eb07e553d31ccab21014b5b7" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrgb__lcd_1aca034d77eb07e553d31ccab21014b5b7" kindref="member">setPWM</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>color,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>pwm){setReg(color,<sp/>pwm);}<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>set<sp/>pwm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrgb__lcd_1a2cc888d679923f959d2a2f19d2ca8519" kindref="member">setColor</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>color);</highlight></codeline>
+<codeline lineno="124" refid="classrgb__lcd_1a9b57c5c6acf822fe86c2206bbf86d429" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrgb__lcd_1a9b57c5c6acf822fe86c2206bbf86d429" kindref="member">setColorAll</ref>(){<ref refid="classrgb__lcd_1aa319b6f0ace80a28b1f3826f9fb0a1d5" kindref="member">setRGB</ref>(0,<sp/>0,<sp/>0);}</highlight></codeline>
+<codeline lineno="125" refid="classrgb__lcd_1af90f303c88c594c27983f100b01960d3" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrgb__lcd_1af90f303c88c594c27983f100b01960d3" kindref="member">setColorWhite</ref>(){<ref refid="classrgb__lcd_1aa319b6f0ace80a28b1f3826f9fb0a1d5" kindref="member">setRGB</ref>(255,<sp/>255,<sp/>255);}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>Print::write;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>send(uint8_t,<sp/>uint8_t);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setReg(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>addr,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>dta);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/>uint8_t<sp/>_displayfunction;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/>uint8_t<sp/>_displaycontrol;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/>uint8_t<sp/>_displaymode;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/>uint8_t<sp/>_initialized;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/>uint8_t<sp/>_numlines,_currline;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h"/>
+  </compounddef>
+</doxygen>

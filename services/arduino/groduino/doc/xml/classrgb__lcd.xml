@@ -1,0 +1,581 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classrgb__lcd" kind="class" language="C++" prot="public">
+    <compoundname>rgb_lcd</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Print</basecompoundref>
+    <includes refid="rgb__lcd_8h" local="no">rgb_lcd.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classrgb__lcd_1a2602853b1decbe7857da47b56837a83c" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t rgb_lcd::_displayfunction</definition>
+        <argsstring></argsstring>
+        <name>_displayfunction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="133" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrgb__lcd_1a06de826d7f98d60b17063bfa1e4409da" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t rgb_lcd::_displaycontrol</definition>
+        <argsstring></argsstring>
+        <name>_displaycontrol</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="134" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrgb__lcd_1a172597e88aff6d07a184f18071dc8166" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t rgb_lcd::_displaymode</definition>
+        <argsstring></argsstring>
+        <name>_displaymode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="135" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrgb__lcd_1aecafa9c640e2743257e7ae1d21405e14" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t rgb_lcd::_initialized</definition>
+        <argsstring></argsstring>
+        <name>_initialized</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="137" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrgb__lcd_1ad47c21dcb96e4ae7d27a0deb5036c73f" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t rgb_lcd::_numlines</definition>
+        <argsstring></argsstring>
+        <name>_numlines</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="139" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrgb__lcd_1a880129b999da24837c46db0ed1a35a0b" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t rgb_lcd::_currline</definition>
+        <argsstring></argsstring>
+        <name>_currline</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="139" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrgb__lcd_1ac651f214e977bc15e4f4f4bfc921ae6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>rgb_lcd::rgb_lcd</definition>
+        <argsstring>()</argsstring>
+        <name>rgb_lcd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="93" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.cpp" bodystart="48" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classrgb__lcd_1a828ec16645effff091b11356de90f016" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rgb_lcd::begin</definition>
+        <argsstring>(uint8_t cols, uint8_t rows, uint8_t charsize=LCD_5x8DOTS)</argsstring>
+        <name>begin</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>cols</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>rows</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>charsize</declname>
+          <defval><ref refid="rgb__lcd_8h_1a9ef57e724c1b846dae0f531aff6fb464" kindref="member">LCD_5x8DOTS</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="95" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.cpp" bodystart="52" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="classrgb__lcd_1a3be1a6075d03e10beff572c7303d6205" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rgb_lcd::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="97" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.cpp" bodystart="115" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classrgb__lcd_1a3cb99ab37a932a7279605033a1f3627a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rgb_lcd::home</definition>
+        <argsstring>()</argsstring>
+        <name>home</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="98" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.cpp" bodystart="121" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="classrgb__lcd_1ae74196f203857b5a0886668263cb6b0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rgb_lcd::noDisplay</definition>
+        <argsstring>()</argsstring>
+        <name>noDisplay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="100" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.cpp" bodystart="138" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="classrgb__lcd_1aaa29ca8413bdc5e558f2f24575a0884b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rgb_lcd::display</definition>
+        <argsstring>()</argsstring>
+        <name>display</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="101" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.cpp" bodystart="144" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="classrgb__lcd_1a2da54a37f1f57cec4f41a6f9415b278b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rgb_lcd::noBlink</definition>
+        <argsstring>()</argsstring>
+        <name>noBlink</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="102" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.cpp" bodystart="162" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="classrgb__lcd_1a9d7a1aca56d3b677eac640909e44317c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rgb_lcd::blink</definition>
+        <argsstring>()</argsstring>
+        <name>blink</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="103" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.cpp" bodystart="167" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="classrgb__lcd_1afcfef50ded29ec34468e56c1a578ad39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rgb_lcd::noCursor</definition>
+        <argsstring>()</argsstring>
+        <name>noCursor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="104" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.cpp" bodystart="150" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="classrgb__lcd_1a624fa4814b8d8e328cbaa1e030c7e5b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rgb_lcd::cursor</definition>
+        <argsstring>()</argsstring>
+        <name>cursor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="105" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.cpp" bodystart="156" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="classrgb__lcd_1a13ec4ba249962dfa70e2296cbbbb59b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rgb_lcd::scrollDisplayLeft</definition>
+        <argsstring>()</argsstring>
+        <name>scrollDisplayLeft</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="106" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.cpp" bodystart="174" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="classrgb__lcd_1acba95981c737747a2bbf74698145dc85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rgb_lcd::scrollDisplayRight</definition>
+        <argsstring>()</argsstring>
+        <name>scrollDisplayRight</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="107" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.cpp" bodystart="178" bodyend="181"/>
+      </memberdef>
+      <memberdef kind="function" id="classrgb__lcd_1aa6a10cee260f41c76fc3ec76797ae3e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rgb_lcd::leftToRight</definition>
+        <argsstring>()</argsstring>
+        <name>leftToRight</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="108" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.cpp" bodystart="184" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="function" id="classrgb__lcd_1ad023821ee7042a6c9602741febda6db6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rgb_lcd::rightToLeft</definition>
+        <argsstring>()</argsstring>
+        <name>rightToLeft</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="109" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.cpp" bodystart="191" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="classrgb__lcd_1a6280037a96fa1f40c3cc447e8c548076" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rgb_lcd::autoscroll</definition>
+        <argsstring>()</argsstring>
+        <name>autoscroll</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="110" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.cpp" bodystart="198" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="classrgb__lcd_1acda0feac43a242781f72e21e6f474d50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rgb_lcd::noAutoscroll</definition>
+        <argsstring>()</argsstring>
+        <name>noAutoscroll</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="111" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.cpp" bodystart="205" bodyend="209"/>
+      </memberdef>
+      <memberdef kind="function" id="classrgb__lcd_1a2904b44e55a03d5ae11d2dd1e940725e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rgb_lcd::createChar</definition>
+        <argsstring>(uint8_t, uint8_t[])</argsstring>
+        <name>createChar</name>
+        <param>
+          <type>uint8_t</type>
+          <defname>location</defname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <defname>charmap</defname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="113" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.cpp" bodystart="213" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="classrgb__lcd_1af4fb51c7b2dc73c4bad4ff3c54d808d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rgb_lcd::setCursor</definition>
+        <argsstring>(uint8_t, uint8_t)</argsstring>
+        <name>setCursor</name>
+        <param>
+          <type>uint8_t</type>
+          <defname>col</defname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <defname>row</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="114" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.cpp" bodystart="127" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="classrgb__lcd_1afb79c9b7461d192545808de0555aa94c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>size_t</type>
+        <definition>size_t rgb_lcd::write</definition>
+        <argsstring>(uint8_t)</argsstring>
+        <name>write</name>
+        <param>
+          <type>uint8_t</type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="116" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.cpp" bodystart="239" bodyend="245"/>
+      </memberdef>
+      <memberdef kind="function" id="classrgb__lcd_1a4fadb9289928d7111636d006f47912de" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void rgb_lcd::command</definition>
+        <argsstring>(uint8_t)</argsstring>
+        <name>command</name>
+        <param>
+          <type>uint8_t</type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="117" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.cpp" bodystart="232" bodyend="236"/>
+      </memberdef>
+      <memberdef kind="function" id="classrgb__lcd_1aa319b6f0ace80a28b1f3826f9fb0a1d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rgb_lcd::setRGB</definition>
+        <argsstring>(unsigned char r, unsigned char g, unsigned char b)</argsstring>
+        <name>setRGB</name>
+        <param>
+          <type>unsigned char</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>unsigned char</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>unsigned char</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="120" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.cpp" bodystart="255" bodyend="260"/>
+      </memberdef>
+      <memberdef kind="function" id="classrgb__lcd_1aca034d77eb07e553d31ccab21014b5b7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void rgb_lcd::setPWM</definition>
+        <argsstring>(unsigned char color, unsigned char pwm)</argsstring>
+        <name>setPWM</name>
+        <param>
+          <type>unsigned char</type>
+          <declname>color</declname>
+        </param>
+        <param>
+          <type>unsigned char</type>
+          <declname>pwm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="121" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="121" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classrgb__lcd_1a2cc888d679923f959d2a2f19d2ca8519" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rgb_lcd::setColor</definition>
+        <argsstring>(unsigned char color)</argsstring>
+        <name>setColor</name>
+        <param>
+          <type>unsigned char</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="123" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.cpp" bodystart="270" bodyend="274"/>
+      </memberdef>
+      <memberdef kind="function" id="classrgb__lcd_1a9b57c5c6acf822fe86c2206bbf86d429" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void rgb_lcd::setColorAll</definition>
+        <argsstring>()</argsstring>
+        <name>setColorAll</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="124" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="124" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="classrgb__lcd_1af90f303c88c594c27983f100b01960d3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void rgb_lcd::setColorWhite</definition>
+        <argsstring>()</argsstring>
+        <name>setColorWhite</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="125" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="125" bodyend="125"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classrgb__lcd_1ab796db5c54ea244528d43fe3aecafd5d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rgb_lcd::send</definition>
+        <argsstring>(uint8_t, uint8_t)</argsstring>
+        <name>send</name>
+        <param>
+          <type>uint8_t</type>
+        </param>
+        <param>
+          <type>uint8_t</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="130" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classrgb__lcd_1ae9f4ea913400cecdcc4ff6c00e164980" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rgb_lcd::setReg</definition>
+        <argsstring>(unsigned char addr, unsigned char dta)</argsstring>
+        <name>setReg</name>
+        <param>
+          <type>unsigned char</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>unsigned char</type>
+          <declname>dta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="131" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.cpp" bodystart="247" bodyend="253"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="10">
+        <label>rgb_lcd</label>
+        <link refid="classrgb__lcd"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Print</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="12">
+        <label>rgb_lcd</label>
+        <link refid="classrgb__lcd"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>Print</label>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" line="90" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/rgb_lcd.h" bodystart="89" bodyend="140"/>
+    <listofallmembers>
+      <member refid="classrgb__lcd_1a880129b999da24837c46db0ed1a35a0b" prot="private" virt="non-virtual"><scope>rgb_lcd</scope><name>_currline</name></member>
+      <member refid="classrgb__lcd_1a06de826d7f98d60b17063bfa1e4409da" prot="private" virt="non-virtual"><scope>rgb_lcd</scope><name>_displaycontrol</name></member>
+      <member refid="classrgb__lcd_1a2602853b1decbe7857da47b56837a83c" prot="private" virt="non-virtual"><scope>rgb_lcd</scope><name>_displayfunction</name></member>
+      <member refid="classrgb__lcd_1a172597e88aff6d07a184f18071dc8166" prot="private" virt="non-virtual"><scope>rgb_lcd</scope><name>_displaymode</name></member>
+      <member refid="classrgb__lcd_1aecafa9c640e2743257e7ae1d21405e14" prot="private" virt="non-virtual"><scope>rgb_lcd</scope><name>_initialized</name></member>
+      <member refid="classrgb__lcd_1ad47c21dcb96e4ae7d27a0deb5036c73f" prot="private" virt="non-virtual"><scope>rgb_lcd</scope><name>_numlines</name></member>
+      <member refid="classrgb__lcd_1a6280037a96fa1f40c3cc447e8c548076" prot="public" virt="non-virtual"><scope>rgb_lcd</scope><name>autoscroll</name></member>
+      <member refid="classrgb__lcd_1a828ec16645effff091b11356de90f016" prot="public" virt="non-virtual"><scope>rgb_lcd</scope><name>begin</name></member>
+      <member refid="classrgb__lcd_1a9d7a1aca56d3b677eac640909e44317c" prot="public" virt="non-virtual"><scope>rgb_lcd</scope><name>blink</name></member>
+      <member refid="classrgb__lcd_1a3be1a6075d03e10beff572c7303d6205" prot="public" virt="non-virtual"><scope>rgb_lcd</scope><name>clear</name></member>
+      <member refid="classrgb__lcd_1a4fadb9289928d7111636d006f47912de" prot="public" virt="non-virtual"><scope>rgb_lcd</scope><name>command</name></member>
+      <member refid="classrgb__lcd_1a2904b44e55a03d5ae11d2dd1e940725e" prot="public" virt="non-virtual"><scope>rgb_lcd</scope><name>createChar</name></member>
+      <member refid="classrgb__lcd_1a624fa4814b8d8e328cbaa1e030c7e5b6" prot="public" virt="non-virtual"><scope>rgb_lcd</scope><name>cursor</name></member>
+      <member refid="classrgb__lcd_1aaa29ca8413bdc5e558f2f24575a0884b" prot="public" virt="non-virtual"><scope>rgb_lcd</scope><name>display</name></member>
+      <member refid="classrgb__lcd_1a3cb99ab37a932a7279605033a1f3627a" prot="public" virt="non-virtual"><scope>rgb_lcd</scope><name>home</name></member>
+      <member refid="classrgb__lcd_1aa6a10cee260f41c76fc3ec76797ae3e1" prot="public" virt="non-virtual"><scope>rgb_lcd</scope><name>leftToRight</name></member>
+      <member refid="classrgb__lcd_1acda0feac43a242781f72e21e6f474d50" prot="public" virt="non-virtual"><scope>rgb_lcd</scope><name>noAutoscroll</name></member>
+      <member refid="classrgb__lcd_1a2da54a37f1f57cec4f41a6f9415b278b" prot="public" virt="non-virtual"><scope>rgb_lcd</scope><name>noBlink</name></member>
+      <member refid="classrgb__lcd_1afcfef50ded29ec34468e56c1a578ad39" prot="public" virt="non-virtual"><scope>rgb_lcd</scope><name>noCursor</name></member>
+      <member refid="classrgb__lcd_1ae74196f203857b5a0886668263cb6b0a" prot="public" virt="non-virtual"><scope>rgb_lcd</scope><name>noDisplay</name></member>
+      <member refid="classrgb__lcd_1ac651f214e977bc15e4f4f4bfc921ae6a" prot="public" virt="non-virtual"><scope>rgb_lcd</scope><name>rgb_lcd</name></member>
+      <member refid="classrgb__lcd_1ad023821ee7042a6c9602741febda6db6" prot="public" virt="non-virtual"><scope>rgb_lcd</scope><name>rightToLeft</name></member>
+      <member refid="classrgb__lcd_1a13ec4ba249962dfa70e2296cbbbb59b7" prot="public" virt="non-virtual"><scope>rgb_lcd</scope><name>scrollDisplayLeft</name></member>
+      <member refid="classrgb__lcd_1acba95981c737747a2bbf74698145dc85" prot="public" virt="non-virtual"><scope>rgb_lcd</scope><name>scrollDisplayRight</name></member>
+      <member refid="classrgb__lcd_1ab796db5c54ea244528d43fe3aecafd5d" prot="private" virt="non-virtual"><scope>rgb_lcd</scope><name>send</name></member>
+      <member refid="classrgb__lcd_1a2cc888d679923f959d2a2f19d2ca8519" prot="public" virt="non-virtual"><scope>rgb_lcd</scope><name>setColor</name></member>
+      <member refid="classrgb__lcd_1a9b57c5c6acf822fe86c2206bbf86d429" prot="public" virt="non-virtual"><scope>rgb_lcd</scope><name>setColorAll</name></member>
+      <member refid="classrgb__lcd_1af90f303c88c594c27983f100b01960d3" prot="public" virt="non-virtual"><scope>rgb_lcd</scope><name>setColorWhite</name></member>
+      <member refid="classrgb__lcd_1af4fb51c7b2dc73c4bad4ff3c54d808d5" prot="public" virt="non-virtual"><scope>rgb_lcd</scope><name>setCursor</name></member>
+      <member refid="classrgb__lcd_1aca034d77eb07e553d31ccab21014b5b7" prot="public" virt="non-virtual"><scope>rgb_lcd</scope><name>setPWM</name></member>
+      <member refid="classrgb__lcd_1ae9f4ea913400cecdcc4ff6c00e164980" prot="private" virt="non-virtual"><scope>rgb_lcd</scope><name>setReg</name></member>
+      <member refid="classrgb__lcd_1aa319b6f0ace80a28b1f3826f9fb0a1d5" prot="public" virt="non-virtual"><scope>rgb_lcd</scope><name>setRGB</name></member>
+      <member refid="classrgb__lcd_1afb79c9b7461d192545808de0555aa94c" prot="public" virt="virtual"><scope>rgb_lcd</scope><name>write</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
