@@ -2,10 +2,8 @@ var searchData=
 [
   ['sensor_5fcontact_5fswitch_2ecpp',['sensor_contact_switch.cpp',['../sensor__contact__switch_8cpp.html',1,'']]],
   ['sensor_5fcontact_5fswitch_2eh',['sensor_contact_switch.h',['../sensor__contact__switch_8h.html',1,'']]],
-  ['sensor_5fdfr0161_2ecpp',['sensor_dfr0161.cpp',['../sensor__dfr0161_8cpp.html',1,'']]],
-  ['sensor_5fdfr0161_2eh',['sensor_dfr0161.h',['../sensor__dfr0161_8h.html',1,'']]],
-  ['sensor_5fdfr0300_2ecpp',['sensor_dfr0300.cpp',['../sensor__dfr0300_8cpp.html',1,'']]],
-  ['sensor_5fdfr0300_2eh',['sensor_dfr0300.h',['../sensor__dfr0300_8h.html',1,'']]],
+  ['sensor_5fdfr0161_5f0300_2ecpp',['sensor_dfr0161_0300.cpp',['../sensor__dfr0161__0300_8cpp.html',1,'']]],
+  ['sensor_5fdfr0161_5f0300_2eh',['sensor_dfr0161_0300.h',['../sensor__dfr0161__0300_8h.html',1,'']]],
   ['sensor_5fdht22_2ecpp',['sensor_dht22.cpp',['../sensor__dht22_8cpp.html',1,'']]],
   ['sensor_5fdht22_2eh',['sensor_dht22.h',['../sensor__dht22_8h.html',1,'']]],
   ['sensor_5fgc0011_2ecpp',['sensor_gc0011.cpp',['../sensor__gc0011_8cpp.html',1,'']]],

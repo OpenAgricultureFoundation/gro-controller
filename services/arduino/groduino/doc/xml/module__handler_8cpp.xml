@@ -4,23 +4,22 @@
     <compoundname>module_handler.cpp</compoundname>
     <includes refid="module__handler_8h" local="yes">module_handler.h</includes>
     <includes refid="communication_8h" local="yes">communication.h</includes>
+    <includes refid="sensor__dfr0161__0300_8h" local="yes">sensor_dfr0161_0300.h</includes>
     <includes refid="sensor__tsl2561_8h" local="yes">sensor_tsl2561.h</includes>
     <includes refid="sensor__dht22_8h" local="yes">sensor_dht22.h</includes>
     <includes refid="sensor__gc0011_8h" local="yes">sensor_gc0011.h</includes>
-    <includes refid="sensor__dfr0161_8h" local="yes">sensor_dfr0161.h</includes>
     <includes refid="actuator__relay_8h" local="yes">actuator_relay.h</includes>
-    <includes refid="sensor__dfr0300_8h" local="yes">sensor_dfr0300.h</includes>
     <includes refid="sensor__contact__switch_8h" local="yes">sensor_contact_switch.h</includes>
     <incdepgraph>
-      <node id="37">
+      <node id="28">
         <label>pins_arduino.h</label>
       </node>
-      <node id="26">
+      <node id="31">
         <label>support_wire.h</label>
         <link refid="support__wire_8h"/>
         <childnode refid="27" relation="include">
         </childnode>
-        <childnode refid="28" relation="include">
+        <childnode refid="32" relation="include">
         </childnode>
       </node>
       <node id="20">
@@ -34,26 +33,16 @@
         </childnode>
         <childnode refid="29" relation="include">
         </childnode>
-        <childnode refid="30" relation="include">
-        </childnode>
-        <childnode refid="32" relation="include">
+        <childnode refid="33" relation="include">
         </childnode>
         <childnode refid="34" relation="include">
         </childnode>
-        <childnode refid="35" relation="include">
+        <childnode refid="36" relation="include">
         </childnode>
-        <childnode refid="38" relation="include">
-        </childnode>
-      </node>
-      <node id="32">
-        <label>sensor_dfr0161.h</label>
-        <link refid="sensor__dfr0161_8h"/>
-        <childnode refid="22" relation="include">
-        </childnode>
-        <childnode refid="33" relation="include">
+        <childnode refid="37" relation="include">
         </childnode>
       </node>
-      <node id="38">
+      <node id="37">
         <label>sensor_contact_switch.h</label>
         <link refid="sensor__contact__switch_8h"/>
         <childnode refid="22" relation="include">
@@ -71,17 +60,17 @@
         <childnode refid="22" relation="include">
         </childnode>
       </node>
-      <node id="33">
+      <node id="25">
         <label>support_moving_average.h</label>
         <link refid="support__moving__average_8h"/>
       </node>
-      <node id="34">
+      <node id="36">
         <label>actuator_relay.h</label>
         <link refid="actuator__relay_8h"/>
         <childnode refid="22" relation="include">
         </childnode>
       </node>
-      <node id="29">
+      <node id="33">
         <label>sensor_dht22.h</label>
         <link refid="sensor__dht22_8h"/>
         <childnode refid="22" relation="include">
@@ -90,54 +79,54 @@
       <node id="22">
         <label>WProgram.h</label>
       </node>
-      <node id="36">
+      <node id="26">
         <label>support_one_wire.h</label>
         <link refid="support__one__wire_8h"/>
         <childnode refid="27" relation="include">
         </childnode>
         <childnode refid="22" relation="include">
         </childnode>
-        <childnode refid="37" relation="include">
+        <childnode refid="28" relation="include">
         </childnode>
       </node>
-      <node id="25">
+      <node id="30">
         <label>Arduino.h</label>
       </node>
-      <node id="30">
+      <node id="34">
         <label>sensor_gc0011.h</label>
         <link refid="sensor__gc0011_8h"/>
         <childnode refid="22" relation="include">
         </childnode>
-        <childnode refid="31" relation="include">
-        </childnode>
-      </node>
-      <node id="35">
-        <label>sensor_dfr0300.h</label>
-        <link refid="sensor__dfr0300_8h"/>
-        <childnode refid="22" relation="include">
-        </childnode>
-        <childnode refid="36" relation="include">
-        </childnode>
-        <childnode refid="33" relation="include">
+        <childnode refid="35" relation="include">
         </childnode>
       </node>
       <node id="24">
-        <label>sensor_tsl2561.h</label>
-        <link refid="sensor__tsl2561_8h"/>
+        <label>sensor_dfr0161_0300.h</label>
+        <link refid="sensor__dfr0161__0300_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
         <childnode refid="25" relation="include">
         </childnode>
         <childnode refid="26" relation="include">
         </childnode>
       </node>
-      <node id="31">
+      <node id="29">
+        <label>sensor_tsl2561.h</label>
+        <link refid="sensor__tsl2561_8h"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
         <label>support_software_serial.h</label>
         <link refid="support__software__serial_8h"/>
         <childnode refid="27" relation="include">
         </childnode>
-        <childnode refid="28" relation="include">
+        <childnode refid="32" relation="include">
         </childnode>
       </node>
-      <node id="28">
+      <node id="32">
         <label>Stream.h</label>
       </node>
       <node id="27">
@@ -171,6 +160,19 @@
         </inbodydescription>
         <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="22" column="1"/>
       </memberdef>
+      <memberdef kind="variable" id="module__handler_8cpp_1a5cb0d436382713f20aa8931345ae6e7b" prot="public" static="no" mutable="no">
+        <type><ref refid="class_sensor_dfr01610300" kindref="compound">SensorDfr01610300</ref></type>
+        <definition>SensorDfr01610300 sensor_dfr01610300_water_ph_temperature_ec_default(A1,&quot;SWPH&quot;, 1, 2,&quot;SWTM&quot;, 1, A2,&quot;SWEC&quot;, 1, 22)</definition>
+        <argsstring>(A1,&quot;SWPH&quot;, 1, 2,&quot;SWTM&quot;, 1, A2,&quot;SWEC&quot;, 1, 22)</argsstring>
+        <name>sensor_dfr01610300_water_ph_temperature_ec_default</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="23" column="1"/>
+      </memberdef>
       <memberdef kind="variable" id="module__handler_8cpp_1a71b8e34ff72f1d153e53311443c419e6" prot="public" static="no" mutable="no">
         <type><ref refid="class_sensor_dht22" kindref="compound">SensorDht22</ref></type>
         <definition>SensorDht22 sensor_dht22_air_temperature_humidity_default(A0,&quot;SATM&quot;, 1,&quot;SAHU&quot;, 1)</definition>
@@ -182,7 +184,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="23" column="1"/>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="24" column="1"/>
       </memberdef>
       <memberdef kind="variable" id="module__handler_8cpp_1a8875593f7e7ffa5750599fe64d0cb659" prot="public" static="no" mutable="no">
         <type><ref refid="class_sensor_gc0011" kindref="compound">SensorGc0011</ref></type>
@@ -195,33 +197,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="24" column="1"/>
-      </memberdef>
-      <memberdef kind="variable" id="module__handler_8cpp_1a1ca73f6d0c3361a7fc59d0b07ab1750d" prot="public" static="no" mutable="no">
-        <type><ref refid="class_sensor_dfr0161" kindref="compound">SensorDfr0161</ref></type>
-        <definition>SensorDfr0161 sensor_dfr0161_water_ph_default(A1,&quot;SWPH&quot;, 1)</definition>
-        <argsstring>(A1,&quot;SWPH&quot;, 1)</argsstring>
-        <name>sensor_dfr0161_water_ph_default</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
         <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="25" column="1"/>
-      </memberdef>
-      <memberdef kind="variable" id="module__handler_8cpp_1a88260dc0f33287b1462b533e4dc127b2" prot="public" static="no" mutable="no">
-        <type><ref refid="class_sensor_dfr0300" kindref="compound">SensorDfr0300</ref></type>
-        <definition>SensorDfr0300 sensor_dfr0300_water_temperature_ec_default(5, A2, 2,&quot;SWTM&quot;, 1,&quot;SWEC&quot;, 1)</definition>
-        <argsstring>(5, A2, 2,&quot;SWTM&quot;, 1,&quot;SWEC&quot;, 1)</argsstring>
-        <name>sensor_dfr0300_water_temperature_ec_default</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="26" column="1"/>
       </memberdef>
       <memberdef kind="variable" id="module__handler_8cpp_1aa9f3da0083131fdbd8cf03f27cf9d551" prot="public" static="no" mutable="no">
         <type><ref refid="class_sensor_contact_switch" kindref="compound">SensorContactSwitch</ref></type>
@@ -234,7 +210,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="27" column="1"/>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="28" column="1"/>
       </memberdef>
       <memberdef kind="variable" id="module__handler_8cpp_1ab6630028881a21e75bbe48305c5604f7" prot="public" static="no" mutable="no">
         <type><ref refid="class_sensor_contact_switch" kindref="compound">SensorContactSwitch</ref></type>
@@ -247,7 +223,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="28" column="1"/>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="29" column="1"/>
       </memberdef>
       <memberdef kind="variable" id="module__handler_8cpp_1a0a937c87b9401ed7584696b6923185f3" prot="public" static="no" mutable="no">
         <type><ref refid="class_actuator_relay" kindref="compound">ActuatorRelay</ref></type>
@@ -260,7 +236,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="29" column="1"/>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="30" column="1"/>
       </memberdef>
       <memberdef kind="variable" id="module__handler_8cpp_1a8332988d91deeba745badf4ca8ad163e" prot="public" static="no" mutable="no">
         <type><ref refid="class_actuator_relay" kindref="compound">ActuatorRelay</ref></type>
@@ -273,7 +249,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="30" column="1"/>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="31" column="1"/>
       </memberdef>
       <memberdef kind="variable" id="module__handler_8cpp_1a0e86deb38503c2cf91314642c78cdfd3" prot="public" static="no" mutable="no">
         <type><ref refid="class_actuator_relay" kindref="compound">ActuatorRelay</ref></type>
@@ -286,7 +262,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="31" column="1"/>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="32" column="1"/>
       </memberdef>
       <memberdef kind="variable" id="module__handler_8cpp_1a25c0b2af14a6fb79b2f25ec1df8c838e" prot="public" static="no" mutable="no">
         <type><ref refid="class_actuator_relay" kindref="compound">ActuatorRelay</ref></type>
@@ -299,7 +275,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="32" column="1"/>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="33" column="1"/>
       </memberdef>
       <memberdef kind="variable" id="module__handler_8cpp_1a3f0b6a49faffb54d8af560b9dc3b4cc0" prot="public" static="no" mutable="no">
         <type><ref refid="class_actuator_relay" kindref="compound">ActuatorRelay</ref></type>
@@ -312,7 +288,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="33" column="1"/>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="34" column="1"/>
       </memberdef>
       <memberdef kind="variable" id="module__handler_8cpp_1a804b6a7c6d635c11d5dd634e016e7f3b" prot="public" static="no" mutable="no">
         <type><ref refid="class_actuator_relay" kindref="compound">ActuatorRelay</ref></type>
@@ -325,7 +301,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="34" column="1"/>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="35" column="1"/>
       </memberdef>
       <memberdef kind="variable" id="module__handler_8cpp_1a10f9d41c1003f37e9036eb87416e30c2" prot="public" static="no" mutable="no">
         <type><ref refid="class_actuator_relay" kindref="compound">ActuatorRelay</ref></type>
@@ -338,7 +314,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="35" column="1"/>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="36" column="1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -356,7 +332,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="37" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" bodystart="37" bodyend="49"/>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="38" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" bodystart="38" bodyend="50"/>
       </memberdef>
       <memberdef kind="function" id="module__handler_8cpp_1afcbd04d77356acd5e3dcf91fefb8bd11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="struct_instruction" kindref="compound">Instruction</ref></type>
@@ -373,7 +349,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="52" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" bodystart="52" bodyend="73"/>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="53" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" bodystart="53" bodyend="74"/>
       </memberdef>
       <memberdef kind="function" id="module__handler_8cpp_1aea7eb84b3bdf67ce76b8b3d1a7c1b64d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -389,7 +365,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="75" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" bodystart="75" bodyend="96"/>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="76" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" bodystart="76" bodyend="98"/>
       </memberdef>
       <memberdef kind="function" id="module__handler_8cpp_1a5897de55f349106cd3e341df9bc6ddcd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -405,7 +381,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="98" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" bodystart="98" bodyend="124"/>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="100" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" bodystart="100" bodyend="127"/>
       </memberdef>
       <memberdef kind="function" id="module__handler_8cpp_1a84d5c9e2f57b3fcb377800f72edea419" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>String</type>
@@ -421,7 +397,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="126" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" bodystart="126" bodyend="150"/>
+        <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" line="129" column="1" bodyfile="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp" bodystart="129" bodyend="154"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -431,149 +407,154 @@
 </para>    </detaileddescription>
     <programlisting>
 <codeline lineno="1"></codeline>
-<codeline lineno="8"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="module__handler_8h" kindref="compound">module_handler.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Include<sp/>Module<sp/>Libraries</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="communication_8h" kindref="compound">communication.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="module__handler_8h" kindref="compound">module_handler.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Include<sp/>Module<sp/>Libraries</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="communication_8h" kindref="compound">communication.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="sensor__dfr0161__0300_8h" kindref="compound">sensor_dfr0161_0300.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="sensor__tsl2561_8h" kindref="compound">sensor_tsl2561.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="sensor__dht22_8h" kindref="compound">sensor_dht22.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="sensor__gc0011_8h" kindref="compound">sensor_gc0011.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="sensor__dfr0161_8h" kindref="compound">sensor_dfr0161.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//#include<sp/>&quot;sensor_dfr0161.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="actuator__relay_8h" kindref="compound">actuator_relay.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="sensor__dfr0300_8h" kindref="compound">sensor_dfr0300.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//#include<sp/>&quot;sensor_dfr0300.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="sensor__contact__switch_8h" kindref="compound">sensor_contact_switch.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight></codeline>
 <codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Declare<sp/>Module<sp/>Objects</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="21"><highlight class="normal"><ref refid="class_communication" kindref="compound">Communication</ref><sp/><ref refid="module__handler_8cpp_1ae162b537f743c1fa3e4b3a398324649d" kindref="member">communication</ref>(0);</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"><ref refid="class_sensor_tsl2561" kindref="compound">SensorTsl2561</ref><sp/><ref refid="module__handler_8cpp_1ac80bfd1cbb89a121918c276b790b790e" kindref="member">sensor_tsl2561_light_intensity_default</ref>(</highlight><highlight class="stringliteral">&quot;SLIN&quot;</highlight><highlight class="normal">,<sp/>1,<sp/></highlight><highlight class="stringliteral">&quot;SLPA&quot;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><ref refid="class_sensor_dht22" kindref="compound">SensorDht22</ref><sp/><ref refid="module__handler_8cpp_1a71b8e34ff72f1d153e53311443c419e6" kindref="member">sensor_dht22_air_temperature_humidity_default</ref>(A0,<sp/></highlight><highlight class="stringliteral">&quot;SATM&quot;</highlight><highlight class="normal">,<sp/>1,<sp/></highlight><highlight class="stringliteral">&quot;SAHU&quot;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><ref refid="class_sensor_gc0011" kindref="compound">SensorGc0011</ref><sp/><ref refid="module__handler_8cpp_1a8875593f7e7ffa5750599fe64d0cb659" kindref="member">sensor_gc0011_air_co2_temperature_humidity_default</ref>(12,<sp/>11,<sp/></highlight><highlight class="stringliteral">&quot;SACO&quot;</highlight><highlight class="normal">,<sp/>1,<sp/></highlight><highlight class="stringliteral">&quot;SATM&quot;</highlight><highlight class="normal">,<sp/>2,<sp/></highlight><highlight class="stringliteral">&quot;SAHU&quot;</highlight><highlight class="normal">,<sp/>2);</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><ref refid="class_sensor_dfr0161" kindref="compound">SensorDfr0161</ref><sp/><ref refid="module__handler_8cpp_1a1ca73f6d0c3361a7fc59d0b07ab1750d" kindref="member">sensor_dfr0161_water_ph_default</ref>(A1,<sp/></highlight><highlight class="stringliteral">&quot;SWPH&quot;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><ref refid="class_sensor_dfr0300" kindref="compound">SensorDfr0300</ref><sp/><ref refid="module__handler_8cpp_1a88260dc0f33287b1462b533e4dc127b2" kindref="member">sensor_dfr0300_water_temperature_ec_default</ref>(5,<sp/>A2,<sp/>2,<sp/></highlight><highlight class="stringliteral">&quot;SWTM&quot;</highlight><highlight class="normal">,<sp/>1,<sp/></highlight><highlight class="stringliteral">&quot;SWEC&quot;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><ref refid="class_sensor_contact_switch" kindref="compound">SensorContactSwitch</ref><sp/><ref refid="module__handler_8cpp_1aa9f3da0083131fdbd8cf03f27cf9d551" kindref="member">sensor_contact_switch_general_shell_open_default</ref>(4,<sp/></highlight><highlight class="stringliteral">&quot;SGSO&quot;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><ref refid="class_sensor_contact_switch" kindref="compound">SensorContactSwitch</ref><sp/><ref refid="module__handler_8cpp_1ab6630028881a21e75bbe48305c5604f7" kindref="member">sensor_contact_switch_general_window_open_default</ref>(3,<sp/></highlight><highlight class="stringliteral">&quot;SGWO&quot;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><ref refid="class_actuator_relay" kindref="compound">ActuatorRelay</ref><sp/><ref refid="module__handler_8cpp_1a0a937c87b9401ed7584696b6923185f3" kindref="member">actuator_relay_air_heater_default</ref>(6,<sp/></highlight><highlight class="stringliteral">&quot;AAHE&quot;</highlight><highlight class="normal">,<sp/>1);<sp/></highlight><highlight class="comment">//<sp/>AC<sp/>port<sp/>4</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><ref refid="class_actuator_relay" kindref="compound">ActuatorRelay</ref><sp/><ref refid="module__handler_8cpp_1a8332988d91deeba745badf4ca8ad163e" kindref="member">actuator_relay_light_panel_default</ref>(8,<sp/></highlight><highlight class="stringliteral">&quot;ALPN&quot;</highlight><highlight class="normal">,<sp/>1);<sp/></highlight><highlight class="comment">//<sp/>AC<sp/>port<sp/>2</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><ref refid="class_actuator_relay" kindref="compound">ActuatorRelay</ref><sp/><ref refid="module__handler_8cpp_1a0e86deb38503c2cf91314642c78cdfd3" kindref="member">actuator_relay_air_humidifier_default</ref>(9,<sp/></highlight><highlight class="stringliteral">&quot;AAHU&quot;</highlight><highlight class="normal">,<sp/>1);<sp/></highlight><highlight class="comment">//<sp/>AC<sp/>port<sp/>1</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><ref refid="class_actuator_relay" kindref="compound">ActuatorRelay</ref><sp/><ref refid="module__handler_8cpp_1a25c0b2af14a6fb79b2f25ec1df8c838e" kindref="member">actuator_relay_air_vent_default</ref>(14,<sp/></highlight><highlight class="stringliteral">&quot;AAVE&quot;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><ref refid="class_actuator_relay" kindref="compound">ActuatorRelay</ref><sp/><ref refid="module__handler_8cpp_1a3f0b6a49faffb54d8af560b9dc3b4cc0" kindref="member">actuator_relay_air_circulation_default</ref>(15,<sp/></highlight><highlight class="stringliteral">&quot;AACR&quot;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><ref refid="class_actuator_relay" kindref="compound">ActuatorRelay</ref><sp/><ref refid="module__handler_8cpp_1a804b6a7c6d635c11d5dd634e016e7f3b" kindref="member">actuator_relay_light_chamber_illumination_default</ref>(53,<sp/></highlight><highlight class="stringliteral">&quot;ALPN&quot;</highlight><highlight class="normal">,<sp/>2);<sp/></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><ref refid="class_actuator_relay" kindref="compound">ActuatorRelay</ref><sp/><ref refid="module__handler_8cpp_1a10f9d41c1003f37e9036eb87416e30c2" kindref="member">actuator_relay_light_motherboard_illumination_default</ref>(52,<sp/></highlight><highlight class="stringliteral">&quot;ALMI&quot;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="module__handler_8cpp_1a691a0d8c2404cb4ce0c088e9857560ee" kindref="member">updateIncomingMessage</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Check<sp/>for<sp/>Message(s)<sp/>And<sp/>Handle<sp/>If<sp/>Necessary</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/>String<sp/>response_message<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<ref refid="module__handler_8cpp_1ae162b537f743c1fa3e4b3a398324649d" kindref="member">communication</ref>.<ref refid="class_communication_1a086f2246c7e3715c8de1bc96cfbce262" kindref="member">available</ref>())<sp/>{<sp/></highlight><highlight class="comment">//<sp/>read<sp/>in<sp/>message(s)<sp/>until<sp/>nothing<sp/>in<sp/>serial<sp/>buffer</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>response_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a84d5c9e2f57b3fcb377800f72edea419" kindref="member">handleIncomingMessage</ref>();</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Append<sp/>Responses<sp/>From<sp/>Message(s)<sp/>Then<sp/>Send</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(response_message<sp/>!=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>response_message<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;\&quot;GTYP\&quot;:\&quot;Response\&quot;,&quot;</highlight><highlight class="normal"><sp/>+<sp/>response_message;</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>response_message<sp/>+=<sp/></highlight><highlight class="stringliteral">&quot;\&quot;GEND\&quot;:0&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="module__handler_8cpp_1ae162b537f743c1fa3e4b3a398324649d" kindref="member">communication</ref>.<ref refid="class_communication_1a7905fe8302c11cc1c1dc8a10bc71fdc6" kindref="member">send</ref>(response_message);</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><ref refid="class_sensor_dfr01610300" kindref="compound">SensorDfr01610300</ref><sp/><ref refid="module__handler_8cpp_1a5cb0d436382713f20aa8931345ae6e7b" kindref="member">sensor_dfr01610300_water_ph_temperature_ec_default</ref>(A1,<sp/></highlight><highlight class="stringliteral">&quot;SWPH&quot;</highlight><highlight class="normal">,<sp/>1,<sp/>2,<sp/></highlight><highlight class="stringliteral">&quot;SWTM&quot;</highlight><highlight class="normal">,<sp/>1,<sp/>A2,<sp/></highlight><highlight class="stringliteral">&quot;SWEC&quot;</highlight><highlight class="normal">,<sp/>1,<sp/>22);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><ref refid="class_sensor_dht22" kindref="compound">SensorDht22</ref><sp/><ref refid="module__handler_8cpp_1a71b8e34ff72f1d153e53311443c419e6" kindref="member">sensor_dht22_air_temperature_humidity_default</ref>(A0,<sp/></highlight><highlight class="stringliteral">&quot;SATM&quot;</highlight><highlight class="normal">,<sp/>1,<sp/></highlight><highlight class="stringliteral">&quot;SAHU&quot;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><ref refid="class_sensor_gc0011" kindref="compound">SensorGc0011</ref><sp/><ref refid="module__handler_8cpp_1a8875593f7e7ffa5750599fe64d0cb659" kindref="member">sensor_gc0011_air_co2_temperature_humidity_default</ref>(12,<sp/>11,<sp/></highlight><highlight class="stringliteral">&quot;SACO&quot;</highlight><highlight class="normal">,<sp/>1,<sp/></highlight><highlight class="stringliteral">&quot;SATM&quot;</highlight><highlight class="normal">,<sp/>2,<sp/></highlight><highlight class="stringliteral">&quot;SAHU&quot;</highlight><highlight class="normal">,<sp/>2);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">//SensorDfr0161<sp/>sensor_dfr0161_water_ph_default(A1,<sp/>&quot;SWPH&quot;,<sp/>1);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">//SensorDfr0300<sp/>sensor_dfr0300_water_temperature_ec_default(22,<sp/>A2,<sp/>2,<sp/>&quot;SWTM&quot;,<sp/>1,<sp/>&quot;SWEC&quot;,<sp/>1);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><ref refid="class_sensor_contact_switch" kindref="compound">SensorContactSwitch</ref><sp/><ref refid="module__handler_8cpp_1aa9f3da0083131fdbd8cf03f27cf9d551" kindref="member">sensor_contact_switch_general_shell_open_default</ref>(4,<sp/></highlight><highlight class="stringliteral">&quot;SGSO&quot;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><ref refid="class_sensor_contact_switch" kindref="compound">SensorContactSwitch</ref><sp/><ref refid="module__handler_8cpp_1ab6630028881a21e75bbe48305c5604f7" kindref="member">sensor_contact_switch_general_window_open_default</ref>(3,<sp/></highlight><highlight class="stringliteral">&quot;SGWO&quot;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><ref refid="class_actuator_relay" kindref="compound">ActuatorRelay</ref><sp/><ref refid="module__handler_8cpp_1a0a937c87b9401ed7584696b6923185f3" kindref="member">actuator_relay_air_heater_default</ref>(6,<sp/></highlight><highlight class="stringliteral">&quot;AAHE&quot;</highlight><highlight class="normal">,<sp/>1);<sp/></highlight><highlight class="comment">//<sp/>AC<sp/>port<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><ref refid="class_actuator_relay" kindref="compound">ActuatorRelay</ref><sp/><ref refid="module__handler_8cpp_1a8332988d91deeba745badf4ca8ad163e" kindref="member">actuator_relay_light_panel_default</ref>(8,<sp/></highlight><highlight class="stringliteral">&quot;ALPN&quot;</highlight><highlight class="normal">,<sp/>1);<sp/></highlight><highlight class="comment">//<sp/>AC<sp/>port<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><ref refid="class_actuator_relay" kindref="compound">ActuatorRelay</ref><sp/><ref refid="module__handler_8cpp_1a0e86deb38503c2cf91314642c78cdfd3" kindref="member">actuator_relay_air_humidifier_default</ref>(9,<sp/></highlight><highlight class="stringliteral">&quot;AAHU&quot;</highlight><highlight class="normal">,<sp/>1);<sp/></highlight><highlight class="comment">//<sp/>AC<sp/>port<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><ref refid="class_actuator_relay" kindref="compound">ActuatorRelay</ref><sp/><ref refid="module__handler_8cpp_1a25c0b2af14a6fb79b2f25ec1df8c838e" kindref="member">actuator_relay_air_vent_default</ref>(14,<sp/></highlight><highlight class="stringliteral">&quot;AAVE&quot;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><ref refid="class_actuator_relay" kindref="compound">ActuatorRelay</ref><sp/><ref refid="module__handler_8cpp_1a3f0b6a49faffb54d8af560b9dc3b4cc0" kindref="member">actuator_relay_air_circulation_default</ref>(15,<sp/></highlight><highlight class="stringliteral">&quot;AACR&quot;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><ref refid="class_actuator_relay" kindref="compound">ActuatorRelay</ref><sp/><ref refid="module__handler_8cpp_1a804b6a7c6d635c11d5dd634e016e7f3b" kindref="member">actuator_relay_light_chamber_illumination_default</ref>(53,<sp/></highlight><highlight class="stringliteral">&quot;ALPN&quot;</highlight><highlight class="normal">,<sp/>2);<sp/></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><ref refid="class_actuator_relay" kindref="compound">ActuatorRelay</ref><sp/><ref refid="module__handler_8cpp_1a10f9d41c1003f37e9036eb87416e30c2" kindref="member">actuator_relay_light_motherboard_illumination_default</ref>(52,<sp/></highlight><highlight class="stringliteral">&quot;ALMI&quot;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="module__handler_8cpp_1a691a0d8c2404cb4ce0c088e9857560ee" kindref="member">updateIncomingMessage</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Check<sp/>for<sp/>Message(s)<sp/>And<sp/>Handle<sp/>If<sp/>Necessary</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/>String<sp/>response_message<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<ref refid="module__handler_8cpp_1ae162b537f743c1fa3e4b3a398324649d" kindref="member">communication</ref>.<ref refid="class_communication_1a086f2246c7e3715c8de1bc96cfbce262" kindref="member">available</ref>())<sp/>{<sp/></highlight><highlight class="comment">//<sp/>read<sp/>in<sp/>message(s)<sp/>until<sp/>nothing<sp/>in<sp/>serial<sp/>buffer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>response_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a84d5c9e2f57b3fcb377800f72edea419" kindref="member">handleIncomingMessage</ref>();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Append<sp/>Responses<sp/>From<sp/>Message(s)<sp/>Then<sp/>Send</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(response_message<sp/>!=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>response_message<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;\&quot;GTYP\&quot;:\&quot;Response\&quot;,&quot;</highlight><highlight class="normal"><sp/>+<sp/>response_message;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>response_message<sp/>+=<sp/></highlight><highlight class="stringliteral">&quot;\&quot;GEND\&quot;:0&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="module__handler_8cpp_1ae162b537f743c1fa3e4b3a398324649d" kindref="member">communication</ref>.<ref refid="class_communication_1a7905fe8302c11cc1c1dc8a10bc71fdc6" kindref="member">send</ref>(response_message);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"></highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><ref refid="struct_instruction" kindref="compound">Instruction</ref><sp/><ref refid="module__handler_8cpp_1afcbd04d77356acd5e3dcf91fefb8bd11" kindref="member">parseIncomingMessage</ref>(String<sp/>message)<sp/>{</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialize<sp/>Instruction</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><ref refid="struct_instruction" kindref="compound">Instruction</ref><sp/>instruction;</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/>instruction.<ref refid="struct_instruction_1a3951b82b53920c98582baa6be7210180" kindref="member">valid</ref><sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"></highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>Instruction<sp/>Data</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len<sp/>=<sp/>message.length();</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>first_space<sp/>=<sp/>message.indexOf(</highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((first_space<sp/>&gt;<sp/>0)<sp/>&amp;&amp;<sp/>(len<sp/>&gt;<sp/>first_space))<sp/>{</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>second_space<sp/>=<sp/>message.indexOf(</highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">,<sp/>first_space<sp/>+<sp/>1);</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((second_space<sp/>&gt;<sp/>0)<sp/>&amp;&amp;<sp/>(second_space<sp/>&lt;<sp/>len<sp/>-<sp/>1))<sp/>{</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Received<sp/>good<sp/>message</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>instruction.<ref refid="struct_instruction_1ad888a5bd187437c04dca0f5574ce4ebd" kindref="member">code</ref><sp/>=<sp/>message.substring(0,<sp/>4);</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>instruction.<ref refid="struct_instruction_1aca74587d9d1a44daca3b0965af207a4c" kindref="member">id</ref><sp/>=<sp/>(message.substring(first_space,<sp/>second_space)).toInt();</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>instruction.<ref refid="struct_instruction_1a61c139a5e35c88092611020e999e220d" kindref="member">parameter</ref><sp/>=<sp/>message.substring(second_space<sp/>+<sp/>1,<sp/>len);</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>instruction.<ref refid="struct_instruction_1a3951b82b53920c98582baa6be7210180" kindref="member">valid</ref><sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"></highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>Instruction<sp/>Data</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>instruction;</highlight></codeline>
-<codeline lineno="73"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"></highlight></codeline>
-<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="module__handler_8cpp_1aea7eb84b3bdf67ce76b8b3d1a7c1b64d" kindref="member">initializeModules</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1ae162b537f743c1fa3e4b3a398324649d" kindref="member">communication</ref>.<ref refid="class_communication_1af7eea76d811d38b02fb67ec5133e6eec" kindref="member">begin</ref>();</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1ac80bfd1cbb89a121918c276b790b790e" kindref="member">sensor_tsl2561_light_intensity_default</ref>.<ref refid="class_sensor_tsl2561_1ace17c892222366185df021bda708cc10" kindref="member">begin</ref>();</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1a71b8e34ff72f1d153e53311443c419e6" kindref="member">sensor_dht22_air_temperature_humidity_default</ref>.<ref refid="class_sensor_dht22_1ae4de2976d82d060c9dc12bf84195a347" kindref="member">begin</ref>();</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1a8875593f7e7ffa5750599fe64d0cb659" kindref="member">sensor_gc0011_air_co2_temperature_humidity_default</ref>.<ref refid="class_sensor_gc0011_1a661743d47448c6b9c965fd8e1f123fbc" kindref="member">begin</ref>();</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1a1ca73f6d0c3361a7fc59d0b07ab1750d" kindref="member">sensor_dfr0161_water_ph_default</ref>.<ref refid="class_sensor_dfr0161_1aee10a8faa4f752486a3a14662ba70d2d" kindref="member">begin</ref>();</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1a88260dc0f33287b1462b533e4dc127b2" kindref="member">sensor_dfr0300_water_temperature_ec_default</ref>.<ref refid="class_sensor_dfr0300_1a310bf946e482b58ab079d43f3bb3093b" kindref="member">begin</ref>();</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1aa9f3da0083131fdbd8cf03f27cf9d551" kindref="member">sensor_contact_switch_general_shell_open_default</ref>.<ref refid="class_sensor_contact_switch_1a037d866b1e40776cc6fa00a46169b150" kindref="member">begin</ref>();</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1ab6630028881a21e75bbe48305c5604f7" kindref="member">sensor_contact_switch_general_window_open_default</ref>.<ref refid="class_sensor_contact_switch_1a037d866b1e40776cc6fa00a46169b150" kindref="member">begin</ref>();</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1a0a937c87b9401ed7584696b6923185f3" kindref="member">actuator_relay_air_heater_default</ref>.<ref refid="class_actuator_relay_1abd921e88bb8fcecfbd5e1213e1faad56" kindref="member">begin</ref>();</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1a0e86deb38503c2cf91314642c78cdfd3" kindref="member">actuator_relay_air_humidifier_default</ref>.<ref refid="class_actuator_relay_1abd921e88bb8fcecfbd5e1213e1faad56" kindref="member">begin</ref>();</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1a25c0b2af14a6fb79b2f25ec1df8c838e" kindref="member">actuator_relay_air_vent_default</ref>.<ref refid="class_actuator_relay_1abd921e88bb8fcecfbd5e1213e1faad56" kindref="member">begin</ref>();</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1a3f0b6a49faffb54d8af560b9dc3b4cc0" kindref="member">actuator_relay_air_circulation_default</ref>.<ref refid="class_actuator_relay_1abd921e88bb8fcecfbd5e1213e1faad56" kindref="member">begin</ref>();</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1a8332988d91deeba745badf4ca8ad163e" kindref="member">actuator_relay_light_panel_default</ref>.<ref refid="class_actuator_relay_1abd921e88bb8fcecfbd5e1213e1faad56" kindref="member">begin</ref>();</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1a804b6a7c6d635c11d5dd634e016e7f3b" kindref="member">actuator_relay_light_chamber_illumination_default</ref>.<ref refid="class_actuator_relay_1abd921e88bb8fcecfbd5e1213e1faad56" kindref="member">begin</ref>();</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1a10f9d41c1003f37e9036eb87416e30c2" kindref="member">actuator_relay_light_motherboard_illumination_default</ref>.<ref refid="class_actuator_relay_1abd921e88bb8fcecfbd5e1213e1faad56" kindref="member">begin</ref>();</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"></highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>Default<sp/>States</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1a3f0b6a49faffb54d8af560b9dc3b4cc0" kindref="member">actuator_relay_air_circulation_default</ref>.<ref refid="class_actuator_relay_1a29995263e5a05a3fdff0761cb4730306" kindref="member">set</ref>(</highlight><highlight class="stringliteral">&quot;AACR&quot;</highlight><highlight class="normal">,<sp/>1,<sp/></highlight><highlight class="stringliteral">&quot;1&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1a10f9d41c1003f37e9036eb87416e30c2" kindref="member">actuator_relay_light_motherboard_illumination_default</ref>.<ref refid="class_actuator_relay_1a29995263e5a05a3fdff0761cb4730306" kindref="member">set</ref>(</highlight><highlight class="stringliteral">&quot;ALMI&quot;</highlight><highlight class="normal">,<sp/>1,<sp/></highlight><highlight class="stringliteral">&quot;1&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1a25c0b2af14a6fb79b2f25ec1df8c838e" kindref="member">actuator_relay_air_vent_default</ref>.<ref refid="class_actuator_relay_1a29995263e5a05a3fdff0761cb4730306" kindref="member">set</ref>(</highlight><highlight class="stringliteral">&quot;AAVE&quot;</highlight><highlight class="normal">,<sp/>1,<sp/></highlight><highlight class="stringliteral">&quot;1&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="96"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"></highlight></codeline>
-<codeline lineno="98"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="module__handler_8cpp_1a5897de55f349106cd3e341df9bc6ddcd" kindref="member">updateStreamMessage</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialize<sp/>Stream<sp/>Message</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/>String<sp/>stream_message<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;\&quot;GTYP\&quot;:\&quot;Stream\&quot;,&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"></highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>Stream<sp/>Message</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/>stream_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a88260dc0f33287b1462b533e4dc127b2" kindref="member">sensor_dfr0300_water_temperature_ec_default</ref>.<ref refid="class_sensor_dfr0300_1a16b2e1ab7ed6bd191ea3a4d588d28861" kindref="member">get</ref>();</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/>stream_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1ac80bfd1cbb89a121918c276b790b790e" kindref="member">sensor_tsl2561_light_intensity_default</ref>.<ref refid="class_sensor_tsl2561_1a1d9dff52af755218abca50f9025f0f5c" kindref="member">get</ref>();</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/>stream_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a71b8e34ff72f1d153e53311443c419e6" kindref="member">sensor_dht22_air_temperature_humidity_default</ref>.<ref refid="class_sensor_dht22_1ad939eefeb967eea7029d9505cc6aad6f" kindref="member">get</ref>();<sp/></highlight><highlight class="comment">//<sp/>does<sp/>not<sp/>work<sp/>on<sp/>1.0</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/>stream_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a8875593f7e7ffa5750599fe64d0cb659" kindref="member">sensor_gc0011_air_co2_temperature_humidity_default</ref>.<ref refid="class_sensor_gc0011_1a2920401f54e121bba1398d52e9b2c90a" kindref="member">get</ref>();</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/>stream_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a1ca73f6d0c3361a7fc59d0b07ab1750d" kindref="member">sensor_dfr0161_water_ph_default</ref>.<ref refid="class_sensor_dfr0161_1a85017ddaf1e4ef3c09ea77fd0625e691" kindref="member">get</ref>();</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/>stream_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1aa9f3da0083131fdbd8cf03f27cf9d551" kindref="member">sensor_contact_switch_general_shell_open_default</ref>.<ref refid="class_sensor_contact_switch_1a99a5906b45ed441eea56fb2960d35191" kindref="member">get</ref>();</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/>stream_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1ab6630028881a21e75bbe48305c5604f7" kindref="member">sensor_contact_switch_general_window_open_default</ref>.<ref refid="class_sensor_contact_switch_1a99a5906b45ed441eea56fb2960d35191" kindref="member">get</ref>();</highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/>stream_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a1ca73f6d0c3361a7fc59d0b07ab1750d" kindref="member">sensor_dfr0161_water_ph_default</ref>.<ref refid="class_sensor_dfr0161_1a85017ddaf1e4ef3c09ea77fd0625e691" kindref="member">get</ref>();</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/>stream_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a0a937c87b9401ed7584696b6923185f3" kindref="member">actuator_relay_air_heater_default</ref>.<ref refid="class_actuator_relay_1affbcfa491c42a0aae3d69450cf7295b1" kindref="member">get</ref>();</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"><sp/><sp/>stream_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a0e86deb38503c2cf91314642c78cdfd3" kindref="member">actuator_relay_air_humidifier_default</ref>.<ref refid="class_actuator_relay_1affbcfa491c42a0aae3d69450cf7295b1" kindref="member">get</ref>();</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/>stream_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a25c0b2af14a6fb79b2f25ec1df8c838e" kindref="member">actuator_relay_air_vent_default</ref>.<ref refid="class_actuator_relay_1affbcfa491c42a0aae3d69450cf7295b1" kindref="member">get</ref>();</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/>stream_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a3f0b6a49faffb54d8af560b9dc3b4cc0" kindref="member">actuator_relay_air_circulation_default</ref>.<ref refid="class_actuator_relay_1affbcfa491c42a0aae3d69450cf7295b1" kindref="member">get</ref>();</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/>stream_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a8332988d91deeba745badf4ca8ad163e" kindref="member">actuator_relay_light_panel_default</ref>.<ref refid="class_actuator_relay_1affbcfa491c42a0aae3d69450cf7295b1" kindref="member">get</ref>();</highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/>stream_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a804b6a7c6d635c11d5dd634e016e7f3b" kindref="member">actuator_relay_light_chamber_illumination_default</ref>.<ref refid="class_actuator_relay_1affbcfa491c42a0aae3d69450cf7295b1" kindref="member">get</ref>();</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/>stream_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a10f9d41c1003f37e9036eb87416e30c2" kindref="member">actuator_relay_light_motherboard_illumination_default</ref>.<ref refid="class_actuator_relay_1affbcfa491c42a0aae3d69450cf7295b1" kindref="member">get</ref>();</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"></highlight></codeline>
-<codeline lineno="119"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>Stream<sp/>Message</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/>stream_message<sp/>+=<sp/></highlight><highlight class="stringliteral">&quot;\&quot;GEND\&quot;:0&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><ref refid="struct_instruction" kindref="compound">Instruction</ref><sp/><ref refid="module__handler_8cpp_1afcbd04d77356acd5e3dcf91fefb8bd11" kindref="member">parseIncomingMessage</ref>(String<sp/>message)<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialize<sp/>Instruction</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><ref refid="struct_instruction" kindref="compound">Instruction</ref><sp/>instruction;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/>instruction.<ref refid="struct_instruction_1a3951b82b53920c98582baa6be7210180" kindref="member">valid</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>Instruction<sp/>Data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len<sp/>=<sp/>message.length();</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>first_space<sp/>=<sp/>message.indexOf(</highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((first_space<sp/>&gt;<sp/>0)<sp/>&amp;&amp;<sp/>(len<sp/>&gt;<sp/>first_space))<sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>second_space<sp/>=<sp/>message.indexOf(</highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">,<sp/>first_space<sp/>+<sp/>1);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((second_space<sp/>&gt;<sp/>0)<sp/>&amp;&amp;<sp/>(second_space<sp/>&lt;<sp/>len<sp/>-<sp/>1))<sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Received<sp/>good<sp/>message</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>instruction.<ref refid="struct_instruction_1ad888a5bd187437c04dca0f5574ce4ebd" kindref="member">code</ref><sp/>=<sp/>message.substring(0,<sp/>4);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>instruction.<ref refid="struct_instruction_1aca74587d9d1a44daca3b0965af207a4c" kindref="member">id</ref><sp/>=<sp/>(message.substring(first_space,<sp/>second_space)).toInt();</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>instruction.<ref refid="struct_instruction_1a61c139a5e35c88092611020e999e220d" kindref="member">parameter</ref><sp/>=<sp/>message.substring(second_space<sp/>+<sp/>1,<sp/>len);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>instruction.<ref refid="struct_instruction_1a3951b82b53920c98582baa6be7210180" kindref="member">valid</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>Instruction<sp/>Data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>instruction;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="module__handler_8cpp_1aea7eb84b3bdf67ce76b8b3d1a7c1b64d" kindref="member">initializeModules</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1ae162b537f743c1fa3e4b3a398324649d" kindref="member">communication</ref>.<ref refid="class_communication_1af7eea76d811d38b02fb67ec5133e6eec" kindref="member">begin</ref>();</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1a5cb0d436382713f20aa8931345ae6e7b" kindref="member">sensor_dfr01610300_water_ph_temperature_ec_default</ref>.<ref refid="class_sensor_dfr01610300_1a456221ff4728d8985c8e980d4f22b692" kindref="member">begin</ref>();</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1ac80bfd1cbb89a121918c276b790b790e" kindref="member">sensor_tsl2561_light_intensity_default</ref>.<ref refid="class_sensor_tsl2561_1ace17c892222366185df021bda708cc10" kindref="member">begin</ref>();</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1a71b8e34ff72f1d153e53311443c419e6" kindref="member">sensor_dht22_air_temperature_humidity_default</ref>.<ref refid="class_sensor_dht22_1ae4de2976d82d060c9dc12bf84195a347" kindref="member">begin</ref>();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1a8875593f7e7ffa5750599fe64d0cb659" kindref="member">sensor_gc0011_air_co2_temperature_humidity_default</ref>.<ref refid="class_sensor_gc0011_1a661743d47448c6b9c965fd8e1f123fbc" kindref="member">begin</ref>();</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//sensor_dfr0161_water_ph_default.begin();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//sensor_dfr0300_water_temperature_ec_default.begin();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1aa9f3da0083131fdbd8cf03f27cf9d551" kindref="member">sensor_contact_switch_general_shell_open_default</ref>.<ref refid="class_sensor_contact_switch_1a037d866b1e40776cc6fa00a46169b150" kindref="member">begin</ref>();</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1ab6630028881a21e75bbe48305c5604f7" kindref="member">sensor_contact_switch_general_window_open_default</ref>.<ref refid="class_sensor_contact_switch_1a037d866b1e40776cc6fa00a46169b150" kindref="member">begin</ref>();</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1a0a937c87b9401ed7584696b6923185f3" kindref="member">actuator_relay_air_heater_default</ref>.<ref refid="class_actuator_relay_1abd921e88bb8fcecfbd5e1213e1faad56" kindref="member">begin</ref>();</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1a0e86deb38503c2cf91314642c78cdfd3" kindref="member">actuator_relay_air_humidifier_default</ref>.<ref refid="class_actuator_relay_1abd921e88bb8fcecfbd5e1213e1faad56" kindref="member">begin</ref>();</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1a25c0b2af14a6fb79b2f25ec1df8c838e" kindref="member">actuator_relay_air_vent_default</ref>.<ref refid="class_actuator_relay_1abd921e88bb8fcecfbd5e1213e1faad56" kindref="member">begin</ref>();</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1a3f0b6a49faffb54d8af560b9dc3b4cc0" kindref="member">actuator_relay_air_circulation_default</ref>.<ref refid="class_actuator_relay_1abd921e88bb8fcecfbd5e1213e1faad56" kindref="member">begin</ref>();</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1a8332988d91deeba745badf4ca8ad163e" kindref="member">actuator_relay_light_panel_default</ref>.<ref refid="class_actuator_relay_1abd921e88bb8fcecfbd5e1213e1faad56" kindref="member">begin</ref>();</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1a804b6a7c6d635c11d5dd634e016e7f3b" kindref="member">actuator_relay_light_chamber_illumination_default</ref>.<ref refid="class_actuator_relay_1abd921e88bb8fcecfbd5e1213e1faad56" kindref="member">begin</ref>();</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1a10f9d41c1003f37e9036eb87416e30c2" kindref="member">actuator_relay_light_motherboard_illumination_default</ref>.<ref refid="class_actuator_relay_1abd921e88bb8fcecfbd5e1213e1faad56" kindref="member">begin</ref>();</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>Default<sp/>States</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1a3f0b6a49faffb54d8af560b9dc3b4cc0" kindref="member">actuator_relay_air_circulation_default</ref>.<ref refid="class_actuator_relay_1a29995263e5a05a3fdff0761cb4730306" kindref="member">set</ref>(</highlight><highlight class="stringliteral">&quot;AACR&quot;</highlight><highlight class="normal">,<sp/>1,<sp/></highlight><highlight class="stringliteral">&quot;1&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1a10f9d41c1003f37e9036eb87416e30c2" kindref="member">actuator_relay_light_motherboard_illumination_default</ref>.<ref refid="class_actuator_relay_1a29995263e5a05a3fdff0761cb4730306" kindref="member">set</ref>(</highlight><highlight class="stringliteral">&quot;ALMI&quot;</highlight><highlight class="normal">,<sp/>1,<sp/></highlight><highlight class="stringliteral">&quot;1&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1a25c0b2af14a6fb79b2f25ec1df8c838e" kindref="member">actuator_relay_air_vent_default</ref>.<ref refid="class_actuator_relay_1a29995263e5a05a3fdff0761cb4730306" kindref="member">set</ref>(</highlight><highlight class="stringliteral">&quot;AAVE&quot;</highlight><highlight class="normal">,<sp/>1,<sp/></highlight><highlight class="stringliteral">&quot;1&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="module__handler_8cpp_1a5897de55f349106cd3e341df9bc6ddcd" kindref="member">updateStreamMessage</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialize<sp/>Stream<sp/>Message</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/>String<sp/>stream_message<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;\&quot;GTYP\&quot;:\&quot;Stream\&quot;,&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>Stream<sp/>Message</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//stream_message<sp/>+=<sp/>sensor_dfr0300_water_temperature_ec_default.get();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/>stream_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a5cb0d436382713f20aa8931345ae6e7b" kindref="member">sensor_dfr01610300_water_ph_temperature_ec_default</ref>.<ref refid="class_sensor_dfr01610300_1a21bbd0f8ee7e6576eabd9acf0e1e4d89" kindref="member">get</ref>();</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/>stream_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1ac80bfd1cbb89a121918c276b790b790e" kindref="member">sensor_tsl2561_light_intensity_default</ref>.<ref refid="class_sensor_tsl2561_1a1d9dff52af755218abca50f9025f0f5c" kindref="member">get</ref>();</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/>stream_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a71b8e34ff72f1d153e53311443c419e6" kindref="member">sensor_dht22_air_temperature_humidity_default</ref>.<ref refid="class_sensor_dht22_1ad939eefeb967eea7029d9505cc6aad6f" kindref="member">get</ref>();<sp/></highlight><highlight class="comment">//<sp/>does<sp/>not<sp/>work<sp/>on<sp/>1.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/>stream_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a8875593f7e7ffa5750599fe64d0cb659" kindref="member">sensor_gc0011_air_co2_temperature_humidity_default</ref>.<ref refid="class_sensor_gc0011_1a2920401f54e121bba1398d52e9b2c90a" kindref="member">get</ref>();</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//stream_message<sp/>+=<sp/>sensor_dfr0161_water_ph_default.get();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/>stream_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1aa9f3da0083131fdbd8cf03f27cf9d551" kindref="member">sensor_contact_switch_general_shell_open_default</ref>.<ref refid="class_sensor_contact_switch_1a99a5906b45ed441eea56fb2960d35191" kindref="member">get</ref>();</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/>stream_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1ab6630028881a21e75bbe48305c5604f7" kindref="member">sensor_contact_switch_general_window_open_default</ref>.<ref refid="class_sensor_contact_switch_1a99a5906b45ed441eea56fb2960d35191" kindref="member">get</ref>();</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//stream_message<sp/>+=<sp/>sensor_dfr0161_water_ph_default.get();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/>stream_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a0a937c87b9401ed7584696b6923185f3" kindref="member">actuator_relay_air_heater_default</ref>.<ref refid="class_actuator_relay_1affbcfa491c42a0aae3d69450cf7295b1" kindref="member">get</ref>();</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/>stream_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a0e86deb38503c2cf91314642c78cdfd3" kindref="member">actuator_relay_air_humidifier_default</ref>.<ref refid="class_actuator_relay_1affbcfa491c42a0aae3d69450cf7295b1" kindref="member">get</ref>();</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/>stream_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a25c0b2af14a6fb79b2f25ec1df8c838e" kindref="member">actuator_relay_air_vent_default</ref>.<ref refid="class_actuator_relay_1affbcfa491c42a0aae3d69450cf7295b1" kindref="member">get</ref>();</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/>stream_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a3f0b6a49faffb54d8af560b9dc3b4cc0" kindref="member">actuator_relay_air_circulation_default</ref>.<ref refid="class_actuator_relay_1affbcfa491c42a0aae3d69450cf7295b1" kindref="member">get</ref>();</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/>stream_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a8332988d91deeba745badf4ca8ad163e" kindref="member">actuator_relay_light_panel_default</ref>.<ref refid="class_actuator_relay_1affbcfa491c42a0aae3d69450cf7295b1" kindref="member">get</ref>();</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/>stream_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a804b6a7c6d635c11d5dd634e016e7f3b" kindref="member">actuator_relay_light_chamber_illumination_default</ref>.<ref refid="class_actuator_relay_1affbcfa491c42a0aae3d69450cf7295b1" kindref="member">get</ref>();</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/>stream_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a10f9d41c1003f37e9036eb87416e30c2" kindref="member">actuator_relay_light_motherboard_illumination_default</ref>.<ref refid="class_actuator_relay_1affbcfa491c42a0aae3d69450cf7295b1" kindref="member">get</ref>();</highlight></codeline>
 <codeline lineno="121"><highlight class="normal"></highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Send<sp/>Stream<sp/>Message</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1ae162b537f743c1fa3e4b3a398324649d" kindref="member">communication</ref>.<ref refid="class_communication_1a7905fe8302c11cc1c1dc8a10bc71fdc6" kindref="member">send</ref>(stream_message);</highlight></codeline>
-<codeline lineno="124"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="125"><highlight class="normal"></highlight></codeline>
-<codeline lineno="126"><highlight class="normal">String<sp/><ref refid="module__handler_8cpp_1a84d5c9e2f57b3fcb377800f72edea419" kindref="member">handleIncomingMessage</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
-<codeline lineno="127"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Parse<sp/>Message<sp/>into:<sp/>Code<sp/>-<sp/>ID<sp/>-<sp/>Parameter</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="128"><highlight class="normal"><sp/><sp/>String<sp/>return_message<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="129"><highlight class="normal"><sp/><sp/>String<sp/>incoming_message<sp/>=<sp/><ref refid="module__handler_8cpp_1ae162b537f743c1fa3e4b3a398324649d" kindref="member">communication</ref>.<ref refid="class_communication_1ad53d6b2efc619612fb542afdfda43ec0" kindref="member">receive</ref>();</highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><sp/><sp/><ref refid="struct_instruction" kindref="compound">Instruction</ref><sp/>instruction<sp/>=<sp/><ref refid="module__handler_8cpp_1afcbd04d77356acd5e3dcf91fefb8bd11" kindref="member">parseIncomingMessage</ref>(incoming_message);</highlight></codeline>
-<codeline lineno="131"><highlight class="normal"></highlight></codeline>
-<codeline lineno="132"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Pass<sp/>Parsed<sp/>Message<sp/>To<sp/>All<sp/>Objects<sp/>and<sp/>Update<sp/>Return<sp/>Message<sp/>if<sp/>Applicable</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(instruction.<ref refid="struct_instruction_1a3951b82b53920c98582baa6be7210180" kindref="member">valid</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>return_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1ac80bfd1cbb89a121918c276b790b790e" kindref="member">sensor_tsl2561_light_intensity_default</ref>.<ref refid="class_sensor_tsl2561_1ab4eb3d8197c96867f43857876df46b33" kindref="member">set</ref>(instruction.<ref refid="struct_instruction_1ad888a5bd187437c04dca0f5574ce4ebd" kindref="member">code</ref>,<sp/>instruction.<ref refid="struct_instruction_1aca74587d9d1a44daca3b0965af207a4c" kindref="member">id</ref>,<sp/>instruction.<ref refid="struct_instruction_1a61c139a5e35c88092611020e999e220d" kindref="member">parameter</ref>);</highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>return_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a71b8e34ff72f1d153e53311443c419e6" kindref="member">sensor_dht22_air_temperature_humidity_default</ref>.<ref refid="class_sensor_dht22_1a177a42edbc33d5cf4fa0c4c38dc0047c" kindref="member">set</ref>(instruction.<ref refid="struct_instruction_1ad888a5bd187437c04dca0f5574ce4ebd" kindref="member">code</ref>,<sp/>instruction.<ref refid="struct_instruction_1aca74587d9d1a44daca3b0965af207a4c" kindref="member">id</ref>,<sp/>instruction.<ref refid="struct_instruction_1a61c139a5e35c88092611020e999e220d" kindref="member">parameter</ref>);</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>return_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a8875593f7e7ffa5750599fe64d0cb659" kindref="member">sensor_gc0011_air_co2_temperature_humidity_default</ref>.<ref refid="class_sensor_gc0011_1a658b7856221577342b54e4dc7fe06d2a" kindref="member">set</ref>(instruction.<ref refid="struct_instruction_1ad888a5bd187437c04dca0f5574ce4ebd" kindref="member">code</ref>,<sp/>instruction.<ref refid="struct_instruction_1aca74587d9d1a44daca3b0965af207a4c" kindref="member">id</ref>,<sp/>instruction.<ref refid="struct_instruction_1a61c139a5e35c88092611020e999e220d" kindref="member">parameter</ref>);</highlight></codeline>
-<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>return_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a88260dc0f33287b1462b533e4dc127b2" kindref="member">sensor_dfr0300_water_temperature_ec_default</ref>.<ref refid="class_sensor_dfr0300_1a538a5bd7f86693ce975d4b4b7f48bee0" kindref="member">set</ref>(instruction.<ref refid="struct_instruction_1ad888a5bd187437c04dca0f5574ce4ebd" kindref="member">code</ref>,<sp/>instruction.<ref refid="struct_instruction_1aca74587d9d1a44daca3b0965af207a4c" kindref="member">id</ref>,<sp/>instruction.<ref refid="struct_instruction_1a61c139a5e35c88092611020e999e220d" kindref="member">parameter</ref>);</highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>return_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a1ca73f6d0c3361a7fc59d0b07ab1750d" kindref="member">sensor_dfr0161_water_ph_default</ref>.<ref refid="class_sensor_dfr0161_1a072cbfa3e18f9e5dd7b2faeec20721c3" kindref="member">set</ref>(instruction.<ref refid="struct_instruction_1ad888a5bd187437c04dca0f5574ce4ebd" kindref="member">code</ref>,<sp/>instruction.<ref refid="struct_instruction_1aca74587d9d1a44daca3b0965af207a4c" kindref="member">id</ref>,<sp/>instruction.<ref refid="struct_instruction_1a61c139a5e35c88092611020e999e220d" kindref="member">parameter</ref>);</highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>return_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1aa9f3da0083131fdbd8cf03f27cf9d551" kindref="member">sensor_contact_switch_general_shell_open_default</ref>.<ref refid="class_sensor_contact_switch_1ab49acd5d6132eed50d7342717649abc2" kindref="member">set</ref>(instruction.<ref refid="struct_instruction_1ad888a5bd187437c04dca0f5574ce4ebd" kindref="member">code</ref>,<sp/>instruction.<ref refid="struct_instruction_1aca74587d9d1a44daca3b0965af207a4c" kindref="member">id</ref>,<sp/>instruction.<ref refid="struct_instruction_1a61c139a5e35c88092611020e999e220d" kindref="member">parameter</ref>);</highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>return_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1ab6630028881a21e75bbe48305c5604f7" kindref="member">sensor_contact_switch_general_window_open_default</ref>.<ref refid="class_sensor_contact_switch_1ab49acd5d6132eed50d7342717649abc2" kindref="member">set</ref>(instruction.<ref refid="struct_instruction_1ad888a5bd187437c04dca0f5574ce4ebd" kindref="member">code</ref>,<sp/>instruction.<ref refid="struct_instruction_1aca74587d9d1a44daca3b0965af207a4c" kindref="member">id</ref>,<sp/>instruction.<ref refid="struct_instruction_1a61c139a5e35c88092611020e999e220d" kindref="member">parameter</ref>);</highlight></codeline>
-<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>return_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a0a937c87b9401ed7584696b6923185f3" kindref="member">actuator_relay_air_heater_default</ref>.<ref refid="class_actuator_relay_1a29995263e5a05a3fdff0761cb4730306" kindref="member">set</ref>(instruction.<ref refid="struct_instruction_1ad888a5bd187437c04dca0f5574ce4ebd" kindref="member">code</ref>,<sp/>instruction.<ref refid="struct_instruction_1aca74587d9d1a44daca3b0965af207a4c" kindref="member">id</ref>,<sp/>instruction.<ref refid="struct_instruction_1a61c139a5e35c88092611020e999e220d" kindref="member">parameter</ref>);</highlight></codeline>
-<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>return_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a0e86deb38503c2cf91314642c78cdfd3" kindref="member">actuator_relay_air_humidifier_default</ref>.<ref refid="class_actuator_relay_1a29995263e5a05a3fdff0761cb4730306" kindref="member">set</ref>(instruction.<ref refid="struct_instruction_1ad888a5bd187437c04dca0f5574ce4ebd" kindref="member">code</ref>,<sp/>instruction.<ref refid="struct_instruction_1aca74587d9d1a44daca3b0965af207a4c" kindref="member">id</ref>,<sp/>instruction.<ref refid="struct_instruction_1a61c139a5e35c88092611020e999e220d" kindref="member">parameter</ref>);</highlight></codeline>
-<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>return_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a25c0b2af14a6fb79b2f25ec1df8c838e" kindref="member">actuator_relay_air_vent_default</ref>.<ref refid="class_actuator_relay_1a29995263e5a05a3fdff0761cb4730306" kindref="member">set</ref>(instruction.<ref refid="struct_instruction_1ad888a5bd187437c04dca0f5574ce4ebd" kindref="member">code</ref>,<sp/>instruction.<ref refid="struct_instruction_1aca74587d9d1a44daca3b0965af207a4c" kindref="member">id</ref>,<sp/>instruction.<ref refid="struct_instruction_1a61c139a5e35c88092611020e999e220d" kindref="member">parameter</ref>);</highlight></codeline>
-<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>return_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a3f0b6a49faffb54d8af560b9dc3b4cc0" kindref="member">actuator_relay_air_circulation_default</ref>.<ref refid="class_actuator_relay_1a29995263e5a05a3fdff0761cb4730306" kindref="member">set</ref>(instruction.<ref refid="struct_instruction_1ad888a5bd187437c04dca0f5574ce4ebd" kindref="member">code</ref>,<sp/>instruction.<ref refid="struct_instruction_1aca74587d9d1a44daca3b0965af207a4c" kindref="member">id</ref>,<sp/>instruction.<ref refid="struct_instruction_1a61c139a5e35c88092611020e999e220d" kindref="member">parameter</ref>);</highlight></codeline>
-<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>return_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a8332988d91deeba745badf4ca8ad163e" kindref="member">actuator_relay_light_panel_default</ref>.<ref refid="class_actuator_relay_1a29995263e5a05a3fdff0761cb4730306" kindref="member">set</ref>(instruction.<ref refid="struct_instruction_1ad888a5bd187437c04dca0f5574ce4ebd" kindref="member">code</ref>,<sp/>instruction.<ref refid="struct_instruction_1aca74587d9d1a44daca3b0965af207a4c" kindref="member">id</ref>,<sp/>instruction.<ref refid="struct_instruction_1a61c139a5e35c88092611020e999e220d" kindref="member">parameter</ref>);</highlight></codeline>
-<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>return_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a804b6a7c6d635c11d5dd634e016e7f3b" kindref="member">actuator_relay_light_chamber_illumination_default</ref>.<ref refid="class_actuator_relay_1a29995263e5a05a3fdff0761cb4730306" kindref="member">set</ref>(instruction.<ref refid="struct_instruction_1ad888a5bd187437c04dca0f5574ce4ebd" kindref="member">code</ref>,<sp/>instruction.<ref refid="struct_instruction_1aca74587d9d1a44daca3b0965af207a4c" kindref="member">id</ref>,<sp/>instruction.<ref refid="struct_instruction_1a61c139a5e35c88092611020e999e220d" kindref="member">parameter</ref>);</highlight></codeline>
-<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>return_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a10f9d41c1003f37e9036eb87416e30c2" kindref="member">actuator_relay_light_motherboard_illumination_default</ref>.<ref refid="class_actuator_relay_1a29995263e5a05a3fdff0761cb4730306" kindref="member">set</ref>(instruction.<ref refid="struct_instruction_1ad888a5bd187437c04dca0f5574ce4ebd" kindref="member">code</ref>,<sp/>instruction.<ref refid="struct_instruction_1aca74587d9d1a44daca3b0965af207a4c" kindref="member">id</ref>,<sp/>instruction.<ref refid="struct_instruction_1a61c139a5e35c88092611020e999e220d" kindref="member">parameter</ref>);</highlight></codeline>
-<codeline lineno="148"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="149"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>return_message;</highlight></codeline>
-<codeline lineno="150"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Return<sp/>Stream<sp/>Message</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/>stream_message<sp/>+=<sp/></highlight><highlight class="stringliteral">&quot;\&quot;GEND\&quot;:0&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Send<sp/>Stream<sp/>Message</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><ref refid="module__handler_8cpp_1ae162b537f743c1fa3e4b3a398324649d" kindref="member">communication</ref>.<ref refid="class_communication_1a7905fe8302c11cc1c1dc8a10bc71fdc6" kindref="member">send</ref>(stream_message);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal">String<sp/><ref refid="module__handler_8cpp_1a84d5c9e2f57b3fcb377800f72edea419" kindref="member">handleIncomingMessage</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Parse<sp/>Message<sp/>into:<sp/>Code<sp/>-<sp/>ID<sp/>-<sp/>Parameter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/>String<sp/>return_message<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/>String<sp/>incoming_message<sp/>=<sp/><ref refid="module__handler_8cpp_1ae162b537f743c1fa3e4b3a398324649d" kindref="member">communication</ref>.<ref refid="class_communication_1ad53d6b2efc619612fb542afdfda43ec0" kindref="member">receive</ref>();</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><ref refid="struct_instruction" kindref="compound">Instruction</ref><sp/>instruction<sp/>=<sp/><ref refid="module__handler_8cpp_1afcbd04d77356acd5e3dcf91fefb8bd11" kindref="member">parseIncomingMessage</ref>(incoming_message);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Pass<sp/>Parsed<sp/>Message<sp/>To<sp/>All<sp/>Objects<sp/>and<sp/>Update<sp/>Return<sp/>Message<sp/>if<sp/>Applicable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(instruction.<ref refid="struct_instruction_1a3951b82b53920c98582baa6be7210180" kindref="member">valid</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>return_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a5cb0d436382713f20aa8931345ae6e7b" kindref="member">sensor_dfr01610300_water_ph_temperature_ec_default</ref>.<ref refid="class_sensor_dfr01610300_1ab675c2708ff9d5d0d9bbe10bab3d97e8" kindref="member">set</ref>(instruction.<ref refid="struct_instruction_1ad888a5bd187437c04dca0f5574ce4ebd" kindref="member">code</ref>,<sp/>instruction.<ref refid="struct_instruction_1aca74587d9d1a44daca3b0965af207a4c" kindref="member">id</ref>,<sp/>instruction.<ref refid="struct_instruction_1a61c139a5e35c88092611020e999e220d" kindref="member">parameter</ref>);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>return_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1ac80bfd1cbb89a121918c276b790b790e" kindref="member">sensor_tsl2561_light_intensity_default</ref>.<ref refid="class_sensor_tsl2561_1ab4eb3d8197c96867f43857876df46b33" kindref="member">set</ref>(instruction.<ref refid="struct_instruction_1ad888a5bd187437c04dca0f5574ce4ebd" kindref="member">code</ref>,<sp/>instruction.<ref refid="struct_instruction_1aca74587d9d1a44daca3b0965af207a4c" kindref="member">id</ref>,<sp/>instruction.<ref refid="struct_instruction_1a61c139a5e35c88092611020e999e220d" kindref="member">parameter</ref>);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>return_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a71b8e34ff72f1d153e53311443c419e6" kindref="member">sensor_dht22_air_temperature_humidity_default</ref>.<ref refid="class_sensor_dht22_1a177a42edbc33d5cf4fa0c4c38dc0047c" kindref="member">set</ref>(instruction.<ref refid="struct_instruction_1ad888a5bd187437c04dca0f5574ce4ebd" kindref="member">code</ref>,<sp/>instruction.<ref refid="struct_instruction_1aca74587d9d1a44daca3b0965af207a4c" kindref="member">id</ref>,<sp/>instruction.<ref refid="struct_instruction_1a61c139a5e35c88092611020e999e220d" kindref="member">parameter</ref>);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>return_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a8875593f7e7ffa5750599fe64d0cb659" kindref="member">sensor_gc0011_air_co2_temperature_humidity_default</ref>.<ref refid="class_sensor_gc0011_1a658b7856221577342b54e4dc7fe06d2a" kindref="member">set</ref>(instruction.<ref refid="struct_instruction_1ad888a5bd187437c04dca0f5574ce4ebd" kindref="member">code</ref>,<sp/>instruction.<ref refid="struct_instruction_1aca74587d9d1a44daca3b0965af207a4c" kindref="member">id</ref>,<sp/>instruction.<ref refid="struct_instruction_1a61c139a5e35c88092611020e999e220d" kindref="member">parameter</ref>);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//return_message<sp/>+=<sp/>sensor_dfr0300_water_temperature_ec_default.set(instruction.code,<sp/>instruction.id,<sp/>instruction.parameter);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//return_message<sp/>+=<sp/>sensor_dfr0161_water_ph_default.set(instruction.code,<sp/>instruction.id,<sp/>instruction.parameter);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>return_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1aa9f3da0083131fdbd8cf03f27cf9d551" kindref="member">sensor_contact_switch_general_shell_open_default</ref>.<ref refid="class_sensor_contact_switch_1ab49acd5d6132eed50d7342717649abc2" kindref="member">set</ref>(instruction.<ref refid="struct_instruction_1ad888a5bd187437c04dca0f5574ce4ebd" kindref="member">code</ref>,<sp/>instruction.<ref refid="struct_instruction_1aca74587d9d1a44daca3b0965af207a4c" kindref="member">id</ref>,<sp/>instruction.<ref refid="struct_instruction_1a61c139a5e35c88092611020e999e220d" kindref="member">parameter</ref>);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>return_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1ab6630028881a21e75bbe48305c5604f7" kindref="member">sensor_contact_switch_general_window_open_default</ref>.<ref refid="class_sensor_contact_switch_1ab49acd5d6132eed50d7342717649abc2" kindref="member">set</ref>(instruction.<ref refid="struct_instruction_1ad888a5bd187437c04dca0f5574ce4ebd" kindref="member">code</ref>,<sp/>instruction.<ref refid="struct_instruction_1aca74587d9d1a44daca3b0965af207a4c" kindref="member">id</ref>,<sp/>instruction.<ref refid="struct_instruction_1a61c139a5e35c88092611020e999e220d" kindref="member">parameter</ref>);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>return_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a0a937c87b9401ed7584696b6923185f3" kindref="member">actuator_relay_air_heater_default</ref>.<ref refid="class_actuator_relay_1a29995263e5a05a3fdff0761cb4730306" kindref="member">set</ref>(instruction.<ref refid="struct_instruction_1ad888a5bd187437c04dca0f5574ce4ebd" kindref="member">code</ref>,<sp/>instruction.<ref refid="struct_instruction_1aca74587d9d1a44daca3b0965af207a4c" kindref="member">id</ref>,<sp/>instruction.<ref refid="struct_instruction_1a61c139a5e35c88092611020e999e220d" kindref="member">parameter</ref>);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>return_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a0e86deb38503c2cf91314642c78cdfd3" kindref="member">actuator_relay_air_humidifier_default</ref>.<ref refid="class_actuator_relay_1a29995263e5a05a3fdff0761cb4730306" kindref="member">set</ref>(instruction.<ref refid="struct_instruction_1ad888a5bd187437c04dca0f5574ce4ebd" kindref="member">code</ref>,<sp/>instruction.<ref refid="struct_instruction_1aca74587d9d1a44daca3b0965af207a4c" kindref="member">id</ref>,<sp/>instruction.<ref refid="struct_instruction_1a61c139a5e35c88092611020e999e220d" kindref="member">parameter</ref>);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>return_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a25c0b2af14a6fb79b2f25ec1df8c838e" kindref="member">actuator_relay_air_vent_default</ref>.<ref refid="class_actuator_relay_1a29995263e5a05a3fdff0761cb4730306" kindref="member">set</ref>(instruction.<ref refid="struct_instruction_1ad888a5bd187437c04dca0f5574ce4ebd" kindref="member">code</ref>,<sp/>instruction.<ref refid="struct_instruction_1aca74587d9d1a44daca3b0965af207a4c" kindref="member">id</ref>,<sp/>instruction.<ref refid="struct_instruction_1a61c139a5e35c88092611020e999e220d" kindref="member">parameter</ref>);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>return_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a3f0b6a49faffb54d8af560b9dc3b4cc0" kindref="member">actuator_relay_air_circulation_default</ref>.<ref refid="class_actuator_relay_1a29995263e5a05a3fdff0761cb4730306" kindref="member">set</ref>(instruction.<ref refid="struct_instruction_1ad888a5bd187437c04dca0f5574ce4ebd" kindref="member">code</ref>,<sp/>instruction.<ref refid="struct_instruction_1aca74587d9d1a44daca3b0965af207a4c" kindref="member">id</ref>,<sp/>instruction.<ref refid="struct_instruction_1a61c139a5e35c88092611020e999e220d" kindref="member">parameter</ref>);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>return_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a8332988d91deeba745badf4ca8ad163e" kindref="member">actuator_relay_light_panel_default</ref>.<ref refid="class_actuator_relay_1a29995263e5a05a3fdff0761cb4730306" kindref="member">set</ref>(instruction.<ref refid="struct_instruction_1ad888a5bd187437c04dca0f5574ce4ebd" kindref="member">code</ref>,<sp/>instruction.<ref refid="struct_instruction_1aca74587d9d1a44daca3b0965af207a4c" kindref="member">id</ref>,<sp/>instruction.<ref refid="struct_instruction_1a61c139a5e35c88092611020e999e220d" kindref="member">parameter</ref>);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>return_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a804b6a7c6d635c11d5dd634e016e7f3b" kindref="member">actuator_relay_light_chamber_illumination_default</ref>.<ref refid="class_actuator_relay_1a29995263e5a05a3fdff0761cb4730306" kindref="member">set</ref>(instruction.<ref refid="struct_instruction_1ad888a5bd187437c04dca0f5574ce4ebd" kindref="member">code</ref>,<sp/>instruction.<ref refid="struct_instruction_1aca74587d9d1a44daca3b0965af207a4c" kindref="member">id</ref>,<sp/>instruction.<ref refid="struct_instruction_1a61c139a5e35c88092611020e999e220d" kindref="member">parameter</ref>);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>return_message<sp/>+=<sp/><ref refid="module__handler_8cpp_1a10f9d41c1003f37e9036eb87416e30c2" kindref="member">actuator_relay_light_motherboard_illumination_default</ref>.<ref refid="class_actuator_relay_1a29995263e5a05a3fdff0761cb4730306" kindref="member">set</ref>(instruction.<ref refid="struct_instruction_1ad888a5bd187437c04dca0f5574ce4ebd" kindref="member">code</ref>,<sp/>instruction.<ref refid="struct_instruction_1aca74587d9d1a44daca3b0965af207a4c" kindref="member">id</ref>,<sp/>instruction.<ref refid="struct_instruction_1a61c139a5e35c88092611020e999e220d" kindref="member">parameter</ref>);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>return_message;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/module_handler.cpp"/>
   </compounddef>

@@ -4,14 +4,14 @@
     <compoundname>support_moving_average.cpp</compoundname>
     <includes refid="support__moving__average_8h" local="yes">support_moving_average.h</includes>
     <incdepgraph>
-      <node id="136">
+      <node id="124">
         <label>support_moving_average.h</label>
         <link refid="support__moving__average_8h"/>
       </node>
-      <node id="135">
+      <node id="123">
         <label>support_moving_average.cpp</label>
         <link refid="support_moving_average.cpp"/>
-        <childnode refid="136" relation="include">
+        <childnode refid="124" relation="include">
         </childnode>
       </node>
     </incdepgraph>

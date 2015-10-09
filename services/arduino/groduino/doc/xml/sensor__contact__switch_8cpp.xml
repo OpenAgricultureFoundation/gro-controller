@@ -4,19 +4,19 @@
     <compoundname>sensor_contact_switch.cpp</compoundname>
     <includes refid="sensor__contact__switch_8h" local="yes">sensor_contact_switch.h</includes>
     <incdepgraph>
-      <node id="60">
+      <node id="59">
         <label>sensor_contact_switch.h</label>
         <link refid="sensor__contact__switch_8h"/>
-        <childnode refid="61" relation="include">
+        <childnode refid="60" relation="include">
         </childnode>
       </node>
-      <node id="61">
+      <node id="60">
         <label>WProgram.h</label>
       </node>
-      <node id="59">
+      <node id="58">
         <label>sensor_contact_switch.cpp</label>
         <link refid="sensor_contact_switch.cpp"/>
-        <childnode refid="60" relation="include">
+        <childnode refid="59" relation="include">
         </childnode>
       </node>
     </incdepgraph>

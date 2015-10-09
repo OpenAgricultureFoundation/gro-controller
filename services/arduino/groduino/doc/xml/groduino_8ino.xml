@@ -22,6 +22,7 @@
 <codeline><highlight class="normal">void<sp/>loop()<sp/>{<sp/>//<sp/>runs<sp/>FOREVER!</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>updateIncomingMessage();</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>updateStreamMessage();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>delay(3000);<sp/></highlight></codeline>
 <codeline><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/Users/jakerye/projects/gro-controller/services/arduino/groduino/groduino.ino"/>

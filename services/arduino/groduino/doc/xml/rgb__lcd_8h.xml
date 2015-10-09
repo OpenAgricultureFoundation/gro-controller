@@ -6,30 +6,30 @@
     <includes local="yes">Print.h</includes>
     <includedby refid="rgb__lcd_8cpp" local="yes">rgb_lcd.cpp</includedby>
     <incdepgraph>
-      <node id="56">
+      <node id="55">
         <label>Print.h</label>
       </node>
-      <node id="54">
+      <node id="53">
         <label>rgb_lcd.h</label>
         <link refid="rgb_lcd.h"/>
+        <childnode refid="54" relation="include">
+        </childnode>
         <childnode refid="55" relation="include">
         </childnode>
-        <childnode refid="56" relation="include">
-        </childnode>
       </node>
-      <node id="55">
+      <node id="54">
         <label>inttypes.h</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="58">
+      <node id="57">
         <label>rgb_lcd.cpp</label>
         <link refid="rgb__lcd_8cpp"/>
       </node>
-      <node id="57">
+      <node id="56">
         <label>rgb_lcd.h</label>
         <link refid="rgb_lcd.h"/>
-        <childnode refid="58" relation="include">
+        <childnode refid="57" relation="include">
         </childnode>
       </node>
     </invincdepgraph>

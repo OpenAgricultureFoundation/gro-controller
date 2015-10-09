@@ -7,12 +7,11 @@ Handles all module integration. See \hyperlink{module__handler_8h}{module\+\_\+h
 
 {\ttfamily \#include \char`\"{}module\+\_\+handler.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}communication.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}sensor\+\_\+dfr0161\+\_\+0300.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}sensor\+\_\+tsl2561.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}sensor\+\_\+dht22.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}sensor\+\_\+gc0011.\+h\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}sensor\+\_\+dfr0161.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}actuator\+\_\+relay.\+h\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}sensor\+\_\+dfr0300.\+h\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}sensor\+\_\+contact\+\_\+switch.\+h\char`\"{}}\\*
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -34,13 +33,11 @@ String \hyperlink{module__handler_8cpp_a84d5c9e2f57b3fcb377800f72edea419}{handle
 \item 
 \hyperlink{class_sensor_tsl2561}{Sensor\+Tsl2561} \hyperlink{module__handler_8cpp_ac80bfd1cbb89a121918c276b790b790e}{sensor\+\_\+tsl2561\+\_\+light\+\_\+intensity\+\_\+default} (\char`\"{}S\+L\+I\+N\char`\"{}, 1,\char`\"{}S\+L\+P\+A\char`\"{}, 1)
 \item 
+\hyperlink{class_sensor_dfr01610300}{Sensor\+Dfr01610300} \hyperlink{module__handler_8cpp_a5cb0d436382713f20aa8931345ae6e7b}{sensor\+\_\+dfr01610300\+\_\+water\+\_\+ph\+\_\+temperature\+\_\+ec\+\_\+default} (A1,\char`\"{}S\+W\+P\+H\char`\"{}, 1, 2,\char`\"{}S\+W\+T\+M\char`\"{}, 1, A2,\char`\"{}S\+W\+E\+C\char`\"{}, 1, 22)
+\item 
 \hyperlink{class_sensor_dht22}{Sensor\+Dht22} \hyperlink{module__handler_8cpp_a71b8e34ff72f1d153e53311443c419e6}{sensor\+\_\+dht22\+\_\+air\+\_\+temperature\+\_\+humidity\+\_\+default} (A0,\char`\"{}S\+A\+T\+M\char`\"{}, 1,\char`\"{}S\+A\+H\+U\char`\"{}, 1)
 \item 
 \hyperlink{class_sensor_gc0011}{Sensor\+Gc0011} \hyperlink{module__handler_8cpp_a8875593f7e7ffa5750599fe64d0cb659}{sensor\+\_\+gc0011\+\_\+air\+\_\+co2\+\_\+temperature\+\_\+humidity\+\_\+default} (12, 11,\char`\"{}S\+A\+C\+O\char`\"{}, 1,\char`\"{}S\+A\+T\+M\char`\"{}, 2,\char`\"{}S\+A\+H\+U\char`\"{}, 2)
-\item 
-\hyperlink{class_sensor_dfr0161}{Sensor\+Dfr0161} \hyperlink{module__handler_8cpp_a1ca73f6d0c3361a7fc59d0b07ab1750d}{sensor\+\_\+dfr0161\+\_\+water\+\_\+ph\+\_\+default} (A1,\char`\"{}S\+W\+P\+H\char`\"{}, 1)
-\item 
-\hyperlink{class_sensor_dfr0300}{Sensor\+Dfr0300} \hyperlink{module__handler_8cpp_a88260dc0f33287b1462b533e4dc127b2}{sensor\+\_\+dfr0300\+\_\+water\+\_\+temperature\+\_\+ec\+\_\+default} (5, A2, 2,\char`\"{}S\+W\+T\+M\char`\"{}, 1,\char`\"{}S\+W\+E\+C\char`\"{}, 1)
 \item 
 \hyperlink{class_sensor_contact_switch}{Sensor\+Contact\+Switch} \hyperlink{module__handler_8cpp_aa9f3da0083131fdbd8cf03f27cf9d551}{sensor\+\_\+contact\+\_\+switch\+\_\+general\+\_\+shell\+\_\+open\+\_\+default} (4,\char`\"{}S\+G\+S\+O\char`\"{}, 1)
 \item 
@@ -159,12 +156,9 @@ Handles all outgoing messages to the controller. Polls all objects using their $
 \hypertarget{module__handler_8cpp_ab6630028881a21e75bbe48305c5604f7}{}\index{module\+\_\+handler.\+cpp@{module\+\_\+handler.\+cpp}!sensor\+\_\+contact\+\_\+switch\+\_\+general\+\_\+window\+\_\+open\+\_\+default@{sensor\+\_\+contact\+\_\+switch\+\_\+general\+\_\+window\+\_\+open\+\_\+default}}
 \index{sensor\+\_\+contact\+\_\+switch\+\_\+general\+\_\+window\+\_\+open\+\_\+default@{sensor\+\_\+contact\+\_\+switch\+\_\+general\+\_\+window\+\_\+open\+\_\+default}!module\+\_\+handler.\+cpp@{module\+\_\+handler.\+cpp}}
 \subsubsection[{sensor\+\_\+contact\+\_\+switch\+\_\+general\+\_\+window\+\_\+open\+\_\+default}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sensor\+Contact\+Switch} sensor\+\_\+contact\+\_\+switch\+\_\+general\+\_\+window\+\_\+open\+\_\+default(3,\char`\"{}S\+G\+W\+O\char`\"{}, 1)}\label{module__handler_8cpp_ab6630028881a21e75bbe48305c5604f7}
-\hypertarget{module__handler_8cpp_a1ca73f6d0c3361a7fc59d0b07ab1750d}{}\index{module\+\_\+handler.\+cpp@{module\+\_\+handler.\+cpp}!sensor\+\_\+dfr0161\+\_\+water\+\_\+ph\+\_\+default@{sensor\+\_\+dfr0161\+\_\+water\+\_\+ph\+\_\+default}}
-\index{sensor\+\_\+dfr0161\+\_\+water\+\_\+ph\+\_\+default@{sensor\+\_\+dfr0161\+\_\+water\+\_\+ph\+\_\+default}!module\+\_\+handler.\+cpp@{module\+\_\+handler.\+cpp}}
-\subsubsection[{sensor\+\_\+dfr0161\+\_\+water\+\_\+ph\+\_\+default}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sensor\+Dfr0161} sensor\+\_\+dfr0161\+\_\+water\+\_\+ph\+\_\+default(A1,\char`\"{}S\+W\+P\+H\char`\"{}, 1)}\label{module__handler_8cpp_a1ca73f6d0c3361a7fc59d0b07ab1750d}
-\hypertarget{module__handler_8cpp_a88260dc0f33287b1462b533e4dc127b2}{}\index{module\+\_\+handler.\+cpp@{module\+\_\+handler.\+cpp}!sensor\+\_\+dfr0300\+\_\+water\+\_\+temperature\+\_\+ec\+\_\+default@{sensor\+\_\+dfr0300\+\_\+water\+\_\+temperature\+\_\+ec\+\_\+default}}
-\index{sensor\+\_\+dfr0300\+\_\+water\+\_\+temperature\+\_\+ec\+\_\+default@{sensor\+\_\+dfr0300\+\_\+water\+\_\+temperature\+\_\+ec\+\_\+default}!module\+\_\+handler.\+cpp@{module\+\_\+handler.\+cpp}}
-\subsubsection[{sensor\+\_\+dfr0300\+\_\+water\+\_\+temperature\+\_\+ec\+\_\+default}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sensor\+Dfr0300} sensor\+\_\+dfr0300\+\_\+water\+\_\+temperature\+\_\+ec\+\_\+default(5, A2, 2,\char`\"{}S\+W\+T\+M\char`\"{}, 1,\char`\"{}S\+W\+E\+C\char`\"{}, 1)}\label{module__handler_8cpp_a88260dc0f33287b1462b533e4dc127b2}
+\hypertarget{module__handler_8cpp_a5cb0d436382713f20aa8931345ae6e7b}{}\index{module\+\_\+handler.\+cpp@{module\+\_\+handler.\+cpp}!sensor\+\_\+dfr01610300\+\_\+water\+\_\+ph\+\_\+temperature\+\_\+ec\+\_\+default@{sensor\+\_\+dfr01610300\+\_\+water\+\_\+ph\+\_\+temperature\+\_\+ec\+\_\+default}}
+\index{sensor\+\_\+dfr01610300\+\_\+water\+\_\+ph\+\_\+temperature\+\_\+ec\+\_\+default@{sensor\+\_\+dfr01610300\+\_\+water\+\_\+ph\+\_\+temperature\+\_\+ec\+\_\+default}!module\+\_\+handler.\+cpp@{module\+\_\+handler.\+cpp}}
+\subsubsection[{sensor\+\_\+dfr01610300\+\_\+water\+\_\+ph\+\_\+temperature\+\_\+ec\+\_\+default}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sensor\+Dfr01610300} sensor\+\_\+dfr01610300\+\_\+water\+\_\+ph\+\_\+temperature\+\_\+ec\+\_\+default(A1,\char`\"{}S\+W\+P\+H\char`\"{}, 1, 2,\char`\"{}S\+W\+T\+M\char`\"{}, 1, A2,\char`\"{}S\+W\+E\+C\char`\"{}, 1, 22)}\label{module__handler_8cpp_a5cb0d436382713f20aa8931345ae6e7b}
 \hypertarget{module__handler_8cpp_a71b8e34ff72f1d153e53311443c419e6}{}\index{module\+\_\+handler.\+cpp@{module\+\_\+handler.\+cpp}!sensor\+\_\+dht22\+\_\+air\+\_\+temperature\+\_\+humidity\+\_\+default@{sensor\+\_\+dht22\+\_\+air\+\_\+temperature\+\_\+humidity\+\_\+default}}
 \index{sensor\+\_\+dht22\+\_\+air\+\_\+temperature\+\_\+humidity\+\_\+default@{sensor\+\_\+dht22\+\_\+air\+\_\+temperature\+\_\+humidity\+\_\+default}!module\+\_\+handler.\+cpp@{module\+\_\+handler.\+cpp}}
 \subsubsection[{sensor\+\_\+dht22\+\_\+air\+\_\+temperature\+\_\+humidity\+\_\+default}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sensor\+Dht22} sensor\+\_\+dht22\+\_\+air\+\_\+temperature\+\_\+humidity\+\_\+default(A0,\char`\"{}S\+A\+T\+M\char`\"{}, 1,\char`\"{}S\+A\+H\+U\char`\"{}, 1)}\label{module__handler_8cpp_a71b8e34ff72f1d153e53311443c419e6}

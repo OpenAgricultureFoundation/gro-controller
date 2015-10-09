@@ -4,19 +4,19 @@
     <compoundname>sensor_dht22.cpp</compoundname>
     <includes refid="sensor__dht22_8h" local="yes">sensor_dht22.h</includes>
     <incdepgraph>
-      <node id="97">
+      <node id="85">
         <label>sensor_dht22.h</label>
         <link refid="sensor__dht22_8h"/>
-        <childnode refid="98" relation="include">
+        <childnode refid="86" relation="include">
         </childnode>
       </node>
-      <node id="98">
+      <node id="86">
         <label>WProgram.h</label>
       </node>
-      <node id="96">
+      <node id="84">
         <label>sensor_dht22.cpp</label>
         <link refid="sensor_dht22.cpp"/>
-        <childnode refid="97" relation="include">
+        <childnode refid="85" relation="include">
         </childnode>
       </node>
     </incdepgraph>

@@ -9,23 +9,25 @@
     <includes refid="support__wire_8h" local="yes">support_wire.h</includes>
     <includes refid="rgb__lcd_8h" local="yes">rgb_lcd.h</includes>
     <incdepgraph>
-      <node id="52">
+      <node id="51">
         <label>Print.h</label>
       </node>
-      <node id="49">
+      <node id="48">
         <label>support_wire.h</label>
         <link refid="support__wire_8h"/>
-        <childnode refid="48" relation="include">
+        <childnode refid="47" relation="include">
         </childnode>
-        <childnode refid="50" relation="include">
+        <childnode refid="49" relation="include">
         </childnode>
       </node>
-      <node id="47">
+      <node id="46">
         <label>string.h</label>
       </node>
-      <node id="44">
+      <node id="43">
         <label>rgb_lcd.cpp</label>
         <link refid="rgb_lcd.cpp"/>
+        <childnode refid="44" relation="include">
+        </childnode>
         <childnode refid="45" relation="include">
         </childnode>
         <childnode refid="46" relation="include">
@@ -34,29 +36,27 @@
         </childnode>
         <childnode refid="48" relation="include">
         </childnode>
-        <childnode refid="49" relation="include">
+        <childnode refid="50" relation="include">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>Arduino.h</label>
+      </node>
+      <node id="50">
+        <label>rgb_lcd.h</label>
+        <link refid="rgb__lcd_8h"/>
+        <childnode refid="47" relation="include">
         </childnode>
         <childnode refid="51" relation="include">
         </childnode>
       </node>
-      <node id="45">
-        <label>Arduino.h</label>
-      </node>
-      <node id="51">
-        <label>rgb_lcd.h</label>
-        <link refid="rgb__lcd_8h"/>
-        <childnode refid="48" relation="include">
-        </childnode>
-        <childnode refid="52" relation="include">
-        </childnode>
-      </node>
-      <node id="50">
+      <node id="49">
         <label>Stream.h</label>
       </node>
-      <node id="46">
+      <node id="45">
         <label>stdio.h</label>
       </node>
-      <node id="48">
+      <node id="47">
         <label>inttypes.h</label>
       </node>
     </incdepgraph>

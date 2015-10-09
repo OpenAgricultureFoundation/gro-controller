@@ -1,3 +1,9 @@
+/** 
+ *  \file actuator_relay.hcpp
+ *  \brief Actuator module for an active low relay.
+ *  See actuator_relay.h for details.
+ *  \author Jake Rye
+ */
 #include "actuator_relay.h"
 
 //--------------------------------------------------PUBLIC-------------------------------------------//

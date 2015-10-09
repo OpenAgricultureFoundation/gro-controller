@@ -8,53 +8,53 @@
     <includedby refid="rgb__lcd_8cpp" local="yes">rgb_lcd.cpp</includedby>
     <includedby refid="support__wire_8cpp" local="yes">support_wire.cpp</includedby>
     <incdepgraph>
-      <node id="196">
+      <node id="182">
         <label>support_wire.h</label>
         <link refid="support_wire.h"/>
-        <childnode refid="197" relation="include">
+        <childnode refid="183" relation="include">
         </childnode>
-        <childnode refid="198" relation="include">
+        <childnode refid="184" relation="include">
         </childnode>
       </node>
-      <node id="198">
+      <node id="184">
         <label>Stream.h</label>
       </node>
-      <node id="197">
+      <node id="183">
         <label>inttypes.h</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="204">
+      <node id="190">
         <label>support_wire.cpp</label>
         <link refid="support__wire_8cpp"/>
       </node>
-      <node id="199">
+      <node id="185">
         <label>support_wire.h</label>
         <link refid="support_wire.h"/>
-        <childnode refid="200" relation="include">
+        <childnode refid="186" relation="include">
         </childnode>
-        <childnode refid="203" relation="include">
+        <childnode refid="189" relation="include">
         </childnode>
-        <childnode refid="204" relation="include">
+        <childnode refid="190" relation="include">
         </childnode>
       </node>
-      <node id="201">
+      <node id="187">
         <label>module_handler.cpp</label>
         <link refid="module__handler_8cpp"/>
       </node>
-      <node id="203">
+      <node id="189">
         <label>rgb_lcd.cpp</label>
         <link refid="rgb__lcd_8cpp"/>
       </node>
-      <node id="200">
+      <node id="186">
         <label>sensor_tsl2561.h</label>
         <link refid="sensor__tsl2561_8h"/>
-        <childnode refid="201" relation="include">
+        <childnode refid="187" relation="include">
         </childnode>
-        <childnode refid="202" relation="include">
+        <childnode refid="188" relation="include">
         </childnode>
       </node>
-      <node id="202">
+      <node id="188">
         <label>sensor_tsl2561.cpp</label>
         <link refid="sensor__tsl2561_8cpp"/>
       </node>

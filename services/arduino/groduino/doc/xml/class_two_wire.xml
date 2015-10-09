@@ -628,6 +628,17 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
+      <node id="28">
+        <label>TwoWire</label>
+        <link refid="class_two_wire"/>
+        <childnode refid="29" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>Stream</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="30">
         <label>TwoWire</label>
         <link refid="class_two_wire"/>
@@ -635,17 +646,6 @@
         </childnode>
       </node>
       <node id="31">
-        <label>Stream</label>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
-      <node id="32">
-        <label>TwoWire</label>
-        <link refid="class_two_wire"/>
-        <childnode refid="33" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="33">
         <label>Stream</label>
       </node>
     </collaborationgraph>

@@ -124,48 +124,45 @@
     <member refid="class_sensor_contact_switch_1ab49acd5d6132eed50d7342717649abc2" kind="function"><name>set</name></member>
     <member refid="class_sensor_contact_switch_1adb4c23504b9a2751f42082cd651f3138" kind="function"><name>getData</name></member>
   </compound>
-  <compound refid="class_sensor_dfr0161" kind="class"><name>SensorDfr0161</name>
-    <member refid="class_sensor_dfr0161_1a98640420a5bd5b7461341893c1a8633b" kind="variable"><name>ph</name></member>
-    <member refid="class_sensor_dfr0161_1a84060ac1d68a19d8cbc7505484c31391" kind="variable"><name>ph_avg</name></member>
-    <member refid="class_sensor_dfr0161_1a22668275338d8200bfe48967427def3a" kind="variable"><name>ph_pin_</name></member>
-    <member refid="class_sensor_dfr0161_1a28acac7398bdd68feebc9d7678aa53ab" kind="variable"><name>ph_instruction_code_</name></member>
-    <member refid="class_sensor_dfr0161_1afba4ee356983408adea44cd26213e9a8" kind="variable"><name>ph_instruction_id_</name></member>
-    <member refid="class_sensor_dfr0161_1a922664ef9437d5daf3fcca75e81c84a7" kind="variable"><name>calibration_coeff_</name></member>
-    <member refid="class_sensor_dfr0161_1a3cff1a9d50a05403f61bd76a470cade7" kind="variable"><name>calibration_offset_</name></member>
-    <member refid="class_sensor_dfr0161_1a2610eb178b9cd0c2e00738df72863e8b" kind="function"><name>SensorDfr0161</name></member>
-    <member refid="class_sensor_dfr0161_1aee10a8faa4f752486a3a14662ba70d2d" kind="function"><name>begin</name></member>
-    <member refid="class_sensor_dfr0161_1a85017ddaf1e4ef3c09ea77fd0625e691" kind="function"><name>get</name></member>
-    <member refid="class_sensor_dfr0161_1a072cbfa3e18f9e5dd7b2faeec20721c3" kind="function"><name>set</name></member>
-    <member refid="class_sensor_dfr0161_1a659010048f28fd711b98a29b7825486f" kind="function"><name>getPh</name></member>
-    <member refid="class_sensor_dfr0161_1a970c0532ce28deefb7d3cba14ad3a7f6" kind="function"><name>avergeArray</name></member>
-    <member refid="class_sensor_dfr0161_1a7cf1596ca13f71a71f1522c43e85464a" kind="function"><name>floatToString</name></member>
-  </compound>
-  <compound refid="class_sensor_dfr0300" kind="class"><name>SensorDfr0300</name>
-    <member refid="class_sensor_dfr0300_1acc4191cfd71800c3aa571bcb1820b385" kind="variable"><name>temperature</name></member>
-    <member refid="class_sensor_dfr0300_1abe5609d68642bb1f9e898820dd742671" kind="variable"><name>ec</name></member>
-    <member refid="class_sensor_dfr0300_1a110d741893fd0fca0145325b3ffa8300" kind="variable"><name>ec_avg</name></member>
-    <member refid="class_sensor_dfr0300_1a8e11903aed977ce737c463f4e22760c0" kind="variable"><name>temperature_pin_</name></member>
-    <member refid="class_sensor_dfr0300_1ac743ed5f89e0062e1d925efd88fd4778" kind="variable"><name>ec_pin_</name></member>
-    <member refid="class_sensor_dfr0300_1a260d19f080a9583acb56c6f931fccd9d" kind="variable"><name>ec_enable_pin_</name></member>
-    <member refid="class_sensor_dfr0300_1a3a2c1136ca47999bd8e9f7f73ab7e78e" kind="variable"><name>temperature_instruction_code_</name></member>
-    <member refid="class_sensor_dfr0300_1a087e9041b40acf36e722e181c9d2b4e6" kind="variable"><name>temperature_id_</name></member>
-    <member refid="class_sensor_dfr0300_1aa163dfc258401b359bdf3e818b59c6ae" kind="variable"><name>ec_instruction_code_</name></member>
-    <member refid="class_sensor_dfr0300_1a6851cd2431a29323d798c4d5b951014f" kind="variable"><name>ec_id_</name></member>
-    <member refid="class_sensor_dfr0300_1a240e5ad981d1c6d4d12aea8eee1257b3" kind="variable"><name>ec_coefficient_</name></member>
-    <member refid="class_sensor_dfr0300_1a28b194e1cb7008e4dba49042eb139eb3" kind="variable"><name>ec_offset_</name></member>
-    <member refid="class_sensor_dfr0300_1a0cd2b3c054d7795f8bedfe465085b521" kind="variable"><name>offset_</name></member>
-    <member refid="class_sensor_dfr0300_1aefd6862b1478c19d0ed0f93b530e8bae" kind="variable"><name>data_</name></member>
-    <member refid="class_sensor_dfr0300_1a3707ddadcdc221c3ea62406e350862ba" kind="variable"><name>addr_</name></member>
-    <member refid="class_sensor_dfr0300_1a89189bb311f2db19e6a43ba0513303cb" kind="variable"><name>ds_</name></member>
-    <member refid="class_sensor_dfr0300_1a8a318afa69fd7aeb2c5d331bf3cc196a" kind="function"><name>SensorDfr0300</name></member>
-    <member refid="class_sensor_dfr0300_1a310bf946e482b58ab079d43f3bb3093b" kind="function"><name>begin</name></member>
-    <member refid="class_sensor_dfr0300_1a16b2e1ab7ed6bd191ea3a4d588d28861" kind="function"><name>get</name></member>
-    <member refid="class_sensor_dfr0300_1a538a5bd7f86693ce975d4b4b7f48bee0" kind="function"><name>set</name></member>
-    <member refid="class_sensor_dfr0300_1aa42f4a6a5d829fe0b53979a19ab928f3" kind="function"><name>getSensorData</name></member>
-    <member refid="class_sensor_dfr0300_1ad4490aa3ac5d16b48a678e583feaeb11" kind="function"><name>getTemperature</name></member>
-    <member refid="class_sensor_dfr0300_1ad67e9aa351c262e5ae9c8fa505efac6f" kind="function"><name>startTempertureConversion</name></member>
-    <member refid="class_sensor_dfr0300_1a33777bfb45197a63182aa640a08a4f49" kind="function"><name>getEc</name></member>
-    <member refid="class_sensor_dfr0300_1a249349ee7e10afdeafe62f800adf73ae" kind="function"><name>TempProcess</name></member>
+  <compound refid="class_sensor_dfr01610300" kind="class"><name>SensorDfr01610300</name>
+    <member refid="class_sensor_dfr01610300_1aa0ab70c745bde253adaa343afba56473" kind="variable"><name>ph_raw</name></member>
+    <member refid="class_sensor_dfr01610300_1a09ae20cb63d44609c717dda168b8e454" kind="variable"><name>ph_filtered</name></member>
+    <member refid="class_sensor_dfr01610300_1a483485c4c8a91569e8f45819e641e38c" kind="variable"><name>temperature_raw</name></member>
+    <member refid="class_sensor_dfr01610300_1a598f2f18f66d626a3ce392478fcadcc8" kind="variable"><name>temperature_filtered</name></member>
+    <member refid="class_sensor_dfr01610300_1af0fc005c44506d277f792acd29f64c3e" kind="variable"><name>ec_raw</name></member>
+    <member refid="class_sensor_dfr01610300_1a3183d77d8012266006113a3d8647a2a9" kind="variable"><name>ec_filtered</name></member>
+    <member refid="class_sensor_dfr01610300_1a20761369a89e8c7508df9e4ac91f5cdf" kind="variable"><name>ph_pin_</name></member>
+    <member refid="class_sensor_dfr01610300_1ac4454ddb29a52386e3c91744dfa9c104" kind="variable"><name>ph_instruction_code_</name></member>
+    <member refid="class_sensor_dfr01610300_1a61b30abef1db0f99e70a8996f88316ef" kind="variable"><name>ph_instruction_id_</name></member>
+    <member refid="class_sensor_dfr01610300_1ad400653c4c630daa2092a78d71d9a2ae" kind="variable"><name>temperature_pin_</name></member>
+    <member refid="class_sensor_dfr01610300_1a19fd2791b7dcccd06d6ce97d1ff036a5" kind="variable"><name>temperature_instruction_code_</name></member>
+    <member refid="class_sensor_dfr01610300_1a6da209d5f4bec9f11e866fc598b960a8" kind="variable"><name>temperature_id_</name></member>
+    <member refid="class_sensor_dfr01610300_1ac9655b15f77e862d3b6767a0e1a3d18b" kind="variable"><name>ec_pin_</name></member>
+    <member refid="class_sensor_dfr01610300_1aca15f5458efd4af323d43fd73f0a4fdb" kind="variable"><name>ec_instruction_code_</name></member>
+    <member refid="class_sensor_dfr01610300_1aaf65e48308c42ae16f64e20b9e84a63f" kind="variable"><name>ec_id_</name></member>
+    <member refid="class_sensor_dfr01610300_1adf4b1664c273eeb35fdbb270ddec1bbd" kind="variable"><name>ec_enable_pin_</name></member>
+    <member refid="class_sensor_dfr01610300_1ac13f8f9b64e19c08606a8888a009ef66" kind="variable"><name>ph_calibration_coefficient_</name></member>
+    <member refid="class_sensor_dfr01610300_1a3a0de74e5a94edd6930ee35f76abc248" kind="variable"><name>ph_calibration_offset_</name></member>
+    <member refid="class_sensor_dfr01610300_1a3548a15ae28ceef48b95140417496a24" kind="variable"><name>ec_calibration_coefficient_</name></member>
+    <member refid="class_sensor_dfr01610300_1afd56beeab0efc9250d8151f77b94221f" kind="variable"><name>ec_calibration_offset_</name></member>
+    <member refid="class_sensor_dfr01610300_1ac7535bb3b2a77f1f5f4fda1f178c727a" kind="variable"><name>ec_on_delay_</name></member>
+    <member refid="class_sensor_dfr01610300_1af08bd24be32a8b533350d60d30cea179" kind="variable"><name>ec_off_delay_</name></member>
+    <member refid="class_sensor_dfr01610300_1a6b4a0af36d5e534714c405e817253d49" kind="variable"><name>prev_update_time_</name></member>
+    <member refid="class_sensor_dfr01610300_1a930980e3a5c733b22bb67bcfcb1e90e5" kind="variable"><name>last_update_was_ec_</name></member>
+    <member refid="class_sensor_dfr01610300_1a85c6e55c074b82df6e690cb206177408" kind="variable"><name>temperature_data_</name></member>
+    <member refid="class_sensor_dfr01610300_1ab09e08e428a011a1e1d098370021f013" kind="variable"><name>temperature_address_</name></member>
+    <member refid="class_sensor_dfr01610300_1a872df1f5519e42aaf871b642ab862f33" kind="variable"><name>ds_</name></member>
+    <member refid="class_sensor_dfr01610300_1aeb40fef336ad2b2d82f7c5eddf9d318e" kind="function"><name>SensorDfr01610300</name></member>
+    <member refid="class_sensor_dfr01610300_1a456221ff4728d8985c8e980d4f22b692" kind="function"><name>begin</name></member>
+    <member refid="class_sensor_dfr01610300_1a21bbd0f8ee7e6576eabd9acf0e1e4d89" kind="function"><name>get</name></member>
+    <member refid="class_sensor_dfr01610300_1ab675c2708ff9d5d0d9bbe10bab3d97e8" kind="function"><name>set</name></member>
+    <member refid="class_sensor_dfr01610300_1aed6c34781e5b136f270a3d71f63eb212" kind="function"><name>getSensorData</name></member>
+    <member refid="class_sensor_dfr01610300_1a638737e39cdfcea4ac6f375dd78b15b4" kind="function"><name>getPh</name></member>
+    <member refid="class_sensor_dfr01610300_1a66a2235eec478ef93257f7742fab23fb" kind="function"><name>getTemperature</name></member>
+    <member refid="class_sensor_dfr01610300_1a6b3d35487c3aa399e270fb9ee632e1bc" kind="function"><name>getEc</name></member>
+    <member refid="class_sensor_dfr01610300_1a2ad643eaa4d7dc4b4c4899403a43a26f" kind="function"><name>avergeArray</name></member>
+    <member refid="class_sensor_dfr01610300_1a1fd69246c7164cd4f828be769fd5d133" kind="function"><name>startTempertureConversion</name></member>
+    <member refid="class_sensor_dfr01610300_1aae60840a2bfc5db28c3e7f04e163597f" kind="function"><name>TempProcess</name></member>
   </compound>
   <compound refid="class_sensor_dht22" kind="class"><name>SensorDht22</name>
     <member refid="class_sensor_dht22_1a93f9363f3086e00f440fc89a7f1f8a1b" kind="variable"><name>humidity</name></member>
@@ -345,10 +342,9 @@
   <compound refid="module__handler_8cpp" kind="file"><name>module_handler.cpp</name>
     <member refid="module__handler_8cpp_1ae162b537f743c1fa3e4b3a398324649d" kind="variable"><name>communication</name></member>
     <member refid="module__handler_8cpp_1ac80bfd1cbb89a121918c276b790b790e" kind="variable"><name>sensor_tsl2561_light_intensity_default</name></member>
+    <member refid="module__handler_8cpp_1a5cb0d436382713f20aa8931345ae6e7b" kind="variable"><name>sensor_dfr01610300_water_ph_temperature_ec_default</name></member>
     <member refid="module__handler_8cpp_1a71b8e34ff72f1d153e53311443c419e6" kind="variable"><name>sensor_dht22_air_temperature_humidity_default</name></member>
     <member refid="module__handler_8cpp_1a8875593f7e7ffa5750599fe64d0cb659" kind="variable"><name>sensor_gc0011_air_co2_temperature_humidity_default</name></member>
-    <member refid="module__handler_8cpp_1a1ca73f6d0c3361a7fc59d0b07ab1750d" kind="variable"><name>sensor_dfr0161_water_ph_default</name></member>
-    <member refid="module__handler_8cpp_1a88260dc0f33287b1462b533e4dc127b2" kind="variable"><name>sensor_dfr0300_water_temperature_ec_default</name></member>
     <member refid="module__handler_8cpp_1aa9f3da0083131fdbd8cf03f27cf9d551" kind="variable"><name>sensor_contact_switch_general_shell_open_default</name></member>
     <member refid="module__handler_8cpp_1ab6630028881a21e75bbe48305c5604f7" kind="variable"><name>sensor_contact_switch_general_window_open_default</name></member>
     <member refid="module__handler_8cpp_1a0a937c87b9401ed7584696b6923185f3" kind="variable"><name>actuator_relay_air_heater_default</name></member>
@@ -422,15 +418,12 @@
   </compound>
   <compound refid="sensor__contact__switch_8h" kind="file"><name>sensor_contact_switch.h</name>
   </compound>
-  <compound refid="sensor__dfr0161_8cpp" kind="file"><name>sensor_dfr0161.cpp</name>
-    <member refid="sensor__dfr0161_8cpp_1accee04166fbd786be0312cac6ae33c8e" kind="variable"><name>ph_filter</name></member>
+  <compound refid="sensor__dfr0161__0300_8cpp" kind="file"><name>sensor_dfr0161_0300.cpp</name>
+    <member refid="sensor__dfr0161__0300_8cpp_1accee04166fbd786be0312cac6ae33c8e" kind="variable"><name>ph_filter</name></member>
+    <member refid="sensor__dfr0161__0300_8cpp_1a9715f9bf312d1952818720ada853fc05" kind="variable"><name>ec_filter</name></member>
+    <member refid="sensor__dfr0161__0300_8cpp_1a41a2b18a7fbefb5768d94a5f4a6a22ed" kind="variable"><name>temperature_filter</name></member>
   </compound>
-  <compound refid="sensor__dfr0161_8h" kind="file"><name>sensor_dfr0161.h</name>
-  </compound>
-  <compound refid="sensor__dfr0300_8cpp" kind="file"><name>sensor_dfr0300.cpp</name>
-    <member refid="sensor__dfr0300_8cpp_1a9715f9bf312d1952818720ada853fc05" kind="variable"><name>ec_filter</name></member>
-  </compound>
-  <compound refid="sensor__dfr0300_8h" kind="file"><name>sensor_dfr0300.h</name>
+  <compound refid="sensor__dfr0161__0300_8h" kind="file"><name>sensor_dfr0161_0300.h</name>
   </compound>
   <compound refid="sensor__dht22_8cpp" kind="file"><name>sensor_dht22.cpp</name>
   </compound>
