@@ -72,7 +72,7 @@ class SensingPoint(Element):
 
     @value.setter
     def value(self, value):
-        if self._last_value is not value:
+        if self._last_value != value:
             current_time = time.time()
             self._last_value = value
             self._timestamp = current_time
