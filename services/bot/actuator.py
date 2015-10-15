@@ -180,10 +180,11 @@ class Actuator(Element):
 
             delta = desired_value - current_value
 
-            # TODO do we want to have actuation bands or something so that we stay on until we actually reach the value?
-            # Would be easy to do - just look at the state.
-            if abs(delta) < e['threshold']:      # if the magnitude of error is less than the threshold, do nothing
+            # Implements basic band, if below thres, actuate until within thres/2
+            if (abs(delta) < e['threshold']) and (self.state == 0):      # if the magnitude of error is less than the threshold, do nothing
                 # we don't even need to add it to the desired states since its 0
+                continue
+            elif (abs(delta) < e['threshold']/2) and (self.state != 0):
                 continue
             elif delta*e['effect_on_active'] < 0:  # ex. want to heat (pos delta) and effect is negative: do nothing
                 continue

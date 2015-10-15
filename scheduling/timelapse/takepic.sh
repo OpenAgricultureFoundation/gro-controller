@@ -24,10 +24,10 @@ echo index: $index
 ## Take picture
 if [ $OPTION == "on" ]; then
     echo "Taking pic, assumes lights are on"
-    fswebcam --no-banner -F 10 -r "1280x960" -s lights=on $DIR/$NAME$index.jpg
+    fswebcam --no-banner -F 35 -r "1280x960" -s lights=on $DIR/$NAME$index.jpg
 else
     echo "Taking normal pic"
-    fswebcam --no-banner -F 10 -r "1280x960" $DIR/$NAME$index.jpg
+    fswebcam --no-banner -F 100 -r "1280x960" $DIR/$NAME$index.jpg
 fi
 
 ## Increment and write index
