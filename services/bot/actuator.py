@@ -184,7 +184,7 @@ class Actuator(Element):
             if (abs(delta) < e['threshold']) and (self.state == 0):      # if the magnitude of error is less than the threshold, do nothing
                 # we don't even need to add it to the desired states since its 0
                 continue
-            elif (abs(delta) < e['threshold']/2) and (self.state != 0):
+            elif (abs(delta) < e['threshold']/4) and (self.state != 0):
                 continue
             elif delta*e['effect_on_active'] < 0:  # ex. want to heat (pos delta) and effect is negative: do nothing
                 continue
