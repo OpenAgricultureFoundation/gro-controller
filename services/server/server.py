@@ -186,12 +186,15 @@ class Server:
         self._thread_list.append(t)
 
     def _postDataPoints(self, values_list):
-        headers = {'Authorization': 'Token ' + self._token}
-        req = requests.post(self._post_datapoint_url, params={"many": True}, json=values_list, headers=headers)
-        if req.status_code != 201:
-            logging.error('Failed to post %s: Code %d', values_list, req.status_code)
-        else:
-            logging.debug('Posted %d datapoints, took %f secs', len(values_list), req.elapsed.total_seconds())
+        if len(values_list) == 0:
+            logging.debug('No new datapoints!')
+        else:	
+            headers = {'Authorization': 'Token ' + self._token}
+            req = requests.post(self._post_datapoint_url, params={"many": True}, json=values_list, headers=headers)
+            if req.status_code != 201:
+                logging.error('Failed to post %s: Code %d', values_list, req.status_code)
+            else:
+                logging.debug('Posted %d datapoints, took %f secs. Datapoints: %s', len(values_list), req.elapsed.total_seconds(), values_list)
 
 
 # TODO this implements caching, but we probably want it in the server... having it in both seems wasteful

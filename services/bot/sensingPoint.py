@@ -72,8 +72,9 @@ class SensingPoint(Element):
 
     @value.setter
     def value(self, value):
-        if self._last_value != value:
-            current_time = time.time()
+        current_time = time.time()
+        # Update if new value or hasn't been updated for a while
+        if (self._last_value != value) or (current_time - self._timestamp > 60): # TODO shouldn't be hardcoded 
             self._last_value = value
             self._timestamp = current_time
             self._posted = False  # TODO is this only for _last_value? update docs/methods below!
