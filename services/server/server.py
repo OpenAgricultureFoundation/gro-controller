@@ -17,7 +17,7 @@ if sys.version_info < (3, 3, 0):
 # Note: for convention, all urls will have trailing slash. So if you are appending to them, no beginning slash needed
 class Server:
     _max_retries = 5            # max retries for post
-    _req_timeout = 3                # timeout for requests
+    _req_timeout = 5                # timeout for requests
     _warn_results_count = 500   # when getting all results, will warn if there are >_warn_results_count results
     _max_results_count = 1000   # if # results > this, will throw error and return _max_results_count results
 
@@ -77,7 +77,7 @@ class Server:
                     break
                 logging.warning('Failed to get %s, status %d, retry %d' % (url, req.status_code, retry_count))
             except requests.exceptions.RequestException as e:
-                logging.warning('Failed to get request, RequestException: %s' % (e))
+                logging.warning('Failed to get request for %s, RequestException: %s' % (url, e))
                 pass        # Just pass it, we will include it as a retry ahead
             finally:
                 retry_count += 1
@@ -186,12 +186,15 @@ class Server:
         self._thread_list.append(t)
 
     def _postDataPoints(self, values_list):
-        headers = {'Authorization': 'Token ' + self._token}
-        req = requests.post(self._post_datapoint_url, params={"many": True}, json=values_list, headers=headers)
-        if req.status_code != 201:
-            logging.error('Failed to post %s: Code %d', values_list, req.status_code)
-        else:
-            logging.debug('Posted %d datapoints, took %f secs', len(values_list), req.elapsed.total_seconds())
+        if len(values_list) == 0:
+            logging.debug('No new datapoints!')
+        else:	
+            headers = {'Authorization': 'Token ' + self._token}
+            req = requests.post(self._post_datapoint_url, params={"many": True}, json=values_list, headers=headers)
+            if req.status_code != 201:
+                logging.error('Failed to post %s: Code %d', values_list, req.status_code)
+            else:
+                logging.debug('Posted %d datapoints, took %f secs. Datapoints: %s', len(values_list), req.elapsed.total_seconds(), values_list)
 
 
 # TODO this implements caching, but we probably want it in the server... having it in both seems wasteful

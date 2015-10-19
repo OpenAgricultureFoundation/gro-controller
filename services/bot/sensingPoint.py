@@ -73,16 +73,18 @@ class SensingPoint(Element):
     @value.setter
     def value(self, value):
         current_time = time.time()
-        self._last_value = value
-        self._timestamp = current_time
-        self._posted = False  # TODO is this only for _last_value? update docs/methods below!
+        # Update if new value or hasn't been updated for a while
+        if (self._last_value != value) or (current_time - self._timestamp > 60): # TODO shouldn't be hardcoded 
+            self._last_value = value
+            self._timestamp = current_time
+            self._posted = False  # TODO is this only for _last_value? update docs/methods below!
 
-        # If the last timestamp was more than 5 seconds ago, record this value
-        if len(self._values_buffer) == 0 or current_time - self._values_buffer[-1][0] >= 5:
-            self._values_buffer.append((current_time, value))  # append adds to the right
+            # If the last timestamp was more than 5 seconds ago, record this value
+            if len(self._values_buffer) == 0 or current_time - self._values_buffer[-1][0] >= 5:
+                self._values_buffer.append((current_time, value))  # append adds to the right
 
-        if len(self._values_buffer) > 20:  # TODO shouldn't be hardcoded
-            logging.warn('Buffer is getting big (%d) for %s', len(self._values_buffer), str(self))
+            if len(self._values_buffer) > 20:  # TODO shouldn't be hardcoded
+                logging.warn('Buffer is getting big (%d) for %s', len(self._values_buffer), str(self))
 
     @property
     def desired_value(self):

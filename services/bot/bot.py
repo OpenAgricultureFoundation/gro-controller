@@ -28,7 +28,7 @@ class Bot:
 
         self.server = server_inst
         self.groduino = groduino_inst
-        self.server_update_period = 10       # Update from/to the server this often
+        self.server_update_period = 15       # Update from/to the server this often
         self.invalid_message_codeindex_list = []        # TODO document
         self.inactive_sensing_points_dictby_codeindexstr = {}  # Used to store dict of inactive sensors instances
 
